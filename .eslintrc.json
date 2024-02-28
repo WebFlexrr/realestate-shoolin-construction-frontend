@@ -34,16 +34,19 @@
 		"react/prop-types": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-uses-react": "off",
-		"react/jsx-props-no-spreading": "warn",
+		"react/jsx-props-no-spreading": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-unused-vars": "error",
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
 		"react/no-unescaped-entities": "off",
-		"prettier/prettier": "warn",
+		"prettier/prettier": "off",
 		"no-unused-vars": "off",
 		"no-shadow": "off",
 		"@next/next/no-page-custom-font": "off",
-		"@typescript-eslint/explicit-function-return-type": "error"
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/consistent-type-definitions": "off",
+		"@typescript-eslint/strict-boolean-expressions": "off",
+		"object-shorthand": "off"
 	}
 }
