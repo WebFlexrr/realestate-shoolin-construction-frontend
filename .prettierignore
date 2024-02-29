@@ -9,6 +9,7 @@ yarn.lock
 postcss.config.js
 tsconfig.json
 commitlint.config.cjs
+commitlint.config.ts
 
 # asset
 public

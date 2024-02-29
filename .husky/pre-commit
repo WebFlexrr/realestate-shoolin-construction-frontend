@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-#Lint test
+# Lint test
 npx lint-staged --concurrent false
 
 #Check tsconfig standards
@@ -17,7 +17,7 @@ npm run check-format || {
     false;
 }
 #Check ESLint standards
-npm run check-lint || {
+npm run lint || {
     echo '😂🤮❌Get that weak Shit out there!😂🤮❌
     EsLint Check Failed. Make the required changes listed above, add changes and try commit again.'
     false;
