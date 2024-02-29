@@ -1,8 +1,8 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
 #Lint test
-npx lint-staged
+npx lint-staged --concurrent false
 
 #Check tsconfig standards
 npm run check-types || {
@@ -17,7 +17,7 @@ npm run check-format || {
     false;
 }
 #Check ESLint standards
-npm run lint || {
+npm run check-lint || {
     echo '😂🤮❌Get that weak Shit out there!😂🤮❌
     EsLint Check Failed. Make the required changes listed above, add changes and try commit again.'
     false;
