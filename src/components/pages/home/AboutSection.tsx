@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import React from 'react';
 
 const AboutSection = (): JSX.Element => {
 	return (
 		<section className="h-auto w-full ">
-			<div className="h-auto w-full  bg-[white] px-20 py-20">
+			<div className="h-auto w-full  bg-[white] px-20 py-40">
 				<section className="mx-auto w-full max-w-7xl space-y-10">
 					<section className="h-auto w-full">
 						<div className="mx-auto w-fit ">
@@ -23,7 +22,7 @@ const AboutSection = (): JSX.Element => {
 							</p>
 						</div>
 					</section>
-					<section>
+					{/* <section>
 						<div className="grid w-full grid-cols-3 gap-x-5">
 							<section className=" flex h-auto w-full flex-col items-center rounded border border-black bg-white py-10 text-lg font-semibold shadow-2xl">
 								<section className="mb-2">
@@ -62,7 +61,7 @@ const AboutSection = (): JSX.Element => {
 								<section>Helpline Support</section>
 							</section>
 						</div>
-					</section>
+					</section> */}
 				</section>
 			</div>
 		</section>

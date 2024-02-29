@@ -3,7 +3,7 @@ import React from 'react';
 
 const page = (): React.JSX.Element => {
 	return (
-		<main className="h-auto w-full">
+		<main className="mt-[5rem] h-auto w-full">
 			<HeroHeading heading={'About Us'} />
 		</main>
 	);

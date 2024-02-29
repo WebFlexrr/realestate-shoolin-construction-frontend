@@ -9,6 +9,7 @@
 		"eslint:recommended",
 		"standard-with-typescript",
 		"plugin:@typescript-eslint/recommended",
+		// "plugin:@typescript-eslint/eslint-plugin",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:import/typescript",
@@ -27,7 +28,7 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"project": "tsconfig.json"
+		"project": "./tsconfig.json"
 	},
 	"plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
 	"rules": {

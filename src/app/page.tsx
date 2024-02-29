@@ -7,10 +7,10 @@ import ProjectSection from '@/components/pages/home/ProjectSection';
 
 export default function Home(): JSX.Element {
 	return (
-		<main className="h-auto w-full">
+		<main className=" h-auto w-full">
 			<HeroSection />
-			<ProjectSection />
 			<AboutSection />
+			<ProjectSection />
 			<Testimonial />
 			<FAQ />
 			<Footer />

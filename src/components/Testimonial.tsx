@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
 	Carousel,
@@ -16,6 +17,7 @@ import {
 } from '@/components/ui/card';
 import SectionHeading from './SectionHeading';
 import { FaStar } from 'react-icons/fa';
+import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 
 const Testimonial = (): React.JSX.Element => {
@@ -28,7 +30,14 @@ const Testimonial = (): React.JSX.Element => {
 						mainTitle={'Client Review'}
 					/>
 					<section className="h-auto w-full ">
-						<Carousel className="w-full ">
+						<Carousel
+							plugins={[
+								Autoplay({
+									delay: 5000,
+								}),
+							]}
+							className="w-full "
+						>
 							<CarouselContent className="-ml-2 md:-ml-4">
 								{Array.from({ length: 5 }).map((_, index) => (
 									<CarouselItem
