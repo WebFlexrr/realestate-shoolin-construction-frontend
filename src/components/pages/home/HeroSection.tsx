@@ -39,7 +39,7 @@ const HeroSection = (): React.JSX.Element => {
 					</section>
 					<section className="w-full">
 						<Button variant={'default'} size={'lg'} className=" group  text-lg">
-							Projects
+							Find your Property
 							<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
 						</Button>
 					</section>
@@ -61,7 +61,7 @@ const HeroSection = (): React.JSX.Element => {
 								delay: 5000,
 							}),
 						]}
-						className=" border-text aspect-square rounded-lg border"
+						className=" border-text aspect-square rounded-lg "
 					>
 						<CarouselContent>
 							<CarouselItem>

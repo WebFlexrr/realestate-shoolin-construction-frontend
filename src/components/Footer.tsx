@@ -9,7 +9,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 
 const Footer = (): React.JSX.Element => {
 	return (
-		<section className="mt-24 h-auto w-full">
+		<section className=" h-auto w-full">
 			<section className="h-auto w-full bg-black  text-white ">
 				<section className="mx-auto  h-auto w-full max-w-7xl py-20 ">
 					<section className="  grid h-auto w-full grid-cols-2 gap-y-20">

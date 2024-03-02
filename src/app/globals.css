@@ -74,7 +74,7 @@
 		@apply border-border;
 	}
 	body {
-		@apply h-screen w-full bg-background font-poppins font-normal text-foreground;
+		@apply h-screen w-full bg-background font-inter-Tight font-normal text-foreground;
 	}
 	p {
 		@apply text-start font-poppins text-lg font-thin;
@@ -84,7 +84,7 @@
 	}
 
 	h2 {
-		@apply text-4xl font-medium leading-[46px];
+		@apply font-inter-Tight text-4xl  leading-[46px];
 	}
 
 	h4 {
