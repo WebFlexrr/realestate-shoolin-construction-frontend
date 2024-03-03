@@ -10,8 +10,8 @@ import SectionHeading from './SectionHeading';
 
 const FAQ = (): React.JSX.Element => {
 	return (
-		<section className="h-auto w-full bg-[#fcf1d9]">
-			<section className="mx-auto h-auto w-full max-w-7xl  py-20">
+		<section className="h-auto w-full ">
+			<section className="mx-auto h-auto w-full max-w-7xl py-20">
 				<section className=" h-auto w-full ">
 					<SectionHeading
 						subTitle={'FAQ'}

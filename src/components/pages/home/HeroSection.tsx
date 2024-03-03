@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { GoArrowUpRight } from 'react-icons/go';
+import Link from 'next/link';
 
 const HeroSection = (): React.JSX.Element => {
 	return (
@@ -26,8 +27,8 @@ const HeroSection = (): React.JSX.Element => {
 					/> */}
 				</div>
 			</div>
-			<section className=" relative z-30 mx-auto flex h-full w-full max-w-7xl  ">
-				<section className="flex h-full w-1/2 flex-col items-center justify-center gap-8 pr-20 pt-40  ">
+			<section className=" relative z-30 mx-auto flex h-full w-full max-w-7xl ">
+				<section className="flex h-full w-1/2 flex-col items-center justify-center gap-8 pr-20 pt-40 ">
 					<section className="h-auto w-full ">
 						<h1>Your home, your style begin your design adventure</h1>
 					</section>
@@ -38,10 +39,16 @@ const HeroSection = (): React.JSX.Element => {
 						</p>
 					</section>
 					<section className="w-full">
-						<Button variant={'default'} size={'lg'} className=" group  text-lg">
-							Find your Property
-							<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
-						</Button>
+						<Link href={'/projects'}>
+							<Button
+								variant={'default'}
+								size={'lg'}
+								className=" group  text-lg"
+							>
+								Find your Property
+								<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
+							</Button>
+						</Link>
 					</section>
 					<section className="mt-20 flex w-full items-start justify-start">
 						<Image

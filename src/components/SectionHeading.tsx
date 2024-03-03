@@ -7,7 +7,7 @@ interface SectionHeadingProps {
 }
 const SectionHeading: FC<SectionHeadingProps> = ({ mainTitle, subTitle }) => {
 	return (
-		<section className="mb-10 flex h-auto w-full">
+		<section className="mb-8 flex h-auto w-full">
 			<div className=" flex h-auto w-fit flex-col">
 				<span className="flex items-center text-lg uppercase ">
 					<AiFillCaretRight />
