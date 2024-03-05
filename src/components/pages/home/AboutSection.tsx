@@ -7,7 +7,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 const AboutSection = (): JSX.Element => {
 	return (
 		<section className="h-auto w-full ">
-			<section className="h-auto w-full px-5 py-20 lg:mx-auto lg:max-w-7xl ">
+			<section className="h-auto w-full px-5 py-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0 ">
 				<section className="flex h-auto w-full flex-col gap-10 lg:flex-row  ">
 					<section className="flex h-auto w-full flex-col gap-10 lg:w-[70%] lg:pr-20 ">
 						<section className="h-auto w-full">
@@ -51,12 +51,12 @@ const AboutSection = (): JSX.Element => {
 							</Link>
 						</section>
 					</section>
-					<section className="flex h-auto w-full lg:w-[30%] ">
+					<section className="flex h-auto w-full md:w-1/2 lg:w-[30%] ">
 						<Image
 							src={'/picture/pic8.jpg'}
 							width={1000}
 							height={0}
-							className=" aspect-[4/5] h-auto w-full rounded-lg"
+							className=" aspect-square h-auto w-full rounded-lg md:aspect-[4/5]"
 							alt={''}
 						/>
 					</section>

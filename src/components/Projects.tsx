@@ -11,13 +11,13 @@ interface ProjectProps {
 const Projects: FC<ProjectProps> = ({ image, status, link }) => {
 	return (
 		<div className="relative h-auto w-full rounded ">
-			<section className="relative z-10 aspect-square h-auto w-full transition-all duration-500 ease-in-out hover:scale-105 lg:aspect-video">
+			<section className="relative z-10 aspect-[16/10] h-auto w-full transition-all duration-500 ease-in-out hover:scale-105">
 				<Image
 					src={image}
 					width={1000}
 					height={0}
 					alt={''}
-					className="h-full  w-full rounded-xl "
+					className="h-full w-full rounded-xl "
 				/>
 
 				<div className="absolute left-3 top-4 z-20 h-fit w-fit content-center rounded-lg border-2 border-black bg-yellow-400 px-3 py-1 text-sm">

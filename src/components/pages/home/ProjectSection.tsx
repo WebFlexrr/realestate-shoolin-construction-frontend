@@ -7,9 +7,9 @@ import Link from 'next/link';
 const ProjectSection = (): JSX.Element => {
 	return (
 		<section className="h-auto w-full bg-background2">
-			<div className="mx-auto flex h-auto w-full flex-col px-5 pb-40 pt-20 lg:max-w-7xl">
+			<div className="flex h-auto w-full flex-col px-5 pb-40 pt-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0">
 				<SectionHeading mainTitle={'Our Projects'} subTitle={'Explore more'} />
-				<section className=" grid grid-cols-1 gap-10 lg:grid-cols-2">
+				<section className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-10">
 					<Projects image={'/picture/pic2.jpg'} status={'current'} link={'d'} />
 					<Projects image={'/picture/pic1.jpg'} status={'done'} link={'d'} />
 					<Projects image={'/picture/pic3.jpg'} status={'curent'} link={'d'} />

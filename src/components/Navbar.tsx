@@ -45,8 +45,8 @@ const Navbar = (): JSX.Element => {
 						</div>
 					</div>
 				</section> */}
-				<section className="flex h-[5rem] w-full justify-center  bg-background2">
-					<section className="mx-5 flex w-full max-w-7xl items-center justify-between  bg-background2 py-2 lg:mx-32 ">
+				<section className="flex h-[5rem] w-full justify-center bg-background2">
+					<section className="mx-5 flex w-full items-center justify-between bg-background2  py-2 lg:mx-16 xl:mx-auto xl:max-w-7xl ">
 						{/* Logo */}
 						<Link href={'/'}>
 							<Image
@@ -62,7 +62,7 @@ const Navbar = (): JSX.Element => {
 							<NavigationMenu>
 								<NavigationMenuList>
 									<NavigationMenuItem>
-										<Link href="/" legacyBehavior passHref>
+										<Link href="/">
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -71,7 +71,7 @@ const Navbar = (): JSX.Element => {
 										</Link>
 									</NavigationMenuItem>
 									<NavigationMenuItem>
-										<Link href="/about" legacyBehavior passHref>
+										<Link href="/about" legacyBehavior>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>

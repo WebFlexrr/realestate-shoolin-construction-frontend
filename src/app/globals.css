@@ -74,7 +74,7 @@
 		@apply h-screen w-full bg-background font-inter-Tight font-normal text-foreground;
 	}
 	p {
-		@apply text-start font-poppins text-base font-thin;
+		@apply text-start  font-inter-Tight text-lg;
 	}
 	h1 {
 		@apply font-inter-Tight text-5xl font-medium leading-[64px];
