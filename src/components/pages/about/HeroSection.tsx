@@ -22,6 +22,7 @@ import {
 } from '@/components/ui/card';
 import SectionHeading from '@/components/SectionHeading';
 import FAQ from '@/components/FAQ';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 const HeroSection = () => {
 	return (
@@ -184,6 +185,44 @@ const HeroSection = () => {
 								</section>
 							</section>
 						</section>
+					</section>
+				</section>
+			</section>
+			<section className="relative z-30  h-full w-full border border-black bg-background py-20">
+				<section className=" mx-auto flex h-auto w-full max-w-7xl flex-col">
+					<section>Our values</section>
+					<section className="flex w-full">
+						<section className="h-auto w-[40%] ">
+							<button className="group flex h-auto w-full items-center justify-between border-b border-black py-7">
+								<div className="flex gap-5">
+									<span>01.</span>
+									<h4>Creative Integrity</h4>
+								</div>
+								<FiArrowUpRight className=" invisible text-4xl transition-all duration-500 ease-in-out  group-hover:visible" />
+							</button>
+							<button className="flex h-auto w-full items-center justify-between border-b border-black py-7">
+								<div className="flex gap-5">
+									<span>02.</span>
+									<h4>Sustainable Innovation</h4>
+								</div>
+								<FiArrowUpRight className=" text-4xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
+							</button>
+							<button className="flex h-auto w-full items-center justify-between border-b border-black py-7">
+								<div className="flex gap-5">
+									<span>03.</span>
+									<h4>Client Collaboration</h4>
+								</div>
+								<FiArrowUpRight className=" text-4xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
+							</button>
+							<button className="flex h-auto w-full items-center justify-between border-b border-black py-7">
+								<div className="flex gap-5">
+									<span>04.</span>
+									<h4>Ethical Excellence</h4>
+								</div>
+								<FiArrowUpRight className=" text-4xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
+							</button>
+						</section>
+						<section className="h-auto w-[60%] border border-black"></section>
 					</section>
 				</section>
 			</section>
