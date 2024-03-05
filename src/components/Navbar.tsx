@@ -13,9 +13,21 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	// SheetDescription,
+	// SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from '@/components/ui/sheet';
 import { GoArrowUpRight } from 'react-icons/go';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 const Navbar = (): JSX.Element => {
 	return (
@@ -34,7 +46,7 @@ const Navbar = (): JSX.Element => {
 					</div>
 				</section> */}
 				<section className="flex h-[5rem] w-full justify-center  bg-background2">
-					<section className=" mx-32 flex w-full max-w-7xl items-center justify-between bg-background2 py-2 ">
+					<section className="mx-5 flex w-full max-w-7xl items-center justify-between  bg-background2 py-2 lg:mx-32 ">
 						{/* Logo */}
 						<Link href={'/'}>
 							<Image
@@ -46,7 +58,7 @@ const Navbar = (): JSX.Element => {
 							/>
 						</Link>
 
-						<section className="flex w-fit items-center gap-10 ">
+						<section className="hidden w-fit items-center gap-10 lg:flex ">
 							<NavigationMenu>
 								<NavigationMenuList>
 									<NavigationMenuItem>
@@ -63,10 +75,10 @@ const Navbar = (): JSX.Element => {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												<span className="text-lg">About</span>
+												<span className="text-lg">About Us</span>
 											</NavigationMenuLink>
 										</Link>
-										{/* <NavigationMenuContent>
+										<NavigationMenuContent>
 											<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 												<li className="row-span-3">
 													<NavigationMenuLink asChild>
@@ -75,7 +87,7 @@ const Navbar = (): JSX.Element => {
 															href="/"
 														>
 															{/* <Icons.logo className="h-6 w-6" /> */}
-										{/* <div className="mb-2 mt-4 text-lg font-medium">
+															<div className="mb-2 mt-4 text-lg font-medium">
 																shadcn/ui
 															</div>
 															<p className="text-sm leading-tight text-muted-foreground">
@@ -87,7 +99,7 @@ const Navbar = (): JSX.Element => {
 													</NavigationMenuLink>
 												</li>
 											</ul>
-										</NavigationMenuContent> */}
+										</NavigationMenuContent>
 									</NavigationMenuItem>
 									<NavigationMenuItem>
 										<Link href="/projects" legacyBehavior passHref>
@@ -96,50 +108,45 @@ const Navbar = (): JSX.Element => {
 											</NavigationMenuTrigger>
 										</Link>
 										<NavigationMenuContent>
-											<ul className="grid w-[400px] gap-3 border-t-[6px] border-primary p-4 md:w-[500px]  md:grid-cols-2 lg:w-[600px]">
-												<li>
-													<span>Complete Project</span>
+											<ul className="grid w-[600px] gap-3 border-t-[6px]  border-primary p-4 md:w-[500px] md:grid-cols-2 lg:w-[400px] ">
+												<li className="h-full w-full select-none  flex-col justify-end rounded-md bg-slate-400 bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md">
+													<span className=" text-lg font-medium">
+														Complete Project
+													</span>
 													<ul>
-														<li>Shoolin </li>
-														<li>Shoolin </li>
-														<li>Shoolin </li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Simon Pandal
+														</li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Shoolin
+														</li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Shoolin
+														</li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Shoolin
+														</li>
 													</ul>
 												</li>
-												<li>
-													<span>Complete Project</span>
+												<li className="h-full w-full select-none  flex-col justify-end rounded-md bg-slate-400 bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md">
+													<span className=" text-lg font-medium">
+														Complete Project
+													</span>
 													<ul>
-														<li>Shoolin </li>
-														<li>Shoolin </li>
-														<li>Shoolin </li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Simon Pandal
+														</li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Shoolin
+														</li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Shoolin
+														</li>
+														<li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															Shoolin
+														</li>
 													</ul>
 												</li>
-
-												{/* <ListItem
-														key={component.title}
-														title={component.title}
-														href={component.href}
-													>
-														{component.description}
-													</ListItem> */}
-												{/* 												
-												<li className="row-span-3">
-													<NavigationMenuLink asChild>
-														<a
-															className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-															href="/"
-														>
-															
-															<div className="mb-2 mt-4 text-lg font-medium">
-																shadcn/ui
-															</div>
-															<p className="text-sm leading-tight text-muted-foreground">
-																Beautifully designed components that you can
-																copy and paste into your apps. Accessible.
-																Customizable. Open Source.
-															</p>
-														</a>
-													</NavigationMenuLink>
-												</li> */}
 											</ul>
 										</NavigationMenuContent>
 									</NavigationMenuItem>
@@ -175,6 +182,80 @@ const Navbar = (): JSX.Element => {
 									</NavigationMenuItem>
 								</NavigationMenuList>
 							</NavigationMenu>
+						</section>
+						<section className=" lg:hidden">
+							<Sheet>
+								<SheetTrigger asChild>
+									<Button variant={'outline'}>
+										<RxHamburgerMenu className="text-2xl " />
+									</Button>
+								</SheetTrigger>
+								<SheetContent className="">
+									<SheetHeader>
+										<SheetTitle>
+											<Image
+												src={logo}
+												width={0}
+												height={0}
+												alt=""
+												className="aspect-auto h-auto w-[100px]"
+											/>
+										</SheetTitle>
+										{/* <SheetDescription>
+											Make changes to your profile here. Click save when you're
+											done.
+										</SheetDescription> */}
+									</SheetHeader>
+
+									<section className="flex flex-col  py-6">
+										<SheetClose asChild>
+											<Link
+												href={'/about'}
+												className="flex w-full items-center justify-between border-b border-black py-4"
+											>
+												About Shoolin
+												<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
+											</Link>
+										</SheetClose>
+										<SheetClose asChild>
+											<Link
+												href={'/projects'}
+												className="flex w-full items-center justify-between border-b border-black py-4"
+											>
+												Projects
+												<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
+											</Link>
+										</SheetClose>
+										<SheetClose asChild>
+											<Link
+												href={'/media'}
+												className="flex w-full items-center justify-between border-b border-black py-4"
+											>
+												Media
+												<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
+											</Link>
+										</SheetClose>
+										<SheetClose asChild>
+											<Link
+												href={'/contact'}
+												className="flex w-full items-center justify-between border-b border-black py-4"
+											>
+												Contact
+												<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
+											</Link>
+										</SheetClose>
+										<SheetClose asChild>
+											<Link
+												href={'/bookonline'}
+												className="flex w-full items-center justify-between border-b border-black py-4"
+											>
+												Book Online
+												<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
+											</Link>
+										</SheetClose>
+									</section>
+								</SheetContent>
+							</Sheet>
 						</section>
 					</section>
 				</section>

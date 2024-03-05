@@ -14,21 +14,9 @@ import Link from 'next/link';
 
 const HeroSection = (): React.JSX.Element => {
 	return (
-		<section className="relative h-[100vh] w-full bg-background2 ">
-			<div className="absolute left-0 top-0 z-0 h-full w-full">
-				<div className="relative z-0 h-full w-full">
-					{/* <div className="absolute  h-full w-full bg-black opacity-50" /> */}
-					{/* <Image
-						src={'/picture/pic1.jpg'}
-						width={1000}
-						height={0}
-						alt=""
-						className="h-full w-full"
-					/> */}
-				</div>
-			</div>
-			<section className=" relative z-30 mx-auto flex h-full w-full max-w-7xl ">
-				<section className="flex h-full w-1/2 flex-col items-center justify-center gap-8 pr-20 pt-40 ">
+		<section className="relative h-auto w-full bg-background2 pb-10 lg:h-auto ">
+			<section className="  flex h-full w-full flex-col px-5 lg:mx-auto lg:max-w-7xl lg:flex-row">
+				<section className="flex h-full flex-col items-center justify-center gap-8 pt-32 lg:w-1/2 lg:pr-20 lg:pt-40 ">
 					<section className="h-auto w-full ">
 						<h1>Your home, your style begin your design adventure</h1>
 					</section>
@@ -61,7 +49,7 @@ const HeroSection = (): React.JSX.Element => {
 					</section>
 				</section>
 
-				<section className="flex h-full w-1/2 flex-col items-center justify-center gap-4 pt-20 ">
+				<section className="flex h-full w-full flex-col items-center justify-center gap-4 pt-10 lg:w-1/2 lg:pt-40 ">
 					<Carousel
 						plugins={[
 							Autoplay({
@@ -99,23 +87,11 @@ const HeroSection = (): React.JSX.Element => {
 								/>
 							</CarouselItem>
 						</CarouselContent>
-						{/* <CarouselPrevious />
-						<CarouselNext /> */}
 					</Carousel>
 					<section className="flex h-auto w-full justify-end">
 						Architectural Excellence
 					</section>
 				</section>
-
-				{/* <section className="flex h-full w-full flex-col items-center justify-center gap-5 text-7xl font-extrabold text-white">
-					<span>Modern, Sleek, Sustainable</span>
-					<span>High-Rise Living</span>
-					<span>In Responsibly Priced</span>
-				</section> */}
-				{/* <span className=" absolute bottom-10 left-1/2 right-1/2 flex animate-bounce flex-col items-center gap-3 opacity-70 ">
-					<SlMouse className="text-[3rem] text-white" />
-					{/* <FaArrowDownLong className="text-[1.2rem] text-white" /> */}
-				{/* </span>  */}
 			</section>
 		</section>
 	);

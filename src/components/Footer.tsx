@@ -11,8 +11,8 @@ const Footer = (): React.JSX.Element => {
 	return (
 		<section className=" h-auto w-full">
 			<section className="h-auto w-full bg-black  text-white ">
-				<section className="mx-auto  h-auto w-full max-w-7xl py-20 ">
-					<section className="  grid h-auto w-full grid-cols-2 gap-y-20">
+				<section className="mx-auto h-auto w-full max-w-7xl px-10 py-20 ">
+					<section className="grid h-auto w-full grid-cols-1 gap-y-20 lg:grid-cols-2">
 						<section className="flex w-full flex-col gap-2">
 							<Image
 								src={'/logos/logo2.png'}
@@ -25,7 +25,7 @@ const Footer = (): React.JSX.Element => {
 								@2024 shoolin Construction
 							</span>
 						</section>
-						<section className=" grid h-auto w-full grid-cols-3">
+						<section className=" grid h-auto w-full grid-cols-2 lg:grid-cols-3">
 							<section className=" flex h-auto w-full justify-start">
 								<div className="w-fit">
 									<span className=" text-lg">What We Do</span>
@@ -64,8 +64,8 @@ const Footer = (): React.JSX.Element => {
 								</div>
 							</section>
 						</section>
-						<section className="grid h-auto w-full grid-cols-3">
-							<section className="flex h-auto w-full justify-center ">
+						<section className=" grid h-auto w-full grid-cols-2 gap-5 lg:grid-cols-3">
+							<section className="flex h-auto w-full justify-start  md:justify-center ">
 								<div className="flex w-fit flex-col gap-2 text-gray-300">
 									<span className="flex items-center gap-3 font-bold text-white">
 										<HiOutlineOfficeBuilding className="text-lg" /> Office
@@ -75,7 +75,7 @@ const Footer = (): React.JSX.Element => {
 									</span>
 								</div>
 							</section>
-							<section className="flex h-auto w-full justify-center  ">
+							<section className="flex h-auto w-full justify-start  md:justify-center  ">
 								<div className="flex w-fit flex-col gap-2">
 									<span className="flex items-center gap-3 font-bold text-white">
 										<IoMailOutline className="text-lg" /> Mail
@@ -85,8 +85,8 @@ const Footer = (): React.JSX.Element => {
 									</span>
 								</div>
 							</section>
-							<section className="flex h-auto w-full justify-center ">
-								<div className="flex w-fit flex-col justify-start gap-2">
+							<section className="flex h-auto w-full justify-start  md:justify-center ">
+								<div className="flex w-fit flex-col  gap-2">
 									<span className="flex items-center gap-3 font-bold text-white">
 										<CiMobile3 className="text-lg" /> Mobile
 									</span>
@@ -120,7 +120,7 @@ const Footer = (): React.JSX.Element => {
 					</section>
 				</section>
 				<section className="h-auto w-full border-t border-gray-300 py-2 ">
-					<section className="mx-auto  flex h-auto w-full max-w-7xl items-center justify-between py-2 text-sm  text-neutral-400">
+					<section className="mx-auto  flex h-auto w-full max-w-7xl flex-col-reverse items-center justify-between gap-3 py-2 text-sm text-neutral-400  md:flex-row">
 						<section className="w-fit">
 							Design by Webflexrr Digital Services
 						</section>

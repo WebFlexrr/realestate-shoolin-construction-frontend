@@ -11,15 +11,15 @@ import SectionHeading from './SectionHeading';
 const FAQ = (): React.JSX.Element => {
 	return (
 		<section className="h-auto w-full ">
-			<section className="mx-auto h-auto w-full max-w-7xl py-20">
+			<section className="mx-auto h-auto w-full max-w-7xl px-5 py-20">
 				<section className=" h-auto w-full ">
 					<SectionHeading
 						subTitle={'FAQ'}
 						mainTitle={'Frequently Asked Questions'}
 					/>
 					<section className="h-auto w-full">
-						<section className="flex">
-							<section className="h-auto w-[40%] ">
+						<section className="flex flex-col-reverse gap-10 lg:flex-row">
+							<section className="h-auto w-full lg:w-[40%] ">
 								<Image
 									src={'/picture/pic4.jpg'}
 									width={1000}
@@ -28,7 +28,7 @@ const FAQ = (): React.JSX.Element => {
 									className=" aspect-[3/4] w-full rounded-lg"
 								/>
 							</section>
-							<section className="flex h-auto w-[60%] flex-col justify-center gap-10 pl-20">
+							<section className="flex h-auto w-full flex-col justify-center gap-10  lg:w-[60%] lg:pl-20">
 								<section className="flex h-auto w-full flex-col">
 									<h4>Our Expertise</h4>
 									<Accordion type="single" collapsible className="w-full">

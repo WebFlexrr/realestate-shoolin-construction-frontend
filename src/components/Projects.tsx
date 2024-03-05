@@ -11,7 +11,7 @@ interface ProjectProps {
 const Projects: FC<ProjectProps> = ({ image, status, link }) => {
 	return (
 		<div className="relative h-auto w-full rounded ">
-			<section className="relative z-10 aspect-video h-auto w-full transition-all duration-500 ease-in-out hover:scale-105">
+			<section className="relative z-10 aspect-square h-auto w-full transition-all duration-500 ease-in-out hover:scale-105 lg:aspect-video">
 				<Image
 					src={image}
 					width={1000}
@@ -24,11 +24,6 @@ const Projects: FC<ProjectProps> = ({ image, status, link }) => {
 					{status}
 				</div>
 				<section className=" group absolute top-0 flex h-full w-full items-center justify-center">
-					{/* <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-slate-400">
-						<Link href={link}>
-							<GoArrowUpRight className=" text-2xl" />
-						</Link>
-					</div> */}
 					<div className="absolute  top-0 hidden h-full w-full bg-slate-100 opacity-35 transition-all group-hover:block group-hover:duration-500  group-hover:ease-in-out"></div>
 					<Link
 						href={link}
