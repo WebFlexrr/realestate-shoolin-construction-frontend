@@ -74,17 +74,20 @@
 		@apply h-screen w-full bg-background font-inter-Tight font-normal text-foreground;
 	}
 	p {
-		@apply text-start  font-inter-Tight text-lg;
+		@apply text-start  font-inter-Tight text-base leading-[24px];
 	}
 	h1 {
-		@apply font-inter-Tight text-5xl font-medium leading-[64px];
+		@apply font-inter-Tight text-4xl font-normal leading-[48px] lg:text-5xl lg:leading-[64px];
 	}
 
 	h2 {
-		@apply font-inter-Tight text-4xl  leading-[46px];
+		@apply font-inter-Tight text-3xl leading-[36px] lg:text-4xl lg:leading-[46px];
 	}
 
 	h4 {
-		@apply text-2xl font-medium leading-[36px];
+		@apply text-2xl font-normal leading-[36px];
+	}
+	h5 {
+		@apply text-lg leading-[27px];
 	}
 }

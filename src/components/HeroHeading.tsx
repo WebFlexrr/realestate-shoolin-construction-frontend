@@ -7,12 +7,10 @@ interface HeroHeadingProps {
 }
 const HeroHeading: FC<HeroHeadingProps> = ({ heading, subHeading }) => {
 	return (
-		<section className="h-auto w-full  ">
-			<div className="mx-auto h-auto w-full max-w-7xl space-y-4 pb-10 pt-10">
-				<span className="text-5xl font-light leading-[62.4px]">{heading}</span>
-				<Separator />
-				<div className="w-full text-sm font-medium ">{subHeading}</div>
-			</div>
+		<section className="mx-auto h-auto w-full max-w-7xl space-y-4 px-5 py-10 xl:px-0">
+			<h1>{heading}</h1>
+			<Separator />
+			<div className="w-full text-sm font-medium ">{subHeading}</div>
 		</section>
 	);
 };

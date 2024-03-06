@@ -46,7 +46,7 @@ const Navbar = (): JSX.Element => {
 					</div>
 				</section> */}
 				<section className="flex h-[5rem] w-full justify-center bg-background2">
-					<section className="mx-5 flex w-full items-center justify-between bg-background2  py-2 lg:mx-16 xl:mx-auto xl:max-w-7xl ">
+					<section className="mx-5 flex w-full items-center justify-between bg-background2  py-2  xl:mx-auto xl:max-w-7xl ">
 						{/* Logo */}
 						<Link href={'/'}>
 							<Image
@@ -62,48 +62,19 @@ const Navbar = (): JSX.Element => {
 							<NavigationMenu>
 								<NavigationMenuList>
 									<NavigationMenuItem>
-										<Link href="/">
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												<span className="text-lg">Find Properties</span>
-											</NavigationMenuLink>
-										</Link>
-									</NavigationMenuItem>
-									<NavigationMenuItem>
-										<Link href="/about" legacyBehavior>
+										<Link href={'/about'} legacyBehavior>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												<span className="text-lg">About Us</span>
 											</NavigationMenuLink>
 										</Link>
-										<NavigationMenuContent>
-											<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-												<li className="row-span-3">
-													<NavigationMenuLink asChild>
-														<a
-															className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-															href="/"
-														>
-															{/* <Icons.logo className="h-6 w-6" /> */}
-															<div className="mb-2 mt-4 text-lg font-medium">
-																shadcn/ui
-															</div>
-															<p className="text-sm leading-tight text-muted-foreground">
-																Beautifully designed components that you can
-																copy and paste into your apps. Accessible.
-																Customizable. Open Source.
-															</p>
-														</a>
-													</NavigationMenuLink>
-												</li>
-											</ul>
-										</NavigationMenuContent>
 									</NavigationMenuItem>
 									<NavigationMenuItem>
-										<Link href="/projects" legacyBehavior passHref>
-											<NavigationMenuTrigger>
+										<Link href={'/projects'} legacyBehavior>
+											<NavigationMenuTrigger
+												className={navigationMenuTriggerStyle()}
+											>
 												<span className="text-lg">Projects</span>
 											</NavigationMenuTrigger>
 										</Link>
@@ -151,7 +122,7 @@ const Navbar = (): JSX.Element => {
 										</NavigationMenuContent>
 									</NavigationMenuItem>
 									<NavigationMenuItem>
-										<Link href="/media" legacyBehavior passHref>
+										<Link href={'/media'} legacyBehavior>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -160,7 +131,7 @@ const Navbar = (): JSX.Element => {
 										</Link>
 									</NavigationMenuItem>
 									<NavigationMenuItem>
-										<Link href="/contact" legacyBehavior passHref>
+										<Link href={'/contact'} legacyBehavior>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -169,7 +140,7 @@ const Navbar = (): JSX.Element => {
 										</Link>
 									</NavigationMenuItem>
 									<NavigationMenuItem>
-										<Link href="/contact" legacyBehavior passHref>
+										<Link href={'/bookOnline'}>
 											<Button
 												variant={'default'}
 												size={'default'}
@@ -201,10 +172,6 @@ const Navbar = (): JSX.Element => {
 												className="aspect-auto h-auto w-[100px]"
 											/>
 										</SheetTitle>
-										{/* <SheetDescription>
-											Make changes to your profile here. Click save when you're
-											done.
-										</SheetDescription> */}
 									</SheetHeader>
 
 									<section className="flex flex-col  py-6">
