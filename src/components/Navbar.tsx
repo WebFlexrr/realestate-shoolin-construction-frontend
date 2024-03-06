@@ -36,7 +36,7 @@ const Navbar = (): JSX.Element => {
 				{/* <section className="flex h-7 w-full items-center gap-10 bg-[#4C4C6D] text-white">
 					<div className="mx-auto flex w-full  max-w-[90rem] items-center justify-end gap-10">
 						<div className="flex items-center gap-2 text-sm">
-							<HiMiniDevicePhoneMobile />
+							<HiMiniDevicePhoneMobile /> 
 							8017194170
 						</div>
 						<div className="flex items-center gap-2 text-sm">
@@ -141,11 +141,7 @@ const Navbar = (): JSX.Element => {
 									</NavigationMenuItem>
 									<NavigationMenuItem>
 										<Link href={'/bookOnline'}>
-											<Button
-												variant={'default'}
-												size={'default'}
-												className="group text-lg"
-											>
+											<Button className="group text-lg">
 												Book Online
 												<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
 											</Button>
@@ -157,7 +153,7 @@ const Navbar = (): JSX.Element => {
 						<section className=" lg:hidden">
 							<Sheet>
 								<SheetTrigger asChild>
-									<Button variant={'outline'}>
+									<Button variant={'outline-rounded'}>
 										<RxHamburgerMenu className="text-2xl " />
 									</Button>
 								</SheetTrigger>

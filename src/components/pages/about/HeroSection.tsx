@@ -27,16 +27,16 @@ const HeroSection = () => {
 							alt={''}
 						/>
 						<section className="my-3 flex w-full flex-wrap gap-3 md:my-6">
-							<Button variant={'outline'} size={'sm'}>
+							<Button variant={'outline-rounded'} size={'sm'}>
 								Inspire
 							</Button>
-							<Button variant={'outline'} size={'sm'}>
+							<Button variant={'outline-rounded'} size={'sm'}>
 								Precision
 							</Button>
-							<Button variant={'outline'} size={'sm'}>
+							<Button variant={'outline-rounded'} size={'sm'}>
 								Harmony
 							</Button>
-							<Button variant={'outline'} size={'sm'}>
+							<Button variant={'outline-rounded'} size={'sm'}>
 								Mastery
 							</Button>
 						</section>

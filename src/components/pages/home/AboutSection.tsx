@@ -44,7 +44,11 @@ const AboutSection = (): JSX.Element => {
 						</section>
 						<section className="flex w-full items-center justify-center">
 							<Link href={'/about'}>
-								<Button variant={'outline'} size={'lg'} className="group ">
+								<Button
+									variant={'outline-rounded'}
+									size={'lg'}
+									className="group "
+								>
 									About us
 									<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
 								</Button>

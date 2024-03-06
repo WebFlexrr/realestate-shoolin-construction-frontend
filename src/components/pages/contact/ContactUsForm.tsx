@@ -174,7 +174,7 @@ const ContactUsForm = () => {
 
 									<Button
 										type={'submit'}
-										variant={'outline'}
+										variant={'outline-rounded'}
 										size={'lg'}
 										className="group"
 									>

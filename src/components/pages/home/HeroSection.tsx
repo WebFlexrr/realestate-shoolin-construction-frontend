@@ -31,7 +31,7 @@ const HeroSection = (): React.JSX.Element => {
 					<section className="w-full">
 						<Link href={'/projects'}>
 							<Button
-								variant={'default'}
+								variant={'default-rounded'}
 								size={'lg'}
 								className=" group  text-lg"
 							>
