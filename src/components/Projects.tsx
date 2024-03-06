@@ -11,18 +11,17 @@ interface ProjectProps {
 const Projects: FC<ProjectProps> = ({ image, status, link }) => {
 	return (
 		<div className="relative h-auto w-full rounded ">
-			<section className="relative z-10 aspect-[16/10] h-auto w-full transition-all duration-500 ease-in-out hover:scale-105">
+			<section className="relative z-10 aspect-[16/9] h-auto w-full transition-all duration-500 ease-in-out hover:scale-105 md:aspect-square lg:aspect-[16/10]">
 				<Image
 					src={image}
 					width={1000}
 					height={0}
 					alt={''}
-					className="h-full w-full rounded-xl "
+					className="h-full w-full rounded-md "
 				/>
-
-				<div className="absolute left-3 top-4 z-20 h-fit w-fit content-center rounded-lg border-2 border-black bg-yellow-400 px-3 py-1 text-sm">
+				{/* <div className="absolute left-3 top-4 z-20 h-fit w-fit content-center rounded-lg border-2 border-black bg-yellow-400 px-3 py-1 text-sm">
 					{status}
-				</div>
+				</div> */}
 				<section className=" group absolute top-0 flex h-full w-full items-center justify-center">
 					<div className="absolute  top-0 hidden h-full w-full bg-slate-100 opacity-35 transition-all group-hover:block group-hover:duration-500  group-hover:ease-in-out"></div>
 					<Link
@@ -35,15 +34,15 @@ const Projects: FC<ProjectProps> = ({ image, status, link }) => {
 				</section>
 			</section>
 			<section className=" h-auto w-full py-5">
-				<div className="flex h-auto w-full flex-col text-black">
+				<div className="flex h-auto w-full flex-col gap-3 text-black">
 					<span className=" text-2xl">Simon Pandal</span>
-					{/* <div className="h-auto w-full">
-						<p>
+					<div className="h-auto w-full">
+						<p className="w-full text-sm">
 							Experience a symphony of open spaces, natural light, and
 							minimalist aesthetics that reflect the essence of 21st-century
 							design.
 						</p>
-					</div> */}
+					</div>
 					<span className=" flex items-center gap-2 text-sm">
 						<FaLocationDot />
 						Dum Dum/station
