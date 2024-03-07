@@ -6,7 +6,7 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 const CompanyDetailsSection = () => {
 	return (
 		<section className="h-auto w-full">
-			<section className="relative z-30 mx-auto flex h-full w-full max-w-7xl flex-col px-5 pb-20 xl:px-0">
+			<section className="relative mx-auto flex h-full w-full max-w-7xl flex-col px-5 pb-20 xl:px-0">
 				<section className="flex flex-col gap-5 lg:flex-row lg:gap-0 ">
 					<section className="h-auto w-full  lg:w-[45%] lg:pr-10">
 						<Image

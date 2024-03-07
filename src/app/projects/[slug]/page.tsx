@@ -1,14 +1,14 @@
-import HeroSection from '@/components/pages/projectDetails/HeadingSection';
+import HeadingSection from '@/components/pages/projectDetails/HeadingSection';
 import PictureSlider from '@/components/pages/projectDetails/PictureSlider';
 import React from 'react';
 
-const page = () => {
+const ProjectDetailsPage = () => {
 	return (
-		<section className="mt-[5rem] h-auto w-full">
-			<HeroSection />
+		<main className="h-auto w-full pt-[5rem]">
+			<HeadingSection />
 			<PictureSlider />
-		</section>
+		</main>
 	);
 };
 
-export default page;
+export default ProjectDetailsPage;

@@ -32,7 +32,7 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 const Navbar = (): JSX.Element => {
 	return (
 		<>
-			<nav className="fixed top-0 z-40 h-auto w-full">
+			<nav className="fixed top-0 z-20 h-auto w-full">
 				{/* <section className="flex h-7 w-full items-center gap-10 bg-[#4C4C6D] text-white">
 					<div className="mx-auto flex w-full  max-w-[90rem] items-center justify-end gap-10">
 						<div className="flex items-center gap-2 text-sm">

@@ -70,7 +70,7 @@ const ContactUsForm = () => {
 
 	return (
 		<section className="h-auto w-full ">
-			<section className=" relative z-30 mx-auto flex h-full w-full max-w-7xl flex-col px-5 lg:py-20 xl:px-0">
+			<section className=" relative mx-auto flex h-full w-full max-w-7xl flex-col px-5 lg:py-20 xl:px-0">
 				<section className="flex h-auto w-full flex-col-reverse gap-5 lg:flex-row lg:gap-0">
 					<section className="flex h-auto w-full items-center  lg:w-[55%] lg:pr-16 ">
 						<Form {...form}>

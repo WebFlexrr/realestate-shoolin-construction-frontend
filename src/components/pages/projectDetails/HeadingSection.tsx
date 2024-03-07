@@ -32,7 +32,6 @@ const HeadingSection = () => {
 						</Button>
 					</section>
 				</section>
-				<section></section>
 			</section>
 		</section>
 	);
