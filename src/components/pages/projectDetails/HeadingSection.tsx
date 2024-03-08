@@ -14,7 +14,7 @@ const HeadingSection = () => {
 								<h1>SANCTORUM</h1>
 							</div>
 							<div className="flex items-center gap-2">
-								<FaMapLocationDot /> Pagladanga Road, Kolkata
+								<FaMapLocationDot className="" /> Pagladanga Road, Kolkata
 							</div>
 							<div>Price : 87 Lacs onwards</div>
 							<div>All inclusive price</div>
@@ -24,15 +24,13 @@ const HeadingSection = () => {
 								<h4>Tags</h4>
 							</section>
 							<section className="mt-3 flex w-full flex-wrap gap-3">
-								<div className="w-fit rounded-full border-2  border-black bg-background2 px-3 py-1 hover:bg-primary">
+								<div className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1">
 									Residental
 								</div>
-
-								<div className="w-fit rounded-full border-2  border-black bg-background2 px-3 py-1 hover:bg-primary">
+								<div className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1">
 									Residental
 								</div>
-
-								<div className="w-fit rounded-full border-2  border-black bg-background2 px-3 py-1 hover:bg-primary">
+								<div className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1">
 									Residental
 								</div>
 							</section>
@@ -50,15 +48,9 @@ const HeadingSection = () => {
 								</span>
 							</Button>
 							<Button variant={'destructive'} size={'lg'} className="space-x-3">
-								<FaFilePdf />
-								<span className="text-sm font-semibold">
+								<FaFilePdf className="text-xl" />
+								<span className="text-base font-semibold">
 									Download E-brochure
-								</span>
-							</Button>
-							<Button variant={'destructive'} size={'lg'} className="space-x-3">
-								<FaFilePdf />
-								<span className="text-sm font-semibold">
-									Request to Site visit
 								</span>
 							</Button>
 						</section>
