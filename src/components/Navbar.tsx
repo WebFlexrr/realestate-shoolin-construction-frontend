@@ -122,15 +122,6 @@ const Navbar = (): JSX.Element => {
 										</NavigationMenuContent>
 									</NavigationMenuItem>
 									<NavigationMenuItem>
-										<Link href={'/media'} legacyBehavior>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												<span className="text-lg">Media</span>
-											</NavigationMenuLink>
-										</Link>
-									</NavigationMenuItem>
-									<NavigationMenuItem>
 										<Link href={'/contact'} legacyBehavior>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
@@ -143,7 +134,7 @@ const Navbar = (): JSX.Element => {
 										<Link href={'/bookOnline'}>
 											<Button className="group text-lg">
 												Book Online
-												<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
+												<GoArrowUpRight className=" text-2xl  group-hover:duration-500  group-hover:ease-in-out" />
 											</Button>
 										</Link>
 									</NavigationMenuItem>
@@ -186,15 +177,6 @@ const Navbar = (): JSX.Element => {
 												className="flex w-full items-center justify-between border-b border-black py-4"
 											>
 												Projects
-												<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
-											</Link>
-										</SheetClose>
-										<SheetClose asChild>
-											<Link
-												href={'/media'}
-												className="flex w-full items-center justify-between border-b border-black py-4"
-											>
-												Media
 												<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
 											</Link>
 										</SheetClose>

@@ -12,7 +12,7 @@ const ProjectSection = (): JSX.Element => {
 					mainTitle={'Current Projects'}
 					subTitle={'Explore more'}
 				/>
-				<section className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-10">
+				<section className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
 					<Projects image={'/picture/pic2.jpg'} status={'current'} link={'d'} />
 					<Projects image={'/picture/pic1.jpg'} status={'done'} link={'d'} />
 					<Projects image={'/picture/pic3.jpg'} status={'curent'} link={'d'} />

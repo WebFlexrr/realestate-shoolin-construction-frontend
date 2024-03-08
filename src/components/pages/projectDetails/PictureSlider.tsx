@@ -63,7 +63,7 @@ const PictureSlider = () => {
 						<section className="flex h-auto w-[25%] gap-5">
 							<Separator orientation={'vertical'} />
 							<div className="w-full ">
-								<Card className="bg-background2">
+								<Card className=" bg-background2">
 									<CardHeader>
 										<CardTitle>ENQUIRE NOW</CardTitle>
 									</CardHeader>

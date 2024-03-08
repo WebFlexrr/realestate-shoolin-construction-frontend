@@ -8,7 +8,7 @@ const HeroSection = (): React.JSX.Element => {
 			<section className="mx-auto h-auto w-full max-w-7xl space-y-20 px-5 pb-40 xl:px-0">
 				<section className="flex w-full flex-col">
 					<SectionHeading mainTitle={'Current Projects'} subTitle={'Ongoing'} />
-					<section className=" grid grid-cols-1 gap-10 md:grid-cols-2">
+					<section className=" grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
 						<Projects
 							image={'/picture/pic2.jpg'}
 							status={'current'}
@@ -24,7 +24,7 @@ const HeroSection = (): React.JSX.Element => {
 				</section>
 				<section className="flex w-full flex-col">
 					<SectionHeading mainTitle={'Complete Projects'} subTitle={'Done'} />
-					<section className=" grid grid-cols-1 gap-10 md:grid-cols-2">
+					<section className=" grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
 						<Projects
 							image={'/picture/pic2.jpg'}
 							status={'current'}
