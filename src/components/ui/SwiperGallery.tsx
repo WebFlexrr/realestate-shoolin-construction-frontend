@@ -19,7 +19,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import SwiperButton from './SwiperButton';
 
-const SwiperGalary = () => {
+const SwiperGallery = () => {
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 	return (
 		<>
@@ -34,8 +34,6 @@ const SwiperGalary = () => {
 					type: 'fraction',
 				}}
 				thumbs={{ swiper: thumbsSwiper }}
-				// onSwiper={(swiper) => console.log(swiper)}
-				// onSlideChange={() => console.log('slide change')}
 				className="relative aspect-video w-full  text-white"
 			>
 				<SwiperSlide className="flex h-full items-center  justify-center bg-gray-200 ">
@@ -97,4 +95,4 @@ const SwiperGalary = () => {
 	);
 };
 
-export default SwiperGalary;
+export default SwiperGallery;

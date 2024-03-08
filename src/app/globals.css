@@ -90,6 +90,9 @@
 	h5 {
 		@apply text-lg leading-[27px];
 	}
+	h6 {
+		@apply text-lg font-semibold;
+	}
 }
 
 .mySwiper .swiper-slide {
