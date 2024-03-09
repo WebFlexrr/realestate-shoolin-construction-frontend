@@ -19,9 +19,7 @@ const Projects: FC<ProjectProps> = ({ image, status, link }) => {
 					alt={''}
 					className="h-full w-full rounded-md "
 				/>
-				{/* <div className="absolute left-3 top-4 z-20 h-fit w-fit content-center rounded-lg border-2 border-black bg-yellow-400 px-3 py-1 text-sm">
-					{status}
-				</div> */}
+
 				<section className=" group absolute top-0 flex h-full w-full items-center justify-center">
 					<div className="absolute  top-0 hidden h-full w-full bg-slate-100 opacity-35 transition-all group-hover:block group-hover:duration-500  group-hover:ease-in-out"></div>
 					<Link
@@ -35,7 +33,7 @@ const Projects: FC<ProjectProps> = ({ image, status, link }) => {
 			</section>
 			<section className=" h-auto w-full py-5">
 				<div className="flex h-auto w-full flex-col gap-3 text-black">
-					<span className=" text-2xl">Simon Pandal</span>
+					<span className=" text-3xl font-medium">Simon Pandal</span>
 					<div className="h-auto w-full">
 						<p className="w-full text-sm">
 							Experience a symphony of open spaces, natural light, and

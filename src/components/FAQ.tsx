@@ -25,7 +25,7 @@ const FAQ = (): React.JSX.Element => {
 									width={1000}
 									height={0}
 									alt={''}
-									className=" aspect-square w-full rounded-lg lg:aspect-[3/4]"
+									className=" aspect-square w-full rounded-lg lg:aspect-[3/3.8]"
 								/>
 							</section>
 							<section className="flex h-auto w-full flex-col justify-center gap-10  lg:w-[60%] lg:pl-20">

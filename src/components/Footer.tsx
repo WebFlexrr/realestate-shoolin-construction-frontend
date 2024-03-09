@@ -64,8 +64,8 @@ const Footer = (): React.JSX.Element => {
 								</div>
 							</section>
 						</section>
-						<section className=" grid h-auto w-full grid-cols-2 gap-5 lg:grid-cols-3">
-							<section className="flex h-auto w-full justify-start  md:justify-center ">
+						<section className=" grid h-auto w-full grid-cols-2 gap-5 xl:grid-cols-3">
+							<section className="flex h-auto w-full justify-start  lg:justify-center ">
 								<div className="flex w-fit flex-col gap-2 text-gray-300">
 									<span className="flex items-center gap-3 font-bold text-white">
 										<HiOutlineOfficeBuilding className="text-lg" /> Office
@@ -75,7 +75,7 @@ const Footer = (): React.JSX.Element => {
 									</span>
 								</div>
 							</section>
-							<section className="flex h-auto w-full justify-start  md:justify-center  ">
+							<section className="flex h-auto w-full justify-start  lg:justify-center  ">
 								<div className="flex w-fit flex-col gap-2">
 									<span className="flex items-center gap-3 font-bold text-white">
 										<IoMailOutline className="text-lg" /> Mail
@@ -85,7 +85,7 @@ const Footer = (): React.JSX.Element => {
 									</span>
 								</div>
 							</section>
-							<section className="flex h-auto w-full justify-start  md:justify-center ">
+							<section className="flex h-auto w-full justify-start xl:justify-center ">
 								<div className="flex w-fit flex-col  gap-2">
 									<span className="flex items-center gap-3 font-bold text-white">
 										<CiMobile3 className="text-lg" /> Mobile

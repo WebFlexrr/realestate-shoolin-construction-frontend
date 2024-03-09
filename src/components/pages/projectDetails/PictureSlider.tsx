@@ -19,20 +19,20 @@ const PictureSlider = () => {
 		<section className=" h-auto w-full ">
 			<section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
 				<section className="h-auto w-full ">
-					<section className="mt-10 flex h-auto w-full gap-5 ">
-						<section className="h-auto w-[75%] ">
+					<section className="mt-10 flex  h-auto w-full flex-col gap-5  lg:flex-row ">
+						<section className="h-auto w-full lg:w-[75%]  ">
 							<Dialog>
 								<section className="flex w-full gap-5 ">
-									<DialogTrigger className="h-auto w-[75%]">
+									<DialogTrigger className="h-auto w-full lg:w-[75%]">
 										<Image
-											className="  aspect-video h-full w-full "
+											className=" aspect-square h-full w-full lg:aspect-video "
 											width={1000}
 											height={0}
 											src={'/picture/pic1.jpg'}
 											alt={''}
 										/>
 									</DialogTrigger>
-									<section className="flex h-full w-[25%] flex-col gap-5">
+									<section className="hidden h-full w-[25%] flex-col gap-5 lg:flex">
 										<DialogTrigger className="aspect-square w-full">
 											<Image
 												className=" aspect-square w-full "
@@ -60,7 +60,7 @@ const PictureSlider = () => {
 							</Dialog>
 						</section>
 
-						<section className="flex h-auto w-[25%] gap-5">
+						<section className="hidden h-auto w-[25%] gap-5 lg:flex">
 							<Separator orientation={'vertical'} />
 							<div className="w-full ">
 								<Card className=" bg-background2">
@@ -71,7 +71,6 @@ const PictureSlider = () => {
 										<form>
 											<div className="grid w-full items-center gap-4">
 												<div className="flex flex-col space-y-1.5">
-													{/* <Label htmlFor="name">Name</Label> */}
 													<Input id="name" placeholder="Enter Full Name*" />
 													<Input id="name" placeholder="Enter Nobile/Number*" />
 													<Input id="name" placeholder="Enter Email*" />

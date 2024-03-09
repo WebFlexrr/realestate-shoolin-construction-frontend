@@ -13,7 +13,7 @@ import React from 'react';
 
 const ProjectDetailsPage = () => {
 	return (
-		<main className="relative h-auto w-full pt-[5rem]">
+		<main className="relative  h-auto w-full pt-[5rem]">
 			<HeadingSection />
 			<PictureSlider />
 			<DetailsSection />

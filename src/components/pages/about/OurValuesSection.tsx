@@ -5,7 +5,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 
 const OurValuesSection = () => {
 	return (
-		<section className="relative z-30  my-20 h-full  w-full bg-background2 py-20">
+		<section className="relative my-20 h-full  w-full bg-background2 py-20">
 			<section className=" mx-auto flex h-auto w-full max-w-7xl flex-col px-5 xl:px-0">
 				<section>Our values</section>
 				<section className="flex w-full flex-col gap-7 lg:flex-row lg:gap-0">

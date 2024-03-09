@@ -9,7 +9,7 @@ import React from 'react';
 
 const AboutPage = (): React.JSX.Element => {
 	return (
-		<main className="mt-[5rem] h-auto w-full">
+		<main className="z-0 mt-[5rem] h-auto w-full">
 			<HeroHeading heading={'About Us'} />
 			<HeroSection />
 			<OurServicesSection />

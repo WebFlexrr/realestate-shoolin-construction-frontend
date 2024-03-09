@@ -10,7 +10,7 @@ import Image from 'next/image';
 const OurServicesSection = () => {
 	return (
 		<section className="h-auto w-full ">
-			<section className=" relative z-30 mx-auto flex h-full w-full max-w-7xl flex-col px-5 xl:px-0">
+			<section className=" relative mx-auto flex h-full w-full max-w-7xl flex-col px-5 xl:px-0">
 				<section className="mb-7 mt-20 h-auto w-full gap-6 lg:mb-20">
 					<SectionHeading subTitle={'WHAT WE DO'} mainTitle={'Our Services'} />
 					<section className="h-auto w-full">

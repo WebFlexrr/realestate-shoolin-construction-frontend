@@ -3,13 +3,13 @@ import React from 'react';
 const DescriptionSection = () => {
 	return (
 		<section className=" flex h-full w-full justify-start px-5 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0">
-			<section className="h-auto w-[75%]">
+			<section className="h-auto w-full lg:w-[75%]">
 				{/* Description */}
-				<section className="mt-10 h-auto w-full rounded-lg bg-background2 px-16 py-10 ">
+				<section className="mt-10 h-auto w-full rounded-lg bg-background2 p-8 lg:px-16 lg:py-10 ">
 					<section className="w-full">
-						<h2 className=" underline">Description</h2>
+						<h4 className=" underline">Description</h4>
 					</section>
-					<section className="mt-7 w-full space-y-4">
+					<section className="mt-4 w-full space-y-4">
 						<p>
 							Imagine a place where five elements - earth, air, water, energy
 							and space - come to create a peaceful home just for you. That's
