@@ -31,7 +31,7 @@ const AboutSection = (): JSX.Element => {
 									<div className="font-poppins text-2xl">30+</div>
 								</section>
 							</section>
-							<section className="mx-auto w-[60%] text-center leading-5">
+							<section className="mx-auto w-[60%] pl-5 text-center leading-5">
 								<p>
 									Welcome to Shoolin Construction Developers! Discover your
 									dream home with our user-friendly interface and extensive

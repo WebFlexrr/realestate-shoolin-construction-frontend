@@ -70,9 +70,9 @@ const PictureSlider = () => {
 									<CardContent>
 										<form>
 											<div className="grid w-full items-center gap-4">
-												<div className="flex flex-col space-y-1.5">
-													<Input id="name" placeholder="Enter Full Name*" />
-													<Input id="name" placeholder="Enter Nobile/Number*" />
+												<div className="flex flex-col space-y-2">
+													<Input id="name" placeholder="Enter Name*" />
+													<Input id="name" placeholder="Enter Mobile/Number*" />
 													<Input id="name" placeholder="Enter Email*" />
 												</div>
 											</div>

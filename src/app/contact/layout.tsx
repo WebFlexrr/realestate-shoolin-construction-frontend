@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/toaster';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,7 +11,12 @@ const ContactLayout = ({
 }: {
 	children: React.ReactNode;
 }): JSX.Element => {
-	return <section>{children}</section>;
+	return (
+		<section>
+			{children}
+			<Toaster />
+		</section>
+	);
 };
 
 export default ContactLayout;

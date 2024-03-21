@@ -22,7 +22,7 @@ const DetailsSection = () => {
 							</section>
 							<section className="flex w-full flex-col items-center justify-center   ">
 								<h6>August, 2026</h6>
-								<span>Total Units</span>
+								<span>Possession Date</span>
 							</section>
 							<section className="flex w-full flex-col items-center justify-center   ">
 								<h6>18 + 2</h6>

@@ -20,17 +20,17 @@ const LayoutSection = () => {
 							<h4 className=" underline">Layout & Floor Plans</h4>
 						</section>
 						<section className=" flex w-full flex-col gap-5  ">
-							{/* <section className="grid mt-4 w-full grid-cols-3 gap-4  px-10">
+							<section className="mt-4 grid w-full grid-cols-3 gap-4  px-10">
 								<button className="flex w-full justify-center  py-3">
 									<h5 className="font-bold text-cyan-600">Master Plan</h5>
 								</button>
-								<button className="flex w-full justify-center  py-3">
-									<h5 className="font-bold text-cyan-600">Tower Plan</h5>
-								</button>
 								<button className="flex w-full justify-center border-b-2 border-red-500 py-3">
+									<h5 className="font-bold text-cyan-600">Unit Plan</h5>
+								</button>
+								<button className="flex w-full justify-center  py-3">
 									<h5 className="font-bold text-cyan-600">UNIT Plan</h5>
 								</button>
-							</section> */}
+							</section>
 							{/* <Separator className="bg-black" /> */}
 							{/* <section className="mx-auto mt-5 grid w-full grid-cols-4 gap-4 px-20">
 								<button className="flex w-full justify-center border-b-2 border-red-500">
@@ -55,27 +55,27 @@ const LayoutSection = () => {
 							>
 								<SwiperSlide className="px-10">
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
+										<h5 className="font-bold text-cyan-600">1 st Floor</h5>
 									</button>
 								</SwiperSlide>
 								<SwiperSlide className="px-10">
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
+										<h5 className="font-bold text-cyan-600">2 nd Floor</h5>
 									</button>
 								</SwiperSlide>
 								<SwiperSlide className="px-10">
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
+										<h5 className="font-bold text-cyan-600">3 rd Floor</h5>
 									</button>
 								</SwiperSlide>
 								<SwiperSlide className="px-10">
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
+										<h5 className="font-bold text-cyan-600">4 th Floor</h5>
 									</button>
 								</SwiperSlide>
 								<SwiperSlide className="px-10">
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
+										<h5 className="font-bold text-cyan-600">5 th Floor</h5>
 									</button>
 								</SwiperSlide>
 							</Swiper>
@@ -90,10 +90,20 @@ const LayoutSection = () => {
 							>
 								<SwiperSlide className="px-10">
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
+										<h5 className="font-bold text-cyan-600">1 BHK</h5>
 									</button>
 								</SwiperSlide>
 								<SwiperSlide className="px-10">
+									<button className="flex w-full justify-center  border-b-2 border-red-500">
+										<h5 className="font-bold text-cyan-600">2 HK</h5>
+									</button>
+								</SwiperSlide>
+								<SwiperSlide className="px-10">
+									<button className="flex w-full justify-center  border-b-2 border-red-500">
+										<h5 className="font-bold text-cyan-600">3 HK</h5>
+									</button>
+								</SwiperSlide>
+								{/* <SwiperSlide className="px-10">
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
 										<h5 className="font-bold text-cyan-600">2HK</h5>
 									</button>
@@ -102,17 +112,7 @@ const LayoutSection = () => {
 									<button className="flex w-full justify-center  border-b-2 border-red-500">
 										<h5 className="font-bold text-cyan-600">2HK</h5>
 									</button>
-								</SwiperSlide>
-								<SwiperSlide className="px-10">
-									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
-									</button>
-								</SwiperSlide>
-								<SwiperSlide className="px-10">
-									<button className="flex w-full justify-center  border-b-2 border-red-500">
-										<h5 className="font-bold text-cyan-600">2HK</h5>
-									</button>
-								</SwiperSlide>
+								</SwiperSlide> */}
 							</Swiper>
 
 							{/* <Separator className="bg-black" /> */}

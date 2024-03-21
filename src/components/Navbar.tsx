@@ -6,11 +6,9 @@ import logo from '../../public/logos/logo.png';
 // import { HiOutlineMailOpen } from 'react-icons/hi';
 import {
 	NavigationMenu,
-	NavigationMenuContent,
 	NavigationMenuItem,
 	NavigationMenuLink,
 	NavigationMenuList,
-	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import {
@@ -61,7 +59,7 @@ const Navbar = (): JSX.Element => {
 						<section className="hidden w-fit items-center gap-10 lg:flex ">
 							<NavigationMenu>
 								<NavigationMenuList>
-									<NavigationMenuItem>
+									<NavigationMenuItem className="cursor-pointer">
 										<Link href={'/about'} legacyBehavior>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
@@ -70,15 +68,20 @@ const Navbar = (): JSX.Element => {
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuItem>
-									<NavigationMenuItem>
+									<NavigationMenuItem className="cursor-pointer">
 										<Link href={'/projects'} legacyBehavior>
-											<NavigationMenuTrigger
+											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												<span className="text-lg">Projects</span>
-											</NavigationMenuTrigger>
+											</NavigationMenuLink>
+											{/* <NavigationMenuTrigger
+												className={navigationMenuTriggerStyle()}
+											>
+												<span className="text-lg">Projects</span>
+											</NavigationMenuTrigger> */}
 										</Link>
-										<NavigationMenuContent>
+										{/* <NavigationMenuContent>
 											<ul className="grid w-[600px] gap-3 border-t-[6px]  border-primary p-4 md:w-[500px] md:grid-cols-2 lg:w-[400px] ">
 												<li className="h-full w-full select-none  flex-col justify-end rounded-md bg-slate-400 bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md">
 													<span className=" text-lg font-medium">
@@ -119,9 +122,9 @@ const Navbar = (): JSX.Element => {
 													</ul>
 												</li>
 											</ul>
-										</NavigationMenuContent>
+										</NavigationMenuContent> */}
 									</NavigationMenuItem>
-									<NavigationMenuItem>
+									<NavigationMenuItem className="cursor-pointer">
 										<Link href={'/contact'} legacyBehavior>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
@@ -130,7 +133,7 @@ const Navbar = (): JSX.Element => {
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuItem>
-									<NavigationMenuItem>
+									<NavigationMenuItem className="cursor-pointer">
 										<Link href={'/bookOnline'}>
 											<Button className="group text-lg">
 												Book Online
