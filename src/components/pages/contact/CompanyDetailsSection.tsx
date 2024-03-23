@@ -10,11 +10,11 @@ const CompanyDetailsSection = () => {
 				<section className="flex flex-col gap-5 lg:flex-row lg:gap-0 ">
 					<section className="h-auto w-full  lg:w-[45%] lg:pr-10">
 						<Image
-							src={'/picture/pic4.jpg'}
+							src={'/picture/shop-pic.jpg'}
 							width={'1000'}
 							height={'0'}
 							alt={''}
-							className="aspect-[3/3.2] w-full rounded-lg"
+							className="aspect-[3/3.2] w-full rounded-lg object-cover"
 						/>
 					</section>
 
@@ -22,10 +22,10 @@ const CompanyDetailsSection = () => {
 						<section className="flex h-full w-full flex-col gap-16 sm:flex-row lg:gap-0  ">
 							<section className="flex h-auto w-full flex-col gap-6 text-start sm:w-[60%] sm:pr-10 ">
 								<section className="flex h-auto w-full flex-col gap-2 ">
-									<div className=" text-xl">Appointment</div>
+									<div className=" text-xl">Office</div>
 									<p>
-										Book your appointment with us to kickstart your design
-										journey.
+										Shop 13, Rail Gate Colony, Dum Dum Cantonment, Subhash
+										Nagar, Dum Dum, Kolkata, West Bengal 700065
 									</p>
 								</section>
 								<section className="flex h-auto w-full flex-col gap-2 text-sm ">
@@ -43,7 +43,7 @@ const CompanyDetailsSection = () => {
 									</section>
 								</section>
 							</section>
-							<section className="w-full sm:w-[40%] lg:pl-10">
+							{/* <section className="w-full sm:w-[40%] lg:pl-10">
 								<section className=" mb-2 text-xl">Offices</section>
 								<section className="flex w-full flex-col gap-6 text-base">
 									<section className="flex h-auto w-full flex-col gap-2 ">
@@ -65,7 +65,7 @@ const CompanyDetailsSection = () => {
 										</span>
 									</section>
 								</section>
-							</section>
+							</section> */}
 						</section>
 						<section className="w-full">
 							<section className="flex w-fit items-center gap-5">
