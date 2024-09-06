@@ -109,7 +109,7 @@ const FAQ = (): React.JSX.Element => {
 												Getting started with our services is easy. Simply reach
 												out to us via phone, email, or our website contact form
 												to schedule an initial consultation. During this
-												consultation, we'll discuss your project goals,
+												consultation, we&apos;ll discuss your project goals,
 												requirements, and timeline, and outline the next steps
 												to get started on turning your vision into reality.
 											</p>

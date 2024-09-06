@@ -12,14 +12,14 @@ const DescriptionSection = () => {
 					<section className="mt-4 w-full space-y-4">
 						<p>
 							Imagine a place where five elements - earth, air, water, energy
-							and space - come to create a peaceful home just for you. That's
-							Tattvam for you. Set in Bagmari, it's your key to live a balanced
-							and wonderful life. Built by Isha Group,
+							and space - come to create a peaceful home just for you.
+							That&apos;s Tattvam for you. Set in Bagmari, it&apos;s your key to
+							live a balanced and wonderful life. Built by Isha Group,
 						</p>
 						<p>
 							reputed luxury property developers in Kolkata, Tattvam features a
 							host of amenities including rooftop cabana, jogging path,
-							multipurpose court, infinity pool, kids play area etc. What's
+							multipurpose court, infinity pool, kids play area etc. What&apos;s
 							more, it offers 3-side open, south-facing apartments for your
 							comfort.
 						</p>

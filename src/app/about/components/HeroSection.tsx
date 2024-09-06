@@ -13,8 +13,8 @@ const HeroSection = () => {
 					<section className=" order-3 w-full md:order-2">
 						<p>
 							As architects and designers, we believe in the power of creativity
-							to transform spaces and enrich lives. Over the years, we've had
-							the privilege of working on a diverse array of projects, each
+							to transform spaces and enrich lives. Over the years, we&apos;ve
+							had the privilege of working on a diverse array of projects, each
 							presenting its own unique set of challenges and opportunities.
 						</p>
 					</section>

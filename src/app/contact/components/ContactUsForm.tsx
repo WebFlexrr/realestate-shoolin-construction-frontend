@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -107,7 +106,6 @@ const ContactUsForm = () => {
 				terms: false,
 			});
 			setLoading(false);
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (error: any) {
 			setLoading(false);
 
@@ -127,7 +125,6 @@ const ContactUsForm = () => {
 					<section className="flex h-auto w-full items-center  lg:w-[55%] lg:pr-16 ">
 						<Form {...form}>
 							<form
-								// eslint-disable-next-line @typescript-eslint/no-misused-promises
 								onSubmit={form.handleSubmit(handleSubmit)}
 								className="flex flex-wrap"
 							>

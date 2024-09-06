@@ -42,7 +42,7 @@ const OurValuesSection = () => {
 					<section className="flex h-auto w-full flex-col gap-7 lg:w-[60%] lg:p-16">
 						<div className="flex w-full flex-col gap-3">
 							<p>
-								It's a guiding principle that shapes everything we do. We
+								It&apos;s a guiding principle that shapes everything we do. We
 								believe in approaching every project with a commitment to
 								originality, authenticity, and artistic expression. Our team of
 								architects and designers are dedicated to pushing the boundaries
