@@ -1,14 +1,14 @@
 import Footer from '@/components/Footer';
-import AmenitiesSection from '@/components/pages/projectDetails/AmenitiesSection';
-import ConstructionStatusSection from '@/components/pages/projectDetails/ConstructionStatusSection';
-import DescriptionSection from '@/components/pages/projectDetails/DescriptionSection';
-import DetailsSection from '@/components/pages/projectDetails/DetailsSection';
-import ExtraProjects from '@/components/pages/projectDetails/ExtraProjects';
-import HeadingSection from '@/components/pages/projectDetails/HeadingSection';
-import LayoutSection from '@/components/pages/projectDetails/LayoutSection';
-import LocationMapSection from '@/components/pages/projectDetails/LocationMapSection';
-import PictureSlider from '@/components/pages/projectDetails/PictureSlider';
-import ScheduleSiteVisitSection from '@/components/pages/projectDetails/ScheduleSiteVisitSection';
+import AmenitiesSection from '@/app/projects/[slug]/components/AmenitiesSection';
+import ConstructionStatusSection from '@/app/projects/[slug]/components/ConstructionStatusSection';
+import DescriptionSection from '@/app/projects/[slug]/components/DescriptionSection';
+import DetailsSection from '@/app/projects/[slug]/components/DetailsSection';
+import ExtraProjects from '@/app/projects/[slug]/components/ExtraProjects';
+import HeadingSection from '@/app/projects/[slug]/components/HeadingSection';
+import LayoutSection from '@/app/projects/[slug]/components/LayoutSection';
+import LocationMapSection from '@/app/projects/[slug]/components/LocationMapSection';
+import PictureSlider from '@/app/projects/[slug]/components/PictureSlider';
+import ScheduleSiteVisitSection from '@/app/projects/[slug]/components/ScheduleSiteVisitSection';
 import React from 'react';
 
 const ProjectDetailsPage = () => {

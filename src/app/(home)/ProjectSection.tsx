@@ -1,36 +1,44 @@
 import React from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import SectionHeading from '@/components/SectionHeading';
-import Projects from '@/components/Projects';
+// import Projects from '@/components/Projects';
 import Link from 'next/link';
-import { getAllProjects } from '@/lib/apiCalls';
+import { PROJECTS_QUERY } from '@/sanity/lib/queries';
+import { client } from '@/sanity/lib/client';
+// import Projects from '@/components/Projects';
+// import Projects from '../projects/page';
 
 const ProjectSection = async (): Promise<React.JSX.Element> => {
-	const projectData = await getAllProjects();
-	console.log(projectData);
+	const projects = await client.fetch(PROJECTS_QUERY);
+	console.log('Projects====>', projects);
 	return (
-		<section className="h-auto w-full bg-background2">
+		<section className="h-auto w-full bg-background">
 			<div className="flex h-auto w-full flex-col px-5 pb-40 pt-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0">
 				<SectionHeading
 					mainTitle={'Current Projects'}
 					subTitle={'Explore more'}
 				/>
 				<section className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-					{projectData?.map((item) => {
-						return item.status === 'under-construction' ||
-							item.status === 'not-started' ? (
+					{/* {projects.map(
+						(item:any) => (
+							// {
+							// 	return
+							// item.status === 'under_construction' ||
+							// 	item.status === 'not-started' ? (
 							<Projects
 								key={item._id}
-								image={item.thumbnail}
+								image={item.title}
 								status={item.status}
-								name={item.name}
+								name={item.title}
 								description={item.description}
-								address={item.address}
+								// address={item.address}
 							/>
-						) : (
-							<></>
-						);
-					})}
+						)
+						// ) : (
+						// 	<></>
+						// );
+						// }
+					)} */}
 				</section>
 				<section className=" h-auto w-full">
 					<Link

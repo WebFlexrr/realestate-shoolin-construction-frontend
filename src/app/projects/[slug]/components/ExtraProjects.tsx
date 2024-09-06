@@ -1,10 +1,10 @@
-import Projects from '@/components/Projects';
+// import Projects from '@/components/Projects';
 import SectionHeading from '@/components/SectionHeading';
-import { getAllProjects } from '@/lib/apiCalls';
+
 import React from 'react';
 
 const ExtraProjects = async () => {
-	const projectData = await getAllProjects();
+	// const projectData = await getAllProjects();
 	return (
 		<section className="h-auto w-full bg-background2">
 			<section className="flex h-auto w-full flex-col px-5 pb-40 pt-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0">
@@ -14,7 +14,7 @@ const ExtraProjects = async () => {
 						subTitle={'Explore more'}
 					/>
 					<section className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-						{projectData?.map((item) => {
+						{/* {projectData?.map((item) => {
 							return item.status === 'under-construction' ||
 								item.status === 'completed' ? (
 								<Projects
@@ -28,7 +28,7 @@ const ExtraProjects = async () => {
 							) : (
 								<></>
 							);
-						})}
+						})} */}
 					</section>
 				</section>
 			</section>

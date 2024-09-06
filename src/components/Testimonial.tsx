@@ -19,7 +19,19 @@ import { FaStar } from 'react-icons/fa';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 
-const Testimonial = (): React.JSX.Element => {
+interface testimonial {
+	_id: string;
+	name: string;
+	rating: number;
+	message: string;
+	imageUrl: string;
+}
+const Testimonial = ({
+	testimonials,
+}: {
+	testimonials: testimonial[];
+}): React.JSX.Element => {
+	console.log(testimonials);
 	return (
 		<section className="h-auto w-full">
 			<section className="mx-auto h-auto w-full max-w-7xl px-5 py-20 sm:px-16 xl:px-0">
@@ -38,16 +50,15 @@ const Testimonial = (): React.JSX.Element => {
 							className="w-full  "
 						>
 							<CarouselContent>
-								{Array.from({ length: 5 }).map((_, index) => (
+								{/* {Array.from({ length: 5 }).map((_, index) => ( */}
+								{testimonials.map((testimonial) => (
 									<CarouselItem
-										key={index}
+										key={testimonial._id}
 										className="basis-1/1 w-full  xl:basis-1/2"
 									>
 										<div className="flex w-full flex-col gap-5 sm:flex-row">
 											<Image
-												src={
-													'https://assets-global.website-files.com/659508024773365d154788a8/65cf307bcf5bbed241bbffa6_img-4-p-500.jpg'
-												}
+												src={testimonial.imageUrl}
 												width={1000}
 												height={0}
 												alt={''}
@@ -55,22 +66,18 @@ const Testimonial = (): React.JSX.Element => {
 											/>
 											<Card className=" flex h-auto w-full flex-col rounded-lg sm:aspect-[4/5] lg:w-1/2 xl:w-[300px] ">
 												<CardHeader>
-													<CardTitle>Tejodeep Mitra Roy</CardTitle>
+													<CardTitle>{testimonial.name}</CardTitle>
 													<section className="flex w-full text-yellow-400 ">
-														<FaStar />
-														<FaStar />
-														<FaStar />
-														<FaStar />
-														<FaStar />
+														{Array.from({ length: testimonial.rating }).map(
+															(_, index) => (
+																<FaStar key={index} />
+															)
+														)}
 													</section>
 												</CardHeader>
 												<CardContent className="">
 													<CardDescription>
-														The modern amenities and other facilities offered by
-														the Project are really attractive in addition to
-														affordable price and lower maintenance charges
-														compared to other projects in Kolkata. We feel
-														elated to be a part of this project.
+														{testimonial.message}
 													</CardDescription>
 												</CardContent>
 											</Card>

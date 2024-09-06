@@ -18,8 +18,9 @@ const HeroSection = (): React.JSX.Element => {
 			<section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
 				<section className="flex h-full flex-col items-center justify-center gap-8 pt-32 md:w-1/2 lg:pr-20 lg:pt-40 ">
 					<section className="h-auto w-full ">
-						<h1 className=" font-medium">
-							Your home, your style begin your design adventure
+						<h1 className="  text-6xl font-medium ">
+							{/* Your home, your style begin your design adventure */}
+							Your Dream home,In affordable prices
 						</h1>
 					</section>
 					<section>

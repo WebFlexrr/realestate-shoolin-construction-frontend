@@ -1,7 +1,7 @@
 import HeroHeading from '@/components/HeroHeading';
 import Footer from '@/components/Footer';
 import React from 'react';
-import HeroSection from '@/components/pages/projects/HeroSection';
+import HeroSection from '@/app/projects/components/HeroSection';
 
 const Projects = (): React.JSX.Element => {
 	return (

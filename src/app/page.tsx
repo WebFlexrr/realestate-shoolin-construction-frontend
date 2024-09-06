@@ -1,17 +1,21 @@
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import Testimonial from '@/components/Testimonial';
-import AboutSection from '@/components/pages/home/AboutSection';
-import HeroSection from '@/components/pages/home/HeroSection';
-import ProjectSection from '@/components/pages/home/ProjectSection';
+import AboutSection from '@/app/(home)/AboutSection';
+import HeroSection from '@/app/(home)/HeroSection';
+import ProjectSection from '@/app/(home)/ProjectSection';
+import { client } from '@/sanity/lib/client';
+import { TESTIMONIALS_QUERY } from '@/sanity/lib/queries';
 
-export default function Home(): JSX.Element {
+export default async function Home() {
+	const testimonials = await client.fetch(TESTIMONIALS_QUERY);
+
 	return (
 		<main className=" h-auto w-full">
 			<HeroSection />
-			<AboutSection />
 			<ProjectSection />
-			<Testimonial />
+			<AboutSection />
+			<Testimonial testimonials={testimonials} />
 			<FAQ />
 			<Footer />
 		</main>

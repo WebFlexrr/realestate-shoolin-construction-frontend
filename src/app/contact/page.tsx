@@ -2,8 +2,8 @@ import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import HeroHeading from '@/components/HeroHeading';
 
-import CompanyDetailsSection from '@/components/pages/contact/CompanyDetailsSection';
-import ContactUsForm from '@/components/pages/contact/ContactUsForm';
+import CompanyDetailsSection from '@/app/contact/components/CompanyDetailsSection';
+import ContactUsForm from '@/app/contact/components/ContactUsForm';
 import React from 'react';
 
 const ContactPage = (): React.JSX.Element => {

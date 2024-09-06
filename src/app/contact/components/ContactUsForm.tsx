@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+
 import React, { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -297,13 +297,20 @@ const ContactUsForm = () => {
 						</Form>
 					</section>
 					<section className="h-auto w-full lg:w-[45%] ">
-						<Image
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.15709049659662!2d88.40971674408956!3d22.634637390352523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e0d3e60c855%3A0xc1f123eb251d85b0!2s14%2C%20Subhas%20Nagar%20Rd%2C%20Rail%20Gate%20Colony%2C%20Dum%20Dum%20Cantonment%2C%20Subhash%20Nagar%2C%20Dum%20Dum%2C%20Kolkata%2C%20West%20Bengal%20700065!5e0!3m2!1sen!2sin!4v1711185861459!5m2!1sen!2sin"
+							allowFullScreen={true}
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+							className="aspect-square w-full rounded-lg"
+						></iframe>
+						{/* <Image
 							src={'/picture/pic4.jpg'}
 							width={1000}
 							height={0}
 							className="aspect-square w-full rounded-lg"
 							alt={''}
-						/>
+						/> */}
 					</section>
 				</section>
 			</section>
