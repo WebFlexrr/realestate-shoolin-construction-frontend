@@ -14,7 +14,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
-import SectionHeading from './SectionHeading';
+import SectionHeading from '../../components/SectionHeading';
 import { FaStar } from 'react-icons/fa';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import SwiperGallery from '@/components/ui/SwiperGallery';
 import { Button } from '@/components/ui/button';

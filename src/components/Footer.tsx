@@ -6,6 +6,7 @@ import { BsTwitterX } from 'react-icons/bs';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { IoMailOutline } from 'react-icons/io5';
 import { GoArrowUpRight } from 'react-icons/go';
+import Link from 'next/link';
 
 const Footer = (): React.JSX.Element => {
 	return (
@@ -43,11 +44,21 @@ const Footer = (): React.JSX.Element => {
 									<span className=" text-lg">Pages</span>
 									<div className="mt-2 flex w-full flex-col">
 										<ul className="flex flex-col gap-2 text-sm text-neutral-400">
-											<li>About us</li>
-											<li>Projects</li>
-											<li>Media</li>
-											<li>FAQ</li>
-											<li>Contact us</li>
+											<li>
+												<Link href={'/about'}>About us</Link>
+											</li>
+											<li>
+												<Link href={'/projects'}>Projects</Link>
+											</li>
+											<li>
+												<Link href={'/projects'}>Media</Link>
+											</li>
+											<li>
+												<Link href={'/faq'}>FAQ</Link>
+											</li>
+											<li>
+												<Link href={'/contact'}>Contact us</Link>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -57,8 +68,12 @@ const Footer = (): React.JSX.Element => {
 									<span className=" text-lg">Resources</span>
 									<div className="mt-2 flex w-full flex-col">
 										<ul className="flex flex-col gap-2 text-sm text-neutral-400">
-											<li>Privacy Policy</li>
-											<li>Terms & Conditions</li>
+											<li>
+												<Link href={'/privacy-policy'}>Privacy Policy</Link>
+											</li>
+											<li>
+												<Link href={'/terms'}>Terms & Conditions</Link>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -71,7 +86,8 @@ const Footer = (): React.JSX.Element => {
 										<HiOutlineOfficeBuilding className="text-lg" /> Office
 									</span>
 									<span className="mt-2 w-full  text-sm text-neutral-400">
-										4517 Washington Ave. Manchester, Kentucky 39495
+										132, Subhash Nagar Road, Dum Dum Cantonment, KOLKATA, India,
+										700065
 									</span>
 								</div>
 							</section>
@@ -81,7 +97,7 @@ const Footer = (): React.JSX.Element => {
 										<IoMailOutline className="text-lg" /> Mail
 									</span>
 									<span className="mt-2 w-full text-sm  text-neutral-400">
-										shoolin@gmail.com
+										contact@shoolinconstruction.com
 									</span>
 								</div>
 							</section>

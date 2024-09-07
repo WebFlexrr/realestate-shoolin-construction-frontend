@@ -1,16 +1,16 @@
 import React from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import SectionHeading from '@/components/SectionHeading';
-// import Projects from '@/components/Projects';
 import Link from 'next/link';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
 import { client } from '@/sanity/lib/client';
-// import Projects from '@/components/Projects';
-// import Projects from '../projects/page';
+import { Project } from '@/sanity/types/sanity.types';
+import Projects from '@/components/Projects';
+import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 
 const ProjectSection = async (): Promise<React.JSX.Element> => {
-	const projects = await client.fetch(PROJECTS_QUERY);
-	console.log('Projects====>', projects);
+	const projects = await client.fetch<Project[]>(PROJECTS_QUERY);
+	// console.log('Home Projects====>', projects);
 	return (
 		<section className="h-auto w-full bg-background">
 			<div className="flex h-auto w-full flex-col px-5 pb-40 pt-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0">
@@ -19,26 +19,21 @@ const ProjectSection = async (): Promise<React.JSX.Element> => {
 					subTitle={'Explore more'}
 				/>
 				<section className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-					{/* {projects.map(
-						(item:any) => (
-							// {
-							// 	return
-							// item.status === 'under_construction' ||
-							// 	item.status === 'not-started' ? (
-							<Projects
-								key={item._id}
-								image={item.title}
-								status={item.status}
-								name={item.title}
-								description={item.description}
-								// address={item.address}
-							/>
-						)
-						// ) : (
-						// 	<></>
-						// );
-						// }
-					)} */}
+					{projects.map((project) => {
+						return (
+							project.status === 'under_construction' && (
+								<Projects
+									key={project._id}
+									slug={project.slug}
+									image={project.master_layout_plan as SanityImageObject}
+									status={project.status}
+									name={project.title}
+									description={project.description}
+									// address={project.location}
+								/>
+							)
+						);
+					})}
 				</section>
 				<section className=" h-auto w-full">
 					<Link

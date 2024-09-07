@@ -1,6 +1,6 @@
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
-import Testimonial from '@/components/Testimonial';
+import Testimonial from '@/app/(home)/Testimonial';
 import AboutSection from '@/app/(home)/AboutSection';
 import HeroSection from '@/app/(home)/HeroSection';
 import ProjectSection from '@/app/(home)/ProjectSection';

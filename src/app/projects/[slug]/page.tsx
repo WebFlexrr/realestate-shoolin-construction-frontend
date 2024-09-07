@@ -10,15 +10,36 @@ import LocationMapSection from '@/app/projects/[slug]/components/LocationMapSect
 import PictureSlider from '@/app/projects/[slug]/components/PictureSlider';
 import ScheduleSiteVisitSection from '@/app/projects/[slug]/components/ScheduleSiteVisitSection';
 import React from 'react';
+import { PROJECT_DETAILS_QUERY } from '@/sanity/lib/queries';
+import { client } from '@/sanity/lib/client';
+import { Project } from '@/sanity/types/sanity.types';
 
-const ProjectDetailsPage = () => {
+const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
+	const project = await client.fetch<Project>(
+		PROJECT_DETAILS_QUERY(params.slug)
+	);
+
+	console.log('params Project or Slug--------->', project);
+	console.log('File Url--------->', project.brochure);
+
 	return (
-		<main className="relative  h-auto w-full pt-[5rem]">
-			<HeadingSection />
+		<main className="relative h-auto w-full pt-[5rem]">
+			<HeadingSection
+				title={project.title}
+				location={project.location}
+				price={project.price}
+				tags={project.tags}
+				brochure={project.brochure}
+			/>
 			<PictureSlider />
-			<DetailsSection />
-			<DescriptionSection />
-			<AmenitiesSection />
+			<DetailsSection
+				bhks={project.bhks}
+				total_units={project.total_units}
+				possession_date={project.possession_date}
+				floors={project.floors}
+			/>
+			<DescriptionSection description={project.description} />
+			<AmenitiesSection amenities={project.amenities} />
 			<LayoutSection />
 			<LocationMapSection />
 			<ScheduleSiteVisitSection />
