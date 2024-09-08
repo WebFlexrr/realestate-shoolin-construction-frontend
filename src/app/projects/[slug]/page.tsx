@@ -13,6 +13,8 @@ import React from 'react';
 import { PROJECT_DETAILS_QUERY } from '@/sanity/lib/queries';
 import { client } from '@/sanity/lib/client';
 import { Project } from '@/sanity/types/sanity.types';
+import { imageUrlFor } from '@/sanity/lib/imageUrlFor';
+import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 
 const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 	const project = await client.fetch<Project>(
@@ -31,7 +33,9 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 				tags={project.tags}
 				brochure={project.brochure}
 			/>
-			<PictureSlider />
+			<PictureSlider
+				thumbnail={imageUrlFor(project?.thumbnail as SanityImageObject).url()}
+			/>
 			<DetailsSection
 				bhks={project.bhks}
 				total_units={project.total_units}
@@ -40,7 +44,12 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 			/>
 			<DescriptionSection description={project.description} />
 			<AmenitiesSection amenities={project.amenities} />
-			<LayoutSection />
+			<LayoutSection
+				master_layout_plan={imageUrlFor(
+					project?.master_layout_plan as SanityImageObject
+				).url()}
+				unit_layout_plan={project.unit_layout_plan}
+			/>
 			<LocationMapSection />
 			<ScheduleSiteVisitSection />
 			<ConstructionStatusSection />

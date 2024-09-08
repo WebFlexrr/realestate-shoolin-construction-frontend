@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import SwiperGallery from '@/components/ui/SwiperGallery';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,10 @@ import {
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 
-const PictureSlider = () => {
+interface PictureSliderProps {
+	thumbnail: string;
+}
+const PictureSlider: FC<PictureSliderProps> = ({ thumbnail }) => {
 	return (
 		<section className=" h-auto w-full ">
 			<section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
@@ -27,7 +30,7 @@ const PictureSlider = () => {
 											className=" aspect-square h-full w-full lg:aspect-video "
 											width={1000}
 											height={0}
-											src={'/picture/pic1.jpg'}
+											src={thumbnail}
 											alt={''}
 										/>
 									</DialogTrigger>

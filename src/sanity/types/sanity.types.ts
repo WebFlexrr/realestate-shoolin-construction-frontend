@@ -132,58 +132,7 @@ export type Project = {
 		crop?: SanityImageCrop;
 		_type: 'image';
 	};
-	unit_layout_plan?: Array<{
-		floor?:
-			| 'ground'
-			| '1'
-			| '2'
-			| '3'
-			| '4'
-			| '5'
-			| '6'
-			| '7'
-			| '8'
-			| '9'
-			| '10'
-			| '11'
-			| '12';
-		floorImage?: {
-			asset?: {
-				_ref: string;
-				_type: 'reference';
-				_weak?: boolean;
-				[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-			};
-			hotspot?: SanityImageHotspot;
-			crop?: SanityImageCrop;
-			_type: 'image';
-		};
-		flats?: Array<{
-			flatName?: string;
-			bhkType?: '1bhk' | '2bhk' | '3bhk';
-			carpetArea?: number;
-			builtUpArea?: number;
-			standardBuiltUpArea?: number;
-			floorImage?: {
-				asset?: {
-					_ref: string;
-					_type: 'reference';
-					_weak?: boolean;
-					[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-				};
-				hotspot?: SanityImageHotspot;
-				crop?: SanityImageCrop;
-				_type: 'image';
-			};
-			livingDining?: string;
-			bedroomArea?: Array<string>;
-			bathroomArea?: string;
-			kitchen?: string;
-			balconyArea?: string;
-			_key: string;
-		}>;
-		_key: string;
-	}>;
+	unit_layout_plan?: unit_layout_plan;
 	brochure?: string;
 	geoLocation?: Geopoint;
 	construction_progress?: Array<{
@@ -204,6 +153,59 @@ export type Project = {
 		_key: string;
 	}>;
 };
+
+export type unit_layout_plan = Array<{
+	floor?:
+		| 'ground'
+		| '1'
+		| '2'
+		| '3'
+		| '4'
+		| '5'
+		| '6'
+		| '7'
+		| '8'
+		| '9'
+		| '10'
+		| '11'
+		| '12';
+	floorImage?: {
+		asset?: {
+			_ref: string;
+			_type: 'reference';
+			_weak?: boolean;
+			[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+		};
+		hotspot?: SanityImageHotspot;
+		crop?: SanityImageCrop;
+		_type: 'image';
+	};
+	flats?: Array<{
+		flatName?: string;
+		bhkType?: '1bhk' | '2bhk' | '3bhk';
+		carpetArea?: number;
+		builtUpArea?: number;
+		standardBuiltUpArea?: number;
+		floorImage?: {
+			asset?: {
+				_ref: string;
+				_type: 'reference';
+				_weak?: boolean;
+				[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+			};
+			hotspot?: SanityImageHotspot;
+			crop?: SanityImageCrop;
+			_type: 'image';
+		};
+		livingDining?: string;
+		bedroomArea?: Array<string>;
+		bathroomArea?: string;
+		kitchen?: string;
+		balconyArea?: string;
+		_key: string;
+	}>;
+	_key: string;
+}>;
 
 export type Geopoint = {
 	_type: 'geopoint';
