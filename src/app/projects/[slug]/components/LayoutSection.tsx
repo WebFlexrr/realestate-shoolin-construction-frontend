@@ -63,80 +63,56 @@ const LayoutSection: FC<LayoutSectionProps> = ({
 									)}
 								</TabsContent>
 								<TabsContent value="Unit Plan">
-									<Tabs defaultValue="2nd" className="w-full">
+									<Tabs defaultValue="0" className="w-full">
 										<TabsList
 											defaultValue={'ground'}
-											className="w-full bg-background2"
+											className="w-full  gap-5  bg-background2"
 										>
-											<Swiper
-												navigation={true}
-												modules={[Navigation, Pagination]}
-												slidesPerView={3}
-												spaceBetween={5}
-												className="mx-auto mt-5 w-full  "
-											>
-												{unit_layout_plan?.map((layout, index) => (
-													<TabsTrigger
-														key={layout._key}
-														value={layout.floor!}
-														className="w-full border border-black "
-													>
-														<SwiperSlide className="px-10">
-															<button className="flex w-full justify-center ">
-																<h5 className="font-bold text-cyan-600">
-																	{layout.floor} Floor
-																</h5>
-															</button>
-														</SwiperSlide>
-													</TabsTrigger>
-												))}
-											</Swiper>
+											{/* <Swiper
+											navigation={true}
+											modules={[Navigation, Pagination]}
+											slidesPerView={3}
+											spaceBetween={5}
+											className="mx-auto mt-5 w-full  "
+										> */}
+											{unit_layout_plan?.map((layout, index) => (
+												<TabsTrigger
+													key={layout._key}
+													value={`${index}`}
+													className="w-full"
+												>
+													{/* <SwiperSlide className="border border-black px-10"> */}
+													<button className="flex w-full justify-center ">
+														<h5 className="font-bold text-cyan-600">
+															{layout.floor} Floor
+														</h5>
+													</button>
+													{/* </SwiperSlide> */}
+												</TabsTrigger>
+											))}
+											{/* </Swiper> */}
 										</TabsList>
-										{unit_layout_plan?.map((layout) => (
-											<TabsContent key={layout._key} value={layout.floor!}>
-												<Tabs>
-													<TabsList className="w-full bg-background2">
-														<Swiper
-															navigation={true}
-															modules={[Navigation, Pagination]}
-															slidesPerView={3}
-															spaceBetween={5}
-															className="mx-auto mt-5 w-full  "
-														>
-															{layout.flats?.map((flat, index) => (
-																<TabsTrigger
-																	key={flat._key}
-																	value={flat.flatName!}
-																	className="w-full "
-																>
-																	<SwiperSlide className="px-10">
-																		<button className="flex w-full justify-center  border-b-2 border-red-500">
-																			<h5 className="font-bold text-cyan-600">
-																				{flat.bhkType}
-																			</h5>
-																		</button>
-																	</SwiperSlide>
-																</TabsTrigger>
-															))}
-														</Swiper>
-													</TabsList>
-													{layout.flats?.map((flat, index) => (
-														<TabsContent
-															key={flat._key}
-															value={flat.flatName!}
-															className="w-full  "
-														>
+
+										{unit_layout_plan?.map((layout, index) => (
+											<TabsContent
+												key={layout._key}
+												value={`${index}`}
+												className="w-full"
+											>
+												{layout.floorImage && (
+													<section className="mt-10 flex w-full flex-col ">
+														<section className=" flex  w-full items-center justify-center border border-black bg-white">
 															<Image
 																src={imageUrlFor(
-																	flat.floorImage as SanityImageObject
+																	layout.floorImage as SanityImageObject
 																).url()}
 																width={1000}
 																height={0}
 																alt={''}
 															/>
-														</TabsContent>
-													))}
-												</Tabs>
+														</section>
+													</section>
+												)}
 											</TabsContent>
 										))}
 									</Tabs>
