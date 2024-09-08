@@ -15,6 +15,7 @@ import { client } from '@/sanity/lib/client';
 import { Project } from '@/sanity/types/sanity.types';
 import { imageUrlFor } from '@/sanity/lib/imageUrlFor';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
+import CurrentBookingStatusSection from './components/CurrentBookingStatusSection';
 
 const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 	const project = await client.fetch<Project>(
@@ -50,6 +51,7 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 				).url()}
 				unit_layout_plan={project.unit_layout_plan}
 			/>
+			<CurrentBookingStatusSection />
 			<LocationMapSection />
 			<ScheduleSiteVisitSection />
 			<ConstructionStatusSection />
