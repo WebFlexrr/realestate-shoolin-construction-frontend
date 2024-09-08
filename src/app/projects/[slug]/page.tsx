@@ -51,11 +51,13 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 				).url()}
 				unit_layout_plan={project.unit_layout_plan}
 			/>
-			<CurrentBookingStatusSection />
+			{/* <CurrentBookingStatusSection /> */}
 			<LocationMapSection />
-			<ScheduleSiteVisitSection />
-			<ConstructionStatusSection />
-			<ExtraProjects />
+			{/* <ScheduleSiteVisitSection /> */}
+			<ConstructionStatusSection
+				construction_progress={project.construction_progress}
+			/>
+			{/* <ExtraProjects /> */}
 			<Footer />
 		</main>
 	);

@@ -57,7 +57,9 @@ const PictureSlider: FC<PictureSliderProps> = ({ thumbnail }) => {
 								</section>
 
 								<DialogContent className=" max-w-5xl p-10">
-									<SwiperGallery />
+									<SwiperGallery
+										data={['/picture/pic1.jpg', '/picture/pic4.jpg']}
+									/>
 								</DialogContent>
 							</Dialog>
 						</section>

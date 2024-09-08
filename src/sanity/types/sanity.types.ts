@@ -135,40 +135,31 @@ export type Project = {
 	unit_layout_plan?: unit_layout_plan;
 	brochure?: string;
 	geoLocation?: Geopoint;
-	construction_progress?: Array<{
-		title?: string;
-		date?: string;
-		images?: Array<{
-			asset?: {
-				_ref: string;
-				_type: 'reference';
-				_weak?: boolean;
-				[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-			};
-			hotspot?: SanityImageHotspot;
-			crop?: SanityImageCrop;
-			_type: 'image';
-			_key: string;
-		}>;
-		_key: string;
-	}>;
+	construction_progress?: construction_progress;
 };
+
+export type construction_progress = Array<{
+	title?: string;
+	date?: string;
+	file?: Array<string>;
+	_key: string;
+}>;
 
 export type unit_layout_plan = Array<{
 	floor?:
 		| 'ground'
-		| '1'
-		| '2'
-		| '3'
-		| '4'
-		| '5'
-		| '6'
-		| '7'
-		| '8'
-		| '9'
-		| '10'
-		| '11'
-		| '12';
+		| '1st'
+		| '2nd'
+		| '3rd'
+		| '4th'
+		| '5th'
+		| '6th'
+		| '7th'
+		| '8th'
+		| '9th'
+		| '10th'
+		| '11th'
+		| '12th';
 	floorImage?: {
 		asset?: {
 			_ref: string;
