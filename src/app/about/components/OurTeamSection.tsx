@@ -72,7 +72,7 @@ const OurTeamSection = () => {
 									</p>
 								</section>
 								<section className="mt-5 flex w-fit flex-col border-t border-black">
-									<span>Darlene Robertson</span>
+									<span>Sunil Das</span>
 									<span>CEO & Founder</span>
 								</section>
 							</section>

@@ -6,7 +6,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 
 const AboutSection = (): JSX.Element => {
 	return (
-		<section className="h-auto w-full ">
+		<section className="h-auto w-full bg-background2">
 			<section className="h-auto w-full px-5 py-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0 ">
 				<section className="flex h-auto w-full flex-col gap-10 lg:flex-row  ">
 					<section className="flex h-auto w-full flex-col gap-10 lg:w-[70%] lg:pr-20 ">
@@ -28,7 +28,7 @@ const AboutSection = (): JSX.Element => {
 									<div className="font-poppins  text-sm">
 										Projects Completed
 									</div>
-									<div className="font-poppins text-2xl">30+</div>
+									<div className="font-poppins text-2xl">10+</div>
 								</section>
 							</section>
 							<section className="mx-auto w-[60%] pl-5 text-center leading-5">
@@ -65,46 +65,6 @@ const AboutSection = (): JSX.Element => {
 						/>
 					</section>
 				</section>
-				{/* <section>
-						<div className="grid w-full grid-cols-3 gap-x-5">
-						<section className=" flex h-auto w-full flex-col items-center rounded border border-black bg-white py-10 text-lg font-semibold shadow-2xl">
-						<section className="mb-2">
-						<Image
-										src={'/icons/happy-face.png'}
-										width={50}
-										height={50}
-										alt={'happyface'}
-									/>
-								</section>
-								<section>50+</section>
-								<section>Happy customers</section>
-							</section>
-							<section className=" flex h-auto w-full flex-col items-center rounded border border-black bg-white py-10 text-lg font-semibold shadow-2xl">
-								<section className="mb-2">
-									<Image
-										src={'/icons/architect.png'}
-										width={50}
-										height={50}
-										alt={'architect'}
-									/>
-								</section>
-								<section>30+</section>
-								<section>Successfull Projects</section>
-							</section>
-							<section className=" flex h-auto w-full flex-col items-center rounded border border-black bg-white py-10 text-lg font-semibold shadow-2xl">
-								<section className="mb-2">
-									<Image
-										src={'/icons/24-hours-support.png'}
-										width={50}
-										height={50}
-										alt={'24-hours-support'}
-									/>
-								</section>
-								<section>24/7</section>
-								<section>Helpline Support</section>
-							</section>
-						</div>
-					</section> */}
 			</section>
 		</section>
 	);

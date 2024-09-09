@@ -7,6 +7,7 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { IoMailOutline } from 'react-icons/io5';
 import { GoArrowUpRight } from 'react-icons/go';
 import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 
 const Footer = (): React.JSX.Element => {
 	return (
@@ -26,6 +27,7 @@ const Footer = (): React.JSX.Element => {
 								@2024 shoolin Construction
 							</span>
 						</section>
+
 						<section className=" grid h-auto w-full grid-cols-2 lg:grid-cols-2">
 							{/* <section className=" flex h-auto w-full justify-start">
 								<div className="w-fit">
@@ -43,21 +45,37 @@ const Footer = (): React.JSX.Element => {
 								<div className="w-fit">
 									<span className=" text-lg">Pages</span>
 									<div className="mt-2 flex w-full flex-col">
-										<ul className="flex flex-col gap-2 text-sm text-neutral-400">
-											<li>
-												<Link href={'/about'}>About us</Link>
+										<ul className="flex flex-col gap-2  text-neutral-400">
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link href={'/about'} className="flex items-center">
+													<ChevronRight />
+													About us
+												</Link>
 											</li>
-											<li>
-												<Link href={'/projects'}>Projects</Link>
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link href={'/projects'} className="flex items-center">
+													<ChevronRight />
+													Projects
+												</Link>
 											</li>
-											<li>
-												<Link href={'/projects'}>Media</Link>
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link href={'/projects'} className="flex items-center">
+													<ChevronRight />
+													Media
+												</Link>
 											</li>
-											<li>
-												<Link href={'/faq'}>FAQ</Link>
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link href={'/faq'} className="flex items-center">
+													<ChevronRight />
+													FAQ
+												</Link>
 											</li>
-											<li>
-												<Link href={'/contact'}>Contact us</Link>
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link href={'/contact'} className="flex items-center">
+													{' '}
+													<ChevronRight />
+													Contact us
+												</Link>
 											</li>
 										</ul>
 									</div>
@@ -67,12 +85,21 @@ const Footer = (): React.JSX.Element => {
 								<div className="w-fit">
 									<span className=" text-lg">Resources</span>
 									<div className="mt-2 flex w-full flex-col">
-										<ul className="flex flex-col gap-2 text-sm text-neutral-400">
-											<li>
-												<Link href={'/privacy-policy'}>Privacy Policy</Link>
+										<ul className="flex flex-col gap-2 text-neutral-400">
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link
+													href={'/privacy-policy'}
+													className="flex items-center"
+												>
+													<ChevronRight />
+													Privacy Policy
+												</Link>
 											</li>
-											<li>
-												<Link href={'/terms'}>Terms & Conditions</Link>
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link href={'/terms'} className="flex items-center">
+													<ChevronRight />
+													Terms & Conditions
+												</Link>
 											</li>
 										</ul>
 									</div>
@@ -96,9 +123,12 @@ const Footer = (): React.JSX.Element => {
 									<span className="flex items-center gap-3 font-bold text-white">
 										<IoMailOutline className="text-lg" /> Mail
 									</span>
-									<span className="mt-2 w-full text-sm  text-neutral-400">
+									<Link
+										href={'mailto:contact@shoolinconstruction.com'}
+										className="mt-2 w-full text-sm  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
+									>
 										contact@shoolinconstruction.com
-									</span>
+									</Link>
 								</div>
 							</section>
 							<section className="flex h-auto w-full justify-start xl:justify-center ">
@@ -106,13 +136,16 @@ const Footer = (): React.JSX.Element => {
 									<span className="flex items-center gap-3 font-bold text-white">
 										<CiMobile3 className="text-lg" /> Mobile
 									</span>
-									<span className="mt-2 text-sm text-neutral-400 ">
+									<Link
+										href={'mailto:contact@shoolinconstruction.com'}
+										className="mt-2 w-full text-sm  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
+									>
 										+91 - 8017194170
-									</span>
+									</Link>
 								</div>
 							</section>
 						</section>
-						<section className="flex w-full font-medium">
+						{/* <section className="flex w-full font-medium">
 							<div className="flex w-fit flex-col ">
 								<div>Subscribe for more updates!</div>
 								<div>
@@ -132,7 +165,7 @@ const Footer = (): React.JSX.Element => {
 									</button>
 								</div>
 							</div>
-						</section>
+						</section> */}
 					</section>
 				</section>
 				<section className="h-auto w-full border-t border-gray-300  ">
@@ -141,14 +174,14 @@ const Footer = (): React.JSX.Element => {
 							Design by Webflexrr Digital Services
 						</section>
 						<section className="flex gap-2 ">
-							<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased hover:bg-neutral-400">
-								<BsTwitterX className="  group-hover:text-black" />
+							<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary">
+								<BsTwitterX className=" transition-all duration-500 ease-in-out group-hover:text-black" />
 							</div>
-							<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased hover:bg-neutral-400">
-								<FaFacebookF className="  group-hover:text-black" />
+							<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary">
+								<FaFacebookF className=" transition-all duration-500 ease-in-out group-hover:text-black" />
 							</div>
-							<div className="group group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased hover:bg-neutral-400 ">
-								<FaInstagram className="  group-hover:text-black" />
+							<div className="group  flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary ">
+								<FaInstagram className=" transition-all duration-500 ease-in-out group-hover:text-black" />
 							</div>
 						</section>
 					</section>

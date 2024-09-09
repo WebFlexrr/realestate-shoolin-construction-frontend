@@ -134,7 +134,7 @@ const Navbar = (): JSX.Element => {
 										</Link>
 									</NavigationMenuItem>
 									<NavigationMenuItem className="cursor-pointer">
-										<Link href={'/bookOnline'}>
+										<Link href={'/projects'}>
 											<Button className="group text-lg">
 												Book Online
 												<GoArrowUpRight className=" text-2xl  group-hover:duration-500  group-hover:ease-in-out" />

@@ -7,15 +7,23 @@ const HeroSection = () => {
 		<section className="h-auto w-full ">
 			<section className=" relative mx-auto flex h-full w-full max-w-7xl flex-col px-5 xl:px-0">
 				<section className="grid h-auto w-full grid-cols-1 justify-between gap-5 md:grid-cols-2 lg:flex-row lg:gap-x-7 lg:gap-y-14 ">
-					<section className=" order-1  flex w-full">
-						<h2>Embark on a journey with our architectural firm</h2>
+					<section className=" order-1  flex w-full flex-col gap-3">
+						<h2>Who We are?</h2>
+						<div className="h-1 w-20 bg-primary"></div>
 					</section>
 					<section className=" order-3 w-full md:order-2">
-						<p>
+						{/* <p>
 							As architects and designers, we believe in the power of creativity
 							to transform spaces and enrich lives. Over the years, we&apos;ve
 							had the privilege of working on a diverse array of projects, each
 							presenting its own unique set of challenges and opportunities.
+						</p> */}
+						<p>
+							Shoolin Construction is a Construction Company. Sunil Das are the
+							founder of the company. Our mission is to provide houses at an
+							affordable prices. We assure the best for the price. Backed by a
+							talented team of professionals. We are able to provide there
+							superior service and construction jobs to our valued clients.
 						</p>
 					</section>
 					<section className=" order-2 h-auto w-full ">
