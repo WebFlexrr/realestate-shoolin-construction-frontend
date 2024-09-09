@@ -10,7 +10,10 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'swiperjs.com',
 			},
-			
+			{
+				protocol: 'https',
+				hostname: 'cdn.sanity.io',
+			},
 			{
 				protocol: 'https',
 				hostname: 'shoolin-construction-asset.s3.ap-south-1.amazonaws.com',

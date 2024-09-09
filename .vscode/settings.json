@@ -6,5 +6,7 @@
 		"source.fixAll.eslint": "explicit",
 		"source.fixAll.format": "explicit"
 	},
-	"cSpell.words": ["tailwindcss"]
+	"cSpell.words": ["tailwindcss"],
+	"pieces.cloudCapabilities": "Blended",
+	"pieces.telemetry": true
 }

@@ -95,6 +95,12 @@
 	}
 }
 
+.bg-clip-text {
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
+}
+
 .mySwiper .swiper-slide {
 	width: 25%;
 	height: 100%;

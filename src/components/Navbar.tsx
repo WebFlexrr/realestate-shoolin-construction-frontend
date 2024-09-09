@@ -52,7 +52,7 @@ const Navbar = (): JSX.Element => {
 								width={0}
 								height={0}
 								alt=""
-								className="h-auto w-[90px]"
+								className="h-auto w-[100px]"
 							/>
 						</Link>
 

@@ -2,22 +2,23 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # Lint test
-npx lint-staged --concurrent false
+yarn lint-staged --concurrent false
+
 
 #Check tsconfig standards
-npm run check-types || {
+yarn types || {
     echo '😂🤮❌Failed Type check😂🤮❌
     Are you seriously trying to write that? Make the changes required above.'
     false;
 }
 #Check Prettier standards
-npm run check-format || {
+yarn prettier || {
     echo '😂🤮Its Raw - Your styling looks disgusting😂🤮
     Prettier check Failed. Run npm run format, add changes and try commit again.'
     false;
 }
 #Check ESLint standards
-npm run lint || {
+yarn lint || {
     echo '😂🤮❌Get that weak Shit out there!😂🤮❌
     EsLint Check Failed. Make the required changes listed above, add changes and try commit again.'
     false;
@@ -25,7 +26,7 @@ npm run lint || {
 #If every thing Passes.... try to run a build
     echo '😂... Alright... Code looks good to me.. Trying to build now. 😂'
 
-npm run build || {
+yarn build || {
     echo '❌⚒️💡 Better call to your Senior... Because your build failed ❌⚒️💡
     Next build Failed: View the erros above to see why.'
     false
