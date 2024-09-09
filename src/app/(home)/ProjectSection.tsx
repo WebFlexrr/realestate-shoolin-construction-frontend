@@ -21,15 +21,16 @@ const ProjectSection = async (): Promise<React.JSX.Element> => {
 				<section className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
 					{projects.map((project) => {
 						return (
-							project.status === 'under_construction' && (
+							(project.status === 'under_construction' ||
+								project.status === 'completed') && (
 								<Projects
 									key={project._id}
 									slug={project.slug}
-									image={project.master_layout_plan as SanityImageObject}
+									image={project.thumbnail as SanityImageObject}
 									status={project.status}
 									name={project.title}
 									description={project.description}
-									// address={project.location}
+									address={project.location}
 								/>
 							)
 						);

@@ -1,3 +1,5 @@
+import { PTComponents } from '@/components/PortableText';
+import { PortableText } from 'next-sanity';
 import React, { FC } from 'react';
 
 interface DescriptionSectionProps {
@@ -14,7 +16,8 @@ const DescriptionSection: FC<DescriptionSectionProps> = ({ description }) => {
 						<h4 className=" underline">Description</h4>
 					</section>
 					<section className="mt-4 w-full space-y-4">
-						<p>{description}</p>
+						{/* <PortableText value={description!} components={PTComponents} /> */}
+						{description}
 						{/* <p>
 							Imagine a place where five elements - earth, air, water, energy
 							and space - come to create a peaceful home just for you.

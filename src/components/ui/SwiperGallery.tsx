@@ -18,12 +18,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import SwiperButton from './SwiperButton';
+import ReactPlayer from 'react-player';
 
 interface SwiperGalleryProps {
 	data?: Array<string>;
 }
 const SwiperGallery: FC<SwiperGalleryProps> = ({ data }) => {
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+	const [isPlaying, setIsPlaying] = useState<null | number>(null);
 	return (
 		<>
 			<Swiper
@@ -34,26 +36,41 @@ const SwiperGallery: FC<SwiperGalleryProps> = ({ data }) => {
 				pagination={{
 					clickable: true,
 					dynamicBullets: true,
-					type: 'fraction',
+					// type: 'fraction',
 				}}
+				onSlideChange={() => {
+					setIsPlaying(null);
+				}}
+				watchSlidesProgress={true}
 				thumbs={{ swiper: thumbsSwiper }}
-				className="relative aspect-video w-full  text-white"
+				className="relative aspect-video w-full pb-5  text-white"
 			>
 				{data?.map((file, index) =>
 					file.split('.')[3] === 'mp4' ? (
 						<SwiperSlide
 							key={index}
-							className="flex h-full items-center  justify-center bg-gray-200 "
+							className="flex h-full w-full  bg-gray-200 "
 						>
-							<div className="flex h-full items-center justify-center bg-gray-200">
-								<video
-									src={file}
+							<div className="flex h-full w-full items-center justify-center border border-black bg-gray-200">
+								<ReactPlayer
 									key={index}
-									autoPlay
+									url={file}
 									controls
-									loop
-									className="z-30 h-full"
-								></video>
+									autoPlay
+									onPlay={() => {
+										setIsPlaying(index);
+									}}
+									playing={isPlaying === index}
+									style={{
+										width: '100%',
+										height: '100%',
+										border: '2px solid black',
+										position: 'relative',
+										top: '0',
+										left: '0',
+										objectFit: 'contain',
+									}}
+								/>
 							</div>
 						</SwiperSlide>
 					) : (

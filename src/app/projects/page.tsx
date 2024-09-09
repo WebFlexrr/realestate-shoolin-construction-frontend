@@ -29,19 +29,19 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 						/>
 						<section className=" grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
 							{projects.map((project) => {
-								return project.status === 'under_construction' ||
-									project.status === 'completed' ? (
-									<Projects
-										key={project._id}
-										slug={project.slug}
-										image={project.master_layout_plan as SanityImageObject}
-										status={project.status}
-										name={project.title}
-										description={project.description}
-										// address={item.address}
-									/>
-								) : (
-									<></>
+								return (
+									(project.status === 'under_construction' ||
+										project.status === 'completed') && (
+										<Projects
+											key={project._id}
+											slug={project.slug}
+											image={project.thumbnail as SanityImageObject}
+											status={project.status}
+											name={project.title}
+											description={project.description}
+											address={project.location}
+										/>
+									)
 								);
 							})}
 						</section>
@@ -49,20 +49,19 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 					<section className="flex w-full flex-col">
 						<SectionHeading mainTitle={'Complete Projects'} subTitle={'Done'} />
 						<section className=" grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-							{projects.map((project) =>
-								project.status === 'completed' ? (
-									<Projects
-										key={project._id}
-										slug={project.slug}
-										image={project.master_layout_plan as SanityImageObject}
-										status={project.status}
-										name={project.title}
-										description={project.description}
-										// address={item.address}
-									/>
-								) : (
-									<></>
-								)
+							{projects.map(
+								(project) =>
+									project.status === 'completed' && (
+										<Projects
+											key={project._id}
+											slug={project.slug}
+											image={project.thumbnail as SanityImageObject}
+											status={project.status}
+											name={project.title}
+											description={project.description}
+											// address={item.address}
+										/>
+									)
 							)}
 						</section>
 					</section>

@@ -12,9 +12,15 @@ interface ProjectProps {
 	status?: string;
 	name?: string;
 	description?: string;
-	// address: string;
+	address?: string;
 }
-const Projects: FC<ProjectProps> = ({ image, name, description, slug }) => {
+const Projects: FC<ProjectProps> = ({
+	image,
+	name,
+	description,
+	slug,
+	address,
+}) => {
 	console.log('This is  good image inside Projects', description);
 	return (
 		<div className="relative h-auto w-full rounded ">
@@ -42,11 +48,13 @@ const Projects: FC<ProjectProps> = ({ image, name, description, slug }) => {
 				<div className="flex h-auto w-full flex-col gap-3 text-black">
 					<span className=" text-3xl font-medium">{name}</span>
 					<div className="h-auto w-full">
-						<p className="w-full text-sm">{description}</p>
+						<p className="w-full  ">
+							{description?.split(' ').splice(0, 40).join(' ').concat(' ...')}
+						</p>
 					</div>
 					<span className=" flex items-center gap-2 text-sm">
 						<FaLocationDot />
-						{/* {address} */}
+						{address}
 					</span>
 				</div>
 			</section>

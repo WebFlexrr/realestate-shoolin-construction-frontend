@@ -26,8 +26,8 @@ const Footer = (): React.JSX.Element => {
 								@2024 shoolin Construction
 							</span>
 						</section>
-						<section className=" grid h-auto w-full grid-cols-2 lg:grid-cols-3">
-							<section className=" flex h-auto w-full justify-start">
+						<section className=" grid h-auto w-full grid-cols-2 lg:grid-cols-2">
+							{/* <section className=" flex h-auto w-full justify-start">
 								<div className="w-fit">
 									<span className=" text-lg">What We Do</span>
 									<div className="mt-2 flex w-full flex-col">
@@ -38,7 +38,7 @@ const Footer = (): React.JSX.Element => {
 										</ul>
 									</div>
 								</div>
-							</section>
+							</section> */}
 							<section className=" flex h-auto w-full justify-start">
 								<div className="w-fit">
 									<span className=" text-lg">Pages</span>
@@ -135,8 +135,8 @@ const Footer = (): React.JSX.Element => {
 						</section>
 					</section>
 				</section>
-				<section className="h-auto w-full border-t border-gray-300 py-2 ">
-					<section className="mx-auto  flex h-auto w-full max-w-7xl flex-col-reverse items-center justify-between gap-3 py-2 text-sm text-neutral-400  md:flex-row">
+				<section className="h-auto w-full border-t border-gray-300  ">
+					<section className="mx-auto  flex h-auto w-full max-w-7xl flex-col-reverse items-center justify-between gap-3 px-10 py-2 text-sm text-neutral-400  md:flex-row">
 						<section className="w-fit">
 							Design by Webflexrr Digital Services
 						</section>

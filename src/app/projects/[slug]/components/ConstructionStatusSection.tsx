@@ -40,8 +40,8 @@ const ConstructionStatusSection: FC<ConstructionStatusSectionProps> = ({
 												alt={''}
 												className="aspect-square w-full rounded"
 											/>
-											<section className="absolute left-0 top-0 h-full w-full rounded bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-50" />
-											<section className="absolute left-0 top-0  flex h-full w-full flex-col items-center justify-end text-white opacity-0 transition-all  duration-300 ease-in-out group-hover:opacity-100">
+											<section className="absolute left-0 top-0 h-full w-full rounded bg-black  opacity-50 transition-all duration-300 ease-in-out" />
+											<section className="absolute left-0 top-0  flex h-full w-full flex-col items-center justify-end text-white  transition-all  duration-300 ease-in-out ">
 												<div className="mb-3 flex max-w-7xl flex-col items-center rounded bg-white px-3 text-sm text-black">
 													<div>Updated on</div>
 													<div>{progress.date}</div>
