@@ -22,7 +22,6 @@ const AboutPage = (): React.JSX.Element => {
 			<OurValuesSection />
 			<OurTeamSection />
 			<FAQ />
-
 			<Footer />
 		</main>
 	);

@@ -59,7 +59,7 @@ const OurValuesSection = () => {
 							<Button
 								variant={'ghost'}
 								size={'lg'}
-								className="group flex gap-1"
+								className="group flex gap-1 hover:bg-primary"
 							>
 								Contact Us
 								<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />

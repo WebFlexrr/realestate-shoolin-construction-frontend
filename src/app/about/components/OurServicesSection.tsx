@@ -17,7 +17,7 @@ const OurServicesSection = () => {
 						<section className="flex flex-col gap-5 lg:flex-row lg:gap-0">
 							<section className="h-auto w-full lg:w-[40%] ">
 								<Image
-									src={'/picture/pic4.jpg'}
+									src={'/picture/pic7.jpg'}
 									width={1000}
 									height={0}
 									alt={''}
@@ -51,9 +51,9 @@ const OurServicesSection = () => {
 												</ul>
 											</AccordionContent>
 										</AccordionItem>
-										<div className="mt-10 lg:mt-6">
+										{/* <div className="mt-10 lg:mt-6">
 											<h4>Supporting Secvices</h4>
-										</div>
+										</div> */}
 										<AccordionItem value="item-3">
 											<AccordionTrigger>Consultation</AccordionTrigger>
 											<AccordionContent>
