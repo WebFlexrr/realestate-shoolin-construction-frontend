@@ -1,4 +1,13 @@
+import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from '@/components/ui/dialog';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
@@ -54,16 +63,31 @@ const HeadingSection: FC<HeadingSection> = ({
 						</section>
 					</section>
 					<section className="flex h-auto w-[25%] justify-end">
-						<section className="fixed bottom-0 left-0 z-30 flex h-16 w-full md:z-0 lg:relative lg:h-auto lg:w-fit lg:flex-col  lg:gap-5">
-							<Button
-								variant={'secondary'}
-								size={'lg'}
-								className=" h-full w-1/2 space-x-3 rounded-none lg:h-10 lg:w-full lg:rounded"
-							>
-								<span className=" text-lg font-bold leading-5 tracking-widest">
-									Enquire Now
-								</span>
-							</Button>
+						<section className="fixed bottom-0 left-0 z-40 flex h-16 w-full lg:relative lg:z-0 lg:h-auto lg:w-fit lg:flex-col  lg:gap-5">
+							<Dialog>
+								<DialogTrigger asChild>
+									<Button
+										variant={'secondary'}
+										size={'lg'}
+										className=" h-full  w-1/2 space-x-3 rounded-none lg:h-10 lg:w-full lg:rounded"
+									>
+										<span className=" text-lg font-bold leading-5 tracking-widest">
+											Enquire Now
+										</span>
+									</Button>
+								</DialogTrigger>
+								<DialogContent>
+									{/* <DialogHeader> */}
+									{/* <DialogTitle>Are you absolutely sure?</DialogTitle>
+										<DialogDescription>
+											This action cannot be undone. This will permanently delete
+											your account and remove your data from our servers.
+										</DialogDescription> */}
+									{/* </DialogHeader> */}
+									<EnquiryForm />
+								</DialogContent>
+							</Dialog>
+
 							{brochure && (
 								<Link
 									target="_blank"

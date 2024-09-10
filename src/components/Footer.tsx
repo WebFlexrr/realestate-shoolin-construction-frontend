@@ -15,7 +15,7 @@ const Footer = (): React.JSX.Element => {
 			<section className="h-auto w-full bg-black  text-white ">
 				<section className="mx-auto h-auto w-full max-w-7xl px-10 py-20 ">
 					<section className="grid h-auto w-full grid-cols-1 gap-y-20 lg:grid-cols-2">
-						<section className="flex w-full flex-col gap-2">
+						<section className="flex w-full flex-col gap-2 ">
 							<Image
 								src={'/logos/logo2.png'}
 								width={150}
