@@ -95,7 +95,7 @@ export type Project = {
 		crop?: SanityImageCrop;
 		_type: 'image';
 	};
-	images?: Array<{
+	projectImages?: Array<{
 		asset?: {
 			_ref: string;
 			_type: 'reference';

@@ -140,7 +140,7 @@ const SwiperGallery: FC<SwiperGalleryProps> = ({ data }) => {
 						<SwiperSlide key={index} className=" opacity-40">
 							<Image
 								className="mx-auto aspect-square h-auto  object-cover "
-								width={1000}
+								width={2000}
 								height={0}
 								src={file}
 								alt={''}

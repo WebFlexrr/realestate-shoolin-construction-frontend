@@ -65,11 +65,15 @@ const HeadingSection: FC<HeadingSection> = ({
 								</span>
 							</Button>
 							{brochure && (
-								<Link target="_blank" href={brochure}>
+								<Link
+									target="_blank"
+									href={brochure}
+									className=" h-full w-1/2 space-x-3 rounded-none lg:h-10  lg:w-full lg:rounded"
+								>
 									<Button
 										variant={'destructive'}
 										size={'lg'}
-										className=" h-full w-1/2 space-x-3 rounded-none lg:h-10  lg:w-full lg:rounded"
+										className=" h-full w-full space-x-3 rounded-none lg:h-10  lg:w-full lg:rounded"
 									>
 										<FaFilePdf className="text-xl" />
 										<span className="text-base font-semibold">

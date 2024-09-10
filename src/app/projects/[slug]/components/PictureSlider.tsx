@@ -14,9 +14,13 @@ import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 
 interface PictureSliderProps {
-	thumbnail: string;
+	thumbnail?: string;
+	projectImages?: Array<string>;
 }
-const PictureSlider: FC<PictureSliderProps> = ({ thumbnail }) => {
+const PictureSlider: FC<PictureSliderProps> = ({
+	thumbnail,
+	projectImages,
+}) => {
 	return (
 		<section className=" h-auto w-full ">
 			<section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
@@ -30,35 +34,59 @@ const PictureSlider: FC<PictureSliderProps> = ({ thumbnail }) => {
 											className=" aspect-square h-full w-full lg:aspect-video "
 											width={1000}
 											height={0}
-											src={thumbnail}
+											src={thumbnail || ''}
 											alt={''}
 										/>
 									</DialogTrigger>
-									<section className="hidden h-full w-[25%] flex-col gap-5 lg:flex">
-										<DialogTrigger className="aspect-square w-full">
-											<Image
-												className=" aspect-square w-full "
-												width={1000}
-												height={0}
-												src={'/picture/pic1.jpg'}
-												alt={''}
-											/>
-										</DialogTrigger>
-										<DialogTrigger className="aspect-[4/3] w-full">
-											<Image
-												className="  aspect-[4/3] w-full "
-												width={1000}
-												height={0}
-												src={'/picture/pic3.jpg'}
-												alt={''}
-											/>
-										</DialogTrigger>
-									</section>
+									{projectImages ? (
+										<section className="hidden h-full w-[25%] flex-col gap-5 lg:flex">
+											<DialogTrigger className="aspect-square w-full">
+												<Image
+													className=" aspect-square w-full "
+													width={1000}
+													height={0}
+													src={'/picture/pic1.jpg'}
+													alt={''}
+												/>
+											</DialogTrigger>
+											<DialogTrigger className="aspect-[4/3] w-full">
+												<Image
+													className="  aspect-[4/3] w-full "
+													width={1000}
+													height={0}
+													src={'/picture/pic3.jpg'}
+													alt={''}
+												/>
+											</DialogTrigger>
+										</section>
+									) : (
+										<section className="hidden h-full w-[25%] flex-col gap-5 lg:flex">
+											<DialogTrigger className="aspect-square w-full">
+												<Image
+													className=" aspect-square w-full "
+													width={1000}
+													height={0}
+													src={'/picture/pic1.jpg'}
+													alt={''}
+												/>
+											</DialogTrigger>
+											<DialogTrigger className="aspect-[4/3] w-full">
+												<Image
+													className="  aspect-[4/3] w-full "
+													width={1000}
+													height={0}
+													src={'/picture/pic3.jpg'}
+													alt={''}
+												/>
+											</DialogTrigger>
+										</section>
+									)}
 								</section>
 
-								<DialogContent className=" max-w-5xl p-10">
+								<DialogContent className="max-w-5xl bg-gray-300 p-10">
 									<SwiperGallery
-										data={['/picture/pic1.jpg', '/picture/pic4.jpg']}
+										// data={['/picture/pic1.jpg', '/picture/pic4.jpg']}
+										data={projectImages}
 									/>
 								</DialogContent>
 							</Dialog>
