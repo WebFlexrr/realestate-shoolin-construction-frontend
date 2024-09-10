@@ -36,6 +36,9 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 			/>
 			<PictureSlider
 				thumbnail={imageUrlFor(project?.thumbnail as SanityImageObject).url()}
+				projectImages={project.projectImages?.map((image) =>
+					imageUrlFor(image as SanityImageObject).url()
+				)}
 			/>
 			<DetailsSection
 				bhks={project.bhks}

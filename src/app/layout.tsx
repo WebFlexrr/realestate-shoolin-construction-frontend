@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import EnquiryForm from '@/components/EnquiryForm';
 
 export const metadata: Metadata = {
 	title:
@@ -21,6 +22,7 @@ export default function RootLayout({
 				<Navbar />
 				{children}
 				<Toaster />
+				{/* <EnquiryForm /> */}
 			</body>
 		</html>
 	);
