@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import React from 'react';
 import { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
-import { client } from '@/sanity/lib/client';
+import { client, sanityFetch } from '@/sanity/lib/client';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
 import Projects from '@/components/Projects';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 };
 
 const ProjectPage = async (): Promise<React.JSX.Element> => {
-	const projects = await client.fetch<Project[]>(PROJECTS_QUERY);
+	const projects = await sanityFetch<Project[]>({
+		query: PROJECTS_QUERY,
+	});
 	console.log('Projects====>', projects);
 	return (
 		<main className="mt-[5rem] h-auto w-full">

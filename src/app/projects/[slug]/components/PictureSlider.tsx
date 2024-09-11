@@ -29,9 +29,9 @@ const PictureSlider: FC<PictureSliderProps> = ({
 						<section className="h-auto w-full lg:w-[75%]  ">
 							<Dialog>
 								<section className="flex w-full gap-5 ">
-									<DialogTrigger className="h-auto w-full lg:w-[75%]">
+									<DialogTrigger className="h-auto w-full lg:aspect-video lg:w-[75%] ">
 										<Image
-											className=" aspect-square h-full w-full lg:aspect-video "
+											className=" aspect-square h-full w-full object-contain lg:aspect-video "
 											width={1000}
 											height={0}
 											src={thumbnail || ''}
@@ -40,24 +40,29 @@ const PictureSlider: FC<PictureSliderProps> = ({
 									</DialogTrigger>
 									{projectImages ? (
 										<section className="hidden h-full w-[25%] flex-col gap-5 lg:flex">
-											<DialogTrigger className="aspect-square w-full">
-												<Image
-													className=" aspect-square w-full "
-													width={1000}
-													height={0}
-													src={'/picture/pic1.jpg'}
-													alt={''}
-												/>
-											</DialogTrigger>
-											<DialogTrigger className="aspect-[4/3] w-full">
-												<Image
-													className="  aspect-[4/3] w-full "
-													width={1000}
-													height={0}
-													src={'/picture/pic3.jpg'}
-													alt={''}
-												/>
-											</DialogTrigger>
+											{projectImages[1] && (
+												<DialogTrigger className="aspect-square w-full">
+													<Image
+														className=" aspect-square w-full object-contain "
+														width={1000}
+														height={0}
+														src={projectImages[1]}
+														alt={''}
+													/>
+												</DialogTrigger>
+											)}
+
+											{projectImages[2] && (
+												<DialogTrigger className="aspect-[4/3] w-full">
+													<Image
+														className="  aspect-[4/3] w-full "
+														width={1000}
+														height={0}
+														src={projectImages[2]}
+														alt={''}
+													/>
+												</DialogTrigger>
+											)}
 										</section>
 									) : (
 										<section className="hidden h-full w-[25%] flex-col gap-5 lg:flex">

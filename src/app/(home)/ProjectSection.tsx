@@ -3,14 +3,14 @@ import { GoArrowUpRight } from 'react-icons/go';
 import SectionHeading from '@/components/SectionHeading';
 import Link from 'next/link';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
-import { client } from '@/sanity/lib/client';
+import { client, sanityFetch } from '@/sanity/lib/client';
 import { Project } from '@/sanity/types/sanity.types';
 import Projects from '@/components/Projects';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 
 const ProjectSection = async (): Promise<React.JSX.Element> => {
-	const projects = await client.fetch<Project[]>(PROJECTS_QUERY);
-	// console.log('Home Projects====>', projects);
+	const projects = await sanityFetch<Project[]>({ query: PROJECTS_QUERY });
+
 	return (
 		<section className="h-auto w-full bg-background">
 			<div className="flex h-auto w-full flex-col px-5 pb-40 pt-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0">

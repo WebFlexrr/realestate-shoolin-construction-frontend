@@ -1,21 +1,23 @@
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
-import Testimonial from '@/app/(home)/Testimonial';
 import AboutSection from '@/app/(home)/AboutSection';
 import HeroSection from '@/app/(home)/HeroSection';
 import ProjectSection from '@/app/(home)/ProjectSection';
-import { client } from '@/sanity/lib/client';
+import { sanityFetch } from '@/sanity/lib/client';
 import { TESTIMONIALS_QUERY } from '@/sanity/lib/queries';
+import Testimonials, { Testimonial } from '@/app/(home)/Testimonial';
 
 export default async function Home() {
-	const testimonials = await client.fetch(TESTIMONIALS_QUERY);
+	const testimonials = await sanityFetch<Testimonial[]>({
+		query: TESTIMONIALS_QUERY,
+	});
 
 	return (
 		<main className=" h-auto w-full">
 			<HeroSection />
 			<ProjectSection />
 			<AboutSection />
-			<Testimonial testimonials={testimonials} />
+			<Testimonials testimonials={testimonials} />
 			<FAQ />
 			<Footer />
 		</main>

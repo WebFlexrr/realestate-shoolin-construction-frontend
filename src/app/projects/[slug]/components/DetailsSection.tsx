@@ -45,7 +45,7 @@ const DetailsSection: FC<DetailsSectionProps> = ({
 								<span>Possession Date</span>
 							</section>
 							<section className="flex w-full flex-col items-center justify-center   ">
-								<h6>{floors}</h6>
+								<h6>Ground + {floors}</h6>
 								<span>Floors </span>
 							</section>
 						</section>

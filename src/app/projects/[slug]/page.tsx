@@ -11,19 +11,19 @@ import PictureSlider from '@/app/projects/[slug]/components/PictureSlider';
 import ScheduleSiteVisitSection from '@/app/projects/[slug]/components/ScheduleSiteVisitSection';
 import React from 'react';
 import { PROJECT_DETAILS_QUERY } from '@/sanity/lib/queries';
-import { client } from '@/sanity/lib/client';
+import { client, sanityFetch } from '@/sanity/lib/client';
 import { Project } from '@/sanity/types/sanity.types';
 import { imageUrlFor } from '@/sanity/lib/imageUrlFor';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import CurrentBookingStatusSection from './components/CurrentBookingStatusSection';
 
 const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
-	const project = await client.fetch<Project>(
-		PROJECT_DETAILS_QUERY(params.slug)
-	);
+	const project = await sanityFetch<Project>({
+		query: PROJECT_DETAILS_QUERY(params.slug),
+	});
 
-	console.log('params Project or Slug--------->', project);
-	console.log('File Url--------->', project.brochure);
+	console.log('params Project or Slug--------->', params.slug);
+	console.log('File Url--------->', project);
 
 	return (
 		<main className="relative h-auto w-full pt-[5rem]">
@@ -35,9 +35,13 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 				brochure={project.brochure}
 			/>
 			<PictureSlider
-				thumbnail={imageUrlFor(project?.thumbnail as SanityImageObject).url()}
-				projectImages={project.projectImages?.map((image) =>
-					imageUrlFor(image as SanityImageObject).url()
+				thumbnail={
+					project.thumbnail
+						? imageUrlFor(project.thumbnail as SanityImageObject).url()
+						: ''
+				}
+				projectImages={project.projectImages?.map(
+					(image) => image && imageUrlFor(image as SanityImageObject).url()
 				)}
 			/>
 			<DetailsSection
@@ -49,9 +53,11 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 			<DescriptionSection description={project.description} />
 			<AmenitiesSection amenities={project.amenities} />
 			<LayoutSection
-				master_layout_plan={imageUrlFor(
-					project?.master_layout_plan as SanityImageObject
-				).url()}
+				master_layout_plan={
+					project.master_layout_plan
+						? imageUrlFor(project.master_layout_plan as SanityImageObject).url()
+						: ''
+				}
 				unit_layout_plan={project.unit_layout_plan}
 			/>
 			{/* <CurrentBookingStatusSection /> */}

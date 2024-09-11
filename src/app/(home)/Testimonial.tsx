@@ -19,17 +19,17 @@ import { FaStar } from 'react-icons/fa';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 
-interface testimonial {
+export interface Testimonial {
 	_id: string;
 	name: string;
 	rating: number;
 	message: string;
 	imageUrl: string;
 }
-const Testimonial = ({
+const Testimonials = ({
 	testimonials,
 }: {
-	testimonials: testimonial[];
+	testimonials: Testimonial[];
 }): React.JSX.Element => {
 	console.log(testimonials);
 	return (
@@ -97,4 +97,4 @@ const Testimonial = ({
 	);
 };
 
-export default Testimonial;
+export default Testimonials;
