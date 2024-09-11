@@ -1,17 +1,9 @@
+import { amenities } from '@/sanity/types/sanity.types';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
 interface AmenitiesSectionProps {
-	amenities?: {
-		elevators?: boolean;
-		camera?: boolean;
-		park?: boolean;
-		powerBackup?: boolean;
-		waterSupply?: boolean;
-		swimmingPool?: boolean;
-		electricity?: boolean;
-		parking?: boolean;
-	};
+	amenities?: amenities;
 }
 
 const AmenitiesSection: FC<AmenitiesSectionProps> = ({ amenities }) => {
@@ -102,7 +94,7 @@ const AmenitiesSection: FC<AmenitiesSectionProps> = ({ amenities }) => {
 									<span>24/7 Electricity</span>
 								</div>
 							)}
-							{amenities?.parking && (
+							{amenities?.carParking && (
 								<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
 									<Image
 										src={'/icons/garage.png'}
@@ -111,6 +103,17 @@ const AmenitiesSection: FC<AmenitiesSectionProps> = ({ amenities }) => {
 										alt={''}
 									/>
 									<span>4 Wheeler Parking</span>
+								</div>
+							)}
+							{amenities?.bikeParking && (
+								<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
+									<Image
+										src={'/icons/garage.png'}
+										width={60}
+										height={0}
+										alt={''}
+									/>
+									<span>2 Wheeler Parking</span>
 								</div>
 							)}
 						</section>

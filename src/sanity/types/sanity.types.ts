@@ -111,16 +111,7 @@ export type Project = {
 	total_units?: number;
 	possession_date?: string;
 	floors?: number;
-	amenities?: {
-		elevators?: boolean;
-		camera?: boolean;
-		park?: boolean;
-		powerBackup?: boolean;
-		waterSupply?: boolean;
-		swimmingPool?: boolean;
-		electricity?: boolean;
-		parking?: boolean;
-	};
+	amenities?: amenities;
 	master_layout_plan?: {
 		asset?: {
 			_ref: string;
@@ -136,6 +127,18 @@ export type Project = {
 	brochure?: string;
 	geoLocation?: Geopoint;
 	construction_progress?: construction_progress;
+};
+
+export type amenities = {
+	elevators?: boolean;
+	camera?: boolean;
+	park?: boolean;
+	powerBackup?: boolean;
+	waterSupply?: boolean;
+	swimmingPool?: boolean;
+	electricity?: boolean;
+	carParking?: boolean;
+	bikeParking?: boolean;
 };
 
 export type construction_progress = Array<{

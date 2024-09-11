@@ -137,7 +137,7 @@ const Footer = (): React.JSX.Element => {
 										<CiMobile3 className="text-lg" /> Mobile
 									</span>
 									<Link
-										href={'mailto:contact@shoolinconstruction.com'}
+										href={'tel:+91-8017194170'}
 										className="mt-2 w-full text-sm  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
 									>
 										+91 - 8017194170

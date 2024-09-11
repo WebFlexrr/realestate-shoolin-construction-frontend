@@ -44,18 +44,19 @@ const Projects: FC<ProjectProps> = ({
 					</Link>
 				</section>
 			</section>
-			<section className=" h-auto w-full py-5">
+			<section className=" h-auto w-full px-3 py-5 ">
 				<div className="flex h-auto w-full flex-col gap-3 text-black">
 					<span className=" text-3xl font-medium">{name}</span>
-					<div className="h-auto w-full">
+					{/* <div className="h-auto w-full">
 						<p className="w-full  ">
 							{description?.split(' ').splice(0, 40).join(' ').concat(' ...')}
 						</p>
+					</div> */}
+					<div className="flex w-full  justify-start gap-2">
+						<FaLocationDot className="mt-1" />
+
+						<p>{address}</p>
 					</div>
-					<span className=" flex items-center gap-2 text-sm">
-						<FaLocationDot />
-						{address}
-					</span>
 				</div>
 			</section>
 		</div>

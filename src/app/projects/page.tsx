@@ -33,7 +33,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 							{projects.map((project) => {
 								return (
 									(project.status === 'under_construction' ||
-										project.status === 'completed') && (
+										project.status === 'not_started') && (
 										<Projects
 											key={project._id}
 											slug={project.slug}
@@ -53,7 +53,8 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 						<section className=" grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
 							{projects.map(
 								(project) =>
-									project.status === 'completed' && (
+									(project.status === 'completed' ||
+										project.status === 'ready_to_move') && (
 										<Projects
 											key={project._id}
 											slug={project.slug}
