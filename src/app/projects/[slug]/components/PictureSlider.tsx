@@ -1,3 +1,4 @@
+'use client';
 import React, { FC } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import SwiperGallery from '@/components/ui/SwiperGallery';
@@ -12,6 +13,14 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 interface PictureSliderProps {
 	thumbnail?: string;
@@ -28,6 +37,48 @@ const PictureSlider: FC<PictureSliderProps> = ({
 					<section className="mt-10 flex  h-auto w-full flex-col gap-5  lg:flex-row ">
 						<section className="h-auto w-full lg:w-[75%]  ">
 							<Dialog>
+								<DialogTrigger className="flex w-full gap-5 ">
+									<Carousel
+										plugins={[
+											Autoplay({
+												delay: 3000,
+											}),
+										]}
+										opts={{
+											align: 'start',
+											loop: true,
+										}}
+										className="w-full border "
+									>
+										<CarouselContent className="-ml-1 h-auto w-full  lg:aspect-video lg:w-full ">
+											{projectImages?.map((image) => (
+												<CarouselItem
+													key={image}
+													className=" aspect-square w-full"
+												>
+													<Image
+														className=" aspect-square h-full w-full  object-contain  "
+														width={1000}
+														height={0}
+														src={projectImages[1]}
+														alt={''}
+													/>
+												</CarouselItem>
+											))}
+										</CarouselContent>
+										{/* <CarouselPrevious />
+											<CarouselNext /> */}
+									</Carousel>
+								</DialogTrigger>
+
+								<DialogContent className="max-w-5xl bg-gray-300 p-10">
+									<SwiperGallery
+										// data={['/picture/pic1.jpg', '/picture/pic4.jpg']}
+										data={projectImages}
+									/>
+								</DialogContent>
+							</Dialog>
+							{/* <Dialog>
 								<section className="flex w-full gap-5 ">
 									<DialogTrigger className="h-auto w-full lg:aspect-video lg:w-[75%] ">
 										<Image
@@ -94,7 +145,7 @@ const PictureSlider: FC<PictureSliderProps> = ({
 										data={projectImages}
 									/>
 								</DialogContent>
-							</Dialog>
+							</Dialog> */}
 						</section>
 
 						<section className="hidden h-auto w-[25%] gap-5 lg:flex">
