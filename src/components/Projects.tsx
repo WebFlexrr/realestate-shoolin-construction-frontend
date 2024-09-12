@@ -40,22 +40,23 @@ const Projects: FC<ProjectProps> = ({
 						className="mx-auto hidden items-center  gap-3 rounded-full border border-black bg-slate-50 px-4 py-2 text-xs opacity-90 transition-all group-hover:flex group-hover:duration-500  group-hover:ease-in-out"
 					>
 						<div className="font-sm h-2 w-2 rounded-full bg-black" />
-						Load Project
+						Project Details
 					</Link>
 				</section>
 			</section>
-			<section className=" h-auto w-full py-5">
+			<section className=" h-auto w-full px-3 py-5 ">
 				<div className="flex h-auto w-full flex-col gap-3 text-black">
 					<span className=" text-3xl font-medium">{name}</span>
-					<div className="h-auto w-full">
+					{/* <div className="h-auto w-full">
 						<p className="w-full  ">
 							{description?.split(' ').splice(0, 40).join(' ').concat(' ...')}
 						</p>
+					</div> */}
+					<div className="flex w-full  justify-start gap-2">
+						<FaLocationDot className="mt-1" />
+
+						<p>{address}</p>
 					</div>
-					<span className=" flex items-center gap-2 text-sm">
-						<FaLocationDot />
-						{address}
-					</span>
 				</div>
 			</section>
 		</div>

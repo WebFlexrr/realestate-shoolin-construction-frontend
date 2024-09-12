@@ -45,11 +45,11 @@ const HeadingSection: FC<HeadingSection> = ({
 							<div>All inclusive price</div>
 						</section>
 						<section className="mt-4 flex h-full w-full items-center justify-center gap-3 lg:mt-0 lg:max-w-60 lg:flex-col lg:gap-4 ">
-							<section className="w-fit  lg:w-full">
+							{/* <section className="w-fit  lg:w-full">
 								<span className="text-lg font-normal leading-[36px] lg:text-2xl">
 									Tags:
 								</span>
-							</section>
+							</section> */}
 							<section className="flex w-full flex-wrap gap-3 text-xs lg:text-base">
 								{tags?.map((tag, index) => (
 									<div

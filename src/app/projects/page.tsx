@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import React from 'react';
 import { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
-import { client } from '@/sanity/lib/client';
+import { client, sanityFetch } from '@/sanity/lib/client';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
 import Projects from '@/components/Projects';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
@@ -15,10 +15,12 @@ export const metadata: Metadata = {
 };
 
 const ProjectPage = async (): Promise<React.JSX.Element> => {
-	const projects = await client.fetch<Project[]>(PROJECTS_QUERY);
+	const projects = await sanityFetch<Project[]>({
+		query: PROJECTS_QUERY,
+	});
 	console.log('Projects====>', projects);
 	return (
-		<main className="mt-[5rem] h-auto w-full">
+		<main className="mt-[7rem] h-auto w-full">
 			<HeroHeading heading={'Our Projects'} subHeading={'Projects'} />
 			<section className="h-auto w-full  ">
 				<section className="mx-auto h-auto w-full max-w-7xl space-y-20 px-5 pb-40 xl:px-0">
@@ -31,7 +33,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 							{projects.map((project) => {
 								return (
 									(project.status === 'under_construction' ||
-										project.status === 'completed') && (
+										project.status === 'not_started') && (
 										<Projects
 											key={project._id}
 											slug={project.slug}
@@ -51,7 +53,8 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 						<section className=" grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
 							{projects.map(
 								(project) =>
-									project.status === 'completed' && (
+									(project.status === 'completed' ||
+										project.status === 'ready_to_move') && (
 										<Projects
 											key={project._id}
 											slug={project.slug}
@@ -59,7 +62,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 											status={project.status}
 											name={project.title}
 											description={project.description}
-											// address={item.address}
+											address={project.location}
 										/>
 									)
 							)}

@@ -137,7 +137,7 @@ const Footer = (): React.JSX.Element => {
 										<CiMobile3 className="text-lg" /> Mobile
 									</span>
 									<Link
-										href={'mailto:contact@shoolinconstruction.com'}
+										href={'tel:+91-8017194170'}
 										className="mt-2 w-full text-sm  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
 									>
 										+91 - 8017194170
@@ -174,15 +174,18 @@ const Footer = (): React.JSX.Element => {
 							Design by Webflexrr Digital Services
 						</section>
 						<section className="flex gap-2 ">
-							<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary">
-								<BsTwitterX className=" transition-all duration-500 ease-in-out group-hover:text-black" />
-							</div>
-							<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary">
+							<Link
+								href={'https://www.facebook.com/profile.php?id=61565175867835'}
+								className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary"
+							>
 								<FaFacebookF className=" transition-all duration-500 ease-in-out group-hover:text-black" />
-							</div>
-							<div className="group  flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary ">
+							</Link>
+							<Link
+								href={'https://www.instagram.com/shoolinconstruction'}
+								className="group  flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary "
+							>
 								<FaInstagram className=" transition-all duration-500 ease-in-out group-hover:text-black" />
-							</div>
+							</Link>
 						</section>
 					</section>
 				</section>

@@ -8,11 +8,11 @@ import {
 import Image from 'next/image';
 import SectionHeading from './SectionHeading';
 import { FAQ_QUERY } from '@/sanity/lib/queries';
-import { client } from '@/sanity/lib/client';
+import { client, sanityFetch } from '@/sanity/lib/client';
 import { Faq } from '@/sanity/types/sanity.types';
 
 const FAQ = async (): Promise<React.JSX.Element> => {
-	const faqs = await client.fetch<Faq[]>(FAQ_QUERY);
+	const faqs = await sanityFetch<Faq[]>({ query: FAQ_QUERY });
 	return (
 		<section className="h-auto w-full ">
 			<section className="mx-auto h-auto w-full max-w-7xl px-5 pb-32 pt-20 xl:px-0">
