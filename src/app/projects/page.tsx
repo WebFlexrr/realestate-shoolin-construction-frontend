@@ -20,7 +20,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 	});
 	console.log('Projects====>', projects);
 	return (
-		<main className="mt-[5rem] h-auto w-full">
+		<main className="mt-[7rem] h-auto w-full">
 			<HeroHeading heading={'Our Projects'} subHeading={'Projects'} />
 			<section className="h-auto w-full  ">
 				<section className="mx-auto h-auto w-full max-w-7xl space-y-20 px-5 pb-40 xl:px-0">
@@ -62,7 +62,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 											status={project.status}
 											name={project.title}
 											description={project.description}
-											// address={item.address}
+											address={project.location}
 										/>
 									)
 							)}

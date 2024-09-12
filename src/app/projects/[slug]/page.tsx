@@ -26,7 +26,7 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 	console.log('File Url--------->', project);
 
 	return (
-		<main className="relative h-auto w-full pt-[5rem]">
+		<main className="relative h-auto w-full pt-[7rem]">
 			<HeadingSection
 				title={project.title}
 				location={project.location}

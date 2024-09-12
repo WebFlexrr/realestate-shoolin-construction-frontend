@@ -40,7 +40,7 @@ const Projects: FC<ProjectProps> = ({
 						className="mx-auto hidden items-center  gap-3 rounded-full border border-black bg-slate-50 px-4 py-2 text-xs opacity-90 transition-all group-hover:flex group-hover:duration-500  group-hover:ease-in-out"
 					>
 						<div className="font-sm h-2 w-2 rounded-full bg-black" />
-						Load Project
+						Project Details
 					</Link>
 				</section>
 			</section>

@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 const HeroSection = (): React.JSX.Element => {
 	return (
-		<section className="relative h-auto w-full bg-background2 pb-10 lg:h-auto ">
+		<section className="relative h-auto w-full bg-background2 pb-10 pt-[2rem] lg:h-auto ">
 			<section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
 				<section className="flex h-full flex-col items-center justify-center gap-8 pt-32 md:w-1/2 lg:pr-20 lg:pt-40 ">
 					<section className="h-auto w-full ">
