@@ -21,6 +21,7 @@ export async function sanityFetch<T>({
 	tags?: string[];
 }): Promise<T> {
 	return client.fetch<T>(query, params, {
+		// cache: 'no-store',
 		next: {
 			revalidate: tags.length ? false : revalidate, // for simple, time-based revalidation
 			tags, // for tag-based revalidation

@@ -20,41 +20,28 @@ const OurTeamSection = () => {
 		<section className="relative h-full w-full  bg-background lg:py-20 ">
 			<section className=" mx-auto flex h-auto w-full max-w-7xl flex-col px-5 xl:px-0">
 				<SectionHeading subTitle={'Members'} mainTitle={'Meet Our Team'} />
-				<section className="flex h-auto w-full flex-col gap-10 lg:flex-row  xl:gap-0 ">
-					<Carousel className="h-auto w-full lg:w-1/2 ">
-						<CarouselContent className="flex gap-3">
-							{Array.from({ length: 2 }).map((_, index) => (
-								<CarouselItem
-									key={index}
-									className="basis-1/1 flex w-full min-[480px]:basis-1/2 md:basis-1/3 lg:basis-1/2"
-								>
-									<Card className="flex w-full flex-col  border-0  lg:w-[300px]">
-										<CardHeader className="px-0 pb-5 pt-0">
-											<Image
-												src={
-													'https://assets-global.website-files.com/659508024773365d154788a8/65cf307bcf5bbed241bbffa6_img-4-p-500.jpg'
-												}
-												width={1000}
-												height={0}
-												alt={''}
-												className="aspect-[4/5] w-full rounded-lg border border-primary-foreground lg:w-[300px]"
-											/>
-										</CardHeader>
-										<CardContent className="p-0">
-											<CardTitle>Tejodeep Mitra Roy</CardTitle>
-											<CardDescription className="mt-2">
-												Manager
-											</CardDescription>
-										</CardContent>
-									</Card>
-								</CarouselItem>
-							))}
-						</CarouselContent>
-						<CarouselPrevious className="hidden xl:flex" />
-						<CarouselNext className="hidden xl:flex" />
-					</Carousel>
+				<section className="flex h-auto w-full flex-col  gap-10 lg:flex-row  xl:gap-0 ">
+					<div className="flex h-auto w-full justify-between gap-3  border-black  lg:w-1/3">
+						<Card className="flex w-full flex-col  border-none  lg:w-[460px]">
+							<CardHeader className="px-0 pb-5 pt-0">
+								<Image
+									src={
+										'https://assets-global.website-files.com/659508024773365d154788a8/65cf307bcf5bbed241bbffa6_img-4-p-500.jpg'
+									}
+									width={1000}
+									height={0}
+									alt={''}
+									className="aspect-[4/5] w-full rounded-lg border border-primary-foreground lg:w-[300px]"
+								/>
+							</CardHeader>
+							<CardContent className="p-0">
+								<CardTitle>Tejodeep Mitra Roy</CardTitle>
+								<CardDescription className="mt-2">Manager</CardDescription>
+							</CardContent>
+						</Card>
+					</div>
 
-					<section className="h-auto w-full lg:w-1/2 lg:pl-10 xl:pl-20 ">
+					<section className="h-auto w-full  lg:w-full lg:pl-10 xl:pl-20 ">
 						<section className="h-auto w-full">
 							<section className="h-auto w-full pr-4 lg:mt-20">
 								<h4>

@@ -23,13 +23,14 @@ import {
 } from './ui/card';
 import Image from 'next/image';
 import logo from '../../public/logos/logo.png';
+import { headers } from 'next/headers';
 
 const formSchema = z.object({
 	name: z.string().min(2).max(50),
 	mobile: z.string().min(2).max(12),
 	email: z.string().email().min(5),
 	pinCode: z.string().min(2).max(6),
-	message: z.string(),
+	query: z.string(),
 });
 
 const EnquiryForm = () => {
@@ -42,16 +43,28 @@ const EnquiryForm = () => {
 	});
 
 	// 2. Define a submit handler.
-	function onSubmit(values: z.infer<typeof formSchema>) {
+	const onSubmit = async (values: z.infer<typeof formSchema>) => {
 		// Do something with the form values.
 		// ✅ This will be type-safe and validated.
 		console.log(values);
-	}
+
+		try {
+			const responsive = await fetch('/api/enquiry', {
+				method: 'POST',
+				body: JSON.stringify(values),
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8',
+				},
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		// <div className="absolute w-100% bottom-0 left-4 bg-white ">
 		<Card>
 			<CardHeader>
-				<CardTitle>
+				<CardTitle className="flex items-center justify-center">
 					<Image
 						src={logo}
 						width={0}
@@ -60,7 +73,9 @@ const EnquiryForm = () => {
 						className="h-auto w-[100px]"
 					/>
 				</CardTitle>
-				<CardDescription>This is a Enquery Form</CardDescription>
+				<CardDescription className="flex items-center justify-center">
+					This is a Enquery Form
+				</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<Form {...form}>
@@ -70,13 +85,10 @@ const EnquiryForm = () => {
 							name="name"
 							render={({ field }) => (
 								<FormItem>
-									{/* <FormLabel>Name</FormLabel> */}
 									<FormControl>
 										<Input placeholder="*Enter your name" {...field} />
 									</FormControl>
-									{/* <FormDescription>
-											This is your public display name.
-										</FormDescription> */}
+
 									<FormMessage />
 								</FormItem>
 							)}
@@ -86,7 +98,6 @@ const EnquiryForm = () => {
 							name="mobile"
 							render={({ field }) => (
 								<FormItem>
-									{/* <FormLabel>Mobile number</FormLabel> */}
 									<FormControl>
 										<Input
 											type="number"
@@ -94,9 +105,7 @@ const EnquiryForm = () => {
 											{...field}
 										/>
 									</FormControl>
-									{/* <FormDescription>
-											This is your public display name.
-										</FormDescription> */}
+
 									<FormMessage />
 								</FormItem>
 							)}
@@ -106,13 +115,10 @@ const EnquiryForm = () => {
 							name="email"
 							render={({ field }) => (
 								<FormItem>
-									{/* <FormLabel>Email</FormLabel> */}
 									<FormControl>
 										<Input placeholder="*Enter your Email" {...field} />
 									</FormControl>
-									{/* <FormDescription>
-											This is your public display name.
-										</FormDescription> */}
+
 									<FormMessage />
 								</FormItem>
 							)}
@@ -122,29 +128,23 @@ const EnquiryForm = () => {
 							name="pinCode"
 							render={({ field }) => (
 								<FormItem>
-									{/* <FormLabel>Email</FormLabel> */}
 									<FormControl>
 										<Input placeholder="Enter your area Pincode" {...field} />
 									</FormControl>
-									{/* <FormDescription>
-											This is your public display name.
-										</FormDescription> */}
+
 									<FormMessage />
 								</FormItem>
 							)}
 						/>
 						<FormField
 							control={form.control}
-							name="message"
+							name="query"
 							render={({ field }) => (
 								<FormItem>
-									{/* <FormLabel>Email</FormLabel> */}
 									<FormControl>
 										<Input placeholder="Enter your Query" {...field} />
 									</FormControl>
-									{/* <FormDescription>
-											This is your public display name.
-										</FormDescription> */}
+
 									<FormMessage />
 								</FormItem>
 							)}
@@ -153,9 +153,6 @@ const EnquiryForm = () => {
 					</form>
 				</Form>
 			</CardContent>
-			{/* <CardFooter>
-
-				</CardFooter> */}
 		</Card>
 		// </div>
 	);

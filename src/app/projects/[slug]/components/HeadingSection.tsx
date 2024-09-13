@@ -18,7 +18,7 @@ interface HeadingSection {
 	location?: string;
 	price?: number;
 	tags?: string[];
-	brochure?: string;
+	// brochure?: string;
 }
 
 const HeadingSection: FC<HeadingSection> = ({
@@ -26,7 +26,7 @@ const HeadingSection: FC<HeadingSection> = ({
 	location,
 	price,
 	tags,
-	brochure,
+	// brochure,
 }) => {
 	console.log(title, location);
 	return (
@@ -51,25 +51,25 @@ const HeadingSection: FC<HeadingSection> = ({
 								</span>
 							</section> */}
 							<section className="flex w-full flex-wrap gap-3 text-xs lg:text-base">
-								{tags?.map((tag, index) => (
-									<div
-										key={index}
-										className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1"
-									>
-										{tag}
-									</div>
-								))}
+								{/* {tags?.map((tag, index) => ( */}
+								<div className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1">
+									100% Brokerage Free
+								</div>
+								<div className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1">
+									Residential
+								</div>
+								{/* ))} */}
 							</section>
 						</section>
 					</section>
 					<section className="flex h-auto w-[25%] justify-end">
-						<section className="fixed bottom-0 left-0 z-40 flex h-16 w-full lg:relative lg:z-0 lg:h-auto lg:w-fit lg:flex-col  lg:gap-5">
+						<section className="fixed bottom-0 left-0 z-40 flex h-14 w-full lg:relative lg:z-0 lg:h-auto lg:w-fit lg:flex-col  lg:gap-5">
 							<Dialog>
 								<DialogTrigger asChild>
 									<Button
 										variant={'secondary'}
 										size={'lg'}
-										className=" h-full  w-1/2 space-x-3 rounded-none lg:h-10 lg:w-full lg:rounded"
+										className=" h-full  w-full space-x-3 rounded-none lg:h-10 lg:w-full lg:rounded"
 									>
 										<span className=" text-lg font-bold leading-5 tracking-widest">
 											Enquire Now
@@ -77,18 +77,11 @@ const HeadingSection: FC<HeadingSection> = ({
 									</Button>
 								</DialogTrigger>
 								<DialogContent>
-									{/* <DialogHeader> */}
-									{/* <DialogTitle>Are you absolutely sure?</DialogTitle>
-										<DialogDescription>
-											This action cannot be undone. This will permanently delete
-											your account and remove your data from our servers.
-										</DialogDescription> */}
-									{/* </DialogHeader> */}
 									<EnquiryForm />
 								</DialogContent>
 							</Dialog>
 
-							{brochure && (
+							{/* {brochure && (
 								<Link
 									target="_blank"
 									href={brochure}
@@ -105,7 +98,7 @@ const HeadingSection: FC<HeadingSection> = ({
 										</span>
 									</Button>
 								</Link>
-							)}
+							)} */}
 						</section>
 					</section>
 				</section>

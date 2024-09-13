@@ -30,17 +30,17 @@ const LayoutSection: FC<LayoutSectionProps> = ({
 						<section className="w-full">
 							<h4 className=" underline">Layout & Floor Plans</h4>
 						</section>
-						<section className=" mt-10 flex w-full flex-col gap-5  ">
-							<Tabs defaultValue="Master Plan" className="w-full  ">
-								<TabsList className="w-full bg-background2">
+						<section className=" mt-10 grid w-full grid-cols-2 gap-5  ">
+							{/* <Tabs defaultValue="Master Plan" className="w-full  "> */}
+							{/* <TabsList className="w-full bg-background2">
 									<TabsTrigger value="Master Plan" className="w-full ">
 										<h5 className="font-bold text-cyan-600">Master Plan</h5>
 									</TabsTrigger>
 									<TabsTrigger value="Unit Plan" className="w-full">
 										<h5 className="font-bold text-cyan-600">Unit Plan</h5>
 									</TabsTrigger>
-								</TabsList>
-								<TabsContent value="Master Plan">
+								</TabsList> */}
+							{/* <TabsContent value="Master Plan">
 									{master_layout_plan && (
 										<section className="mt-10 flex w-full flex-col gap-3">
 											<section className=" flex  w-full items-center justify-center border border-black bg-white">
@@ -61,8 +61,8 @@ const LayoutSection: FC<LayoutSectionProps> = ({
 											</section>
 										</section>
 									)}
-								</TabsContent>
-								<TabsContent value="Unit Plan">
+								</TabsContent> */}
+							{/* <TabsContent value="Unit Plan">
 									<Tabs defaultValue="0" className="w-full">
 										<TabsList
 											defaultValue={'ground'}
@@ -74,23 +74,23 @@ const LayoutSection: FC<LayoutSectionProps> = ({
 											slidesPerView={3}
 											spaceBetween={5}
 											className="mx-auto mt-5 w-full  "
-										> */}
+										> 
 											{unit_layout_plan?.map((layout, index) => (
 												<TabsTrigger
 													key={layout._key}
 													value={`${index}`}
 													className="w-full"
 												>
-													{/* <SwiperSlide className="border border-black px-10"> */}
+													{/* <SwiperSlide className="border border-black px-10"> 
 													<button className="flex w-full justify-center ">
 														<h5 className="font-bold text-cyan-600">
 															{layout.floor} Floor
 														</h5>
 													</button>
-													{/* </SwiperSlide> */}
+													{/* </SwiperSlide> 
 												</TabsTrigger>
 											))}
-											{/* </Swiper> */}
+											{/* </Swiper> 
 										</TabsList>
 
 										{unit_layout_plan?.map((layout, index) => (
@@ -116,8 +116,33 @@ const LayoutSection: FC<LayoutSectionProps> = ({
 											</TabsContent>
 										))}
 									</Tabs>
-								</TabsContent>
-							</Tabs>
+								</TabsContent> */}
+							{/* </Tabs> */}
+							{unit_layout_plan?.map((layout, index) => (
+								<section key={index} className="mt-10 flex w-full flex-col ">
+									<section className=" flex  w-full items-center justify-center border border-black bg-white">
+										<Image
+											src={imageUrlFor(
+												layout.floorImage as SanityImageObject
+											).url()}
+											width={1000}
+											height={0}
+											alt={''}
+										/>
+									</section>
+									<section>
+										<Link
+											download
+											href={imageUrlFor(
+												layout.floorImage as SanityImageObject
+											).url()}
+											className="flex items-center gap-3 "
+										>
+											<FiDownload /> Download high resolution
+										</Link>
+									</section>
+								</section>
+							))}
 						</section>
 					</section>
 				</section>

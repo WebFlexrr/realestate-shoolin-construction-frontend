@@ -23,7 +23,7 @@ const Footer = (): React.JSX.Element => {
 								className=" drop-shadow"
 								alt={''}
 							/>
-							<span className="text-sm text-neutral-400">
+							<span className=" text-neutral-400">
 								@2024 shoolin Construction
 							</span>
 						</section>
@@ -112,23 +112,10 @@ const Footer = (): React.JSX.Element => {
 									<span className="flex items-center gap-3 font-bold text-white">
 										<HiOutlineOfficeBuilding className="text-lg" /> Office
 									</span>
-									<span className="mt-2 w-full  text-sm text-neutral-400">
+									<span className="mt-2 w-full text-neutral-400">
 										132, Subhash Nagar Road, Dum Dum Cantonment, KOLKATA, India,
 										700065
 									</span>
-								</div>
-							</section>
-							<section className="flex h-auto w-full justify-start  lg:justify-center  ">
-								<div className="flex w-fit flex-col gap-2">
-									<span className="flex items-center gap-3 font-bold text-white">
-										<IoMailOutline className="text-lg" /> Mail
-									</span>
-									<Link
-										href={'mailto:contact@shoolinconstruction.com'}
-										className="mt-2 w-full text-sm  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
-									>
-										contact@shoolinconstruction.com
-									</Link>
 								</div>
 							</section>
 							<section className="flex h-auto w-full justify-start xl:justify-center ">
@@ -138,9 +125,22 @@ const Footer = (): React.JSX.Element => {
 									</span>
 									<Link
 										href={'tel:+91-8017194170'}
-										className="mt-2 w-full text-sm  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
+										className="mt-2 w-full   text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
 									>
 										+91 - 8017194170
+									</Link>
+								</div>
+							</section>
+							<section className="flex h-auto w-full justify-start  lg:justify-center  ">
+								<div className="flex w-fit flex-col gap-2">
+									<span className="flex items-center gap-3 font-bold text-white">
+										<IoMailOutline className="text-lg" /> Mail
+									</span>
+									<Link
+										href={'mailto:contact@shoolinconstruction.com'}
+										className="mt-2 w-full  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
+									>
+										contact@shoolinconstruction.com
 									</Link>
 								</div>
 							</section>
