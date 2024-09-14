@@ -112,20 +112,9 @@ export type Project = {
 	possession_date?: string;
 	floors?: number;
 	amenities?: amenities;
-	master_layout_plan?: {
-		asset?: {
-			_ref: string;
-			_type: 'reference';
-			_weak?: boolean;
-			[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-		};
-		hotspot?: SanityImageHotspot;
-		crop?: SanityImageCrop;
-		_type: 'image';
-	};
 	unit_layout_plan?: unit_layout_plan;
 	brochure?: string;
-	geoLocation?: Geopoint;
+	mapsLocation?: string;
 	construction_progress?: construction_progress;
 };
 

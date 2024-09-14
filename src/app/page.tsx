@@ -13,7 +13,7 @@ export default async function Home() {
 	});
 
 	return (
-		<main className=" h-auto w-full border border-black">
+		<main className=" h-auto w-full">
 			<HeroSection />
 			<ProjectSection />
 			<AboutSection />
