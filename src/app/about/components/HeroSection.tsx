@@ -12,14 +12,8 @@ const HeroSection = () => {
 						<div className="h-1 w-20 bg-primary"></div>
 					</section>
 					<section className=" order-3 w-full md:order-2">
-						{/* <p>
-							As architects and designers, we believe in the power of creativity
-							to transform spaces and enrich lives. Over the years, we&apos;ve
-							had the privilege of working on a diverse array of projects, each
-							presenting its own unique set of challenges and opportunities.
-						</p> */}
 						<p>
-							Shoolin Construction is a Construction Company. Sunil Das are the
+							Shoolin Construction is a Construction Company. Sunil Das is the
 							founder of the company. Our mission is to provide houses at an
 							affordable prices. We assure the best for the price. Backed by a
 							talented team of professionals. We are able to provide there

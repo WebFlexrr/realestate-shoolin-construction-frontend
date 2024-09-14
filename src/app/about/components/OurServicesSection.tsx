@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/accordion';
 import SectionHeading from '@/components/SectionHeading';
 import Image from 'next/image';
+import { Separator } from '@/components/ui/separator';
 
 const OurServicesSection = () => {
 	return (
@@ -26,57 +27,16 @@ const OurServicesSection = () => {
 							</section>
 							<section className="flex h-auto w-full flex-col justify-center gap-10 lg:w-[60%] lg:pl-20">
 								<section className="flex h-auto w-full flex-col">
-									<Accordion type="single" collapsible className="w-full">
-										<h4>Our Expertise</h4>
-										<AccordionItem value="item-1">
-											<AccordionTrigger>Landscape Design</AccordionTrigger>
-											<AccordionContent>
-												<ul className="flex w-full list-decimal flex-col text-base ">
-													<li>Color Psychology</li>
-													<li>Furniture Arrangement</li>
-													<li>Lighting Design</li>
-													<li>Texture and Patterns</li>
-												</ul>
-											</AccordionContent>
-										</AccordionItem>
-										<AccordionItem value="item-2">
-											<AccordionTrigger>Architecture</AccordionTrigger>
-											<AccordionContent>
-												<ul className="flex w-full list-decimal flex-col text-base ">
-													<li>Residential Architecture</li>
-													<li>Renovation and Restoration</li>
-													<li>Construction Administration</li>
-													<li>Sustainable Design</li>
-													<li>3D Visualization</li>
-												</ul>
-											</AccordionContent>
-										</AccordionItem>
-										{/* <div className="mt-10 lg:mt-6">
-											<h4>Supporting Secvices</h4>
-										</div> */}
-										<AccordionItem value="item-3">
-											<AccordionTrigger>Consultation</AccordionTrigger>
-											<AccordionContent>
-												<ul className="flex w-full list-decimal flex-col text-base ">
-													<li>Space Planning</li>
-													<li>Renovation and Restoration</li>
-													<li>Budget Planning</li>
-													<li>Concept Development</li>
-													<li>Material and Color Selection</li>
-												</ul>
-											</AccordionContent>
-										</AccordionItem>
-										<AccordionItem value="item-4">
-											<AccordionTrigger>Design & Planning</AccordionTrigger>
-											<AccordionContent>
-												<ul className="flex w-full list-decimal flex-col  text-base ">
-													<li>Architectural Drawings</li>
-													<li>3D Visualization</li>
-													<li>Landscape Design</li>
-												</ul>
-											</AccordionContent>
-										</AccordionItem>
-									</Accordion>
+									<h4>Our Expertise</h4>
+									<div className="my-5 w-full space-y-5 text-xl font-medium">
+										<div>Landscape Design</div>
+										<Separator />
+										<div>Architecture</div>
+										<Separator />
+										<div>Consultation</div>
+										<Separator />
+										<div>Property Selling </div>
+									</div>
 								</section>
 								<section className="flex h-auto w-full flex-col"></section>
 							</section>

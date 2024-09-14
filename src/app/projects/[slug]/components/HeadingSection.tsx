@@ -41,7 +41,10 @@ const HeadingSection: FC<HeadingSection> = ({
 							<div className="flex items-center gap-2">
 								<FaMapLocationDot /> {location}
 							</div>
-							<div>Price : {price} Lacs onwards</div>
+							<div className="mt-2 text-lg">
+								Flat starting price{' '}
+								<span className="text-2xl font-semibold">{price} Lacs </span>
+							</div>
 							<div>All inclusive price</div>
 						</section>
 						<section className="mt-4 flex h-full w-full items-center justify-center gap-3 lg:mt-0 lg:max-w-60 lg:flex-col lg:gap-4 ">

@@ -12,7 +12,7 @@ export const client = createClient({
 export async function sanityFetch<T>({
 	query,
 	params = {},
-	revalidate = 60, // default revalidation time in seconds
+	revalidate = 1800, // default revalidation time in seconds
 	tags = [],
 }: {
 	query: string;

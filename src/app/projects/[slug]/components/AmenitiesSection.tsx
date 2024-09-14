@@ -16,84 +16,94 @@ const AmenitiesSection: FC<AmenitiesSectionProps> = ({ amenities }) => {
 				<h4 className=" underline">Amenities</h4>
 			</section>
 			<section className="mt-4 w-full ">
-				<section className="grid w-full grid-cols-3 gap-3 gap-y-6 lg:grid-cols-6">
+				<section className="grid w-full grid-cols-3 gap-3 gap-y-5 lg:grid-cols-4">
 					{amenities?.elevators && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
+						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black p-3 text-center font-semibold transition-all  duration-500 ease-in-out hover:bg-primary">
 							<Image
 								src={'/icons/elevator.png'}
 								width={60}
 								height={0}
-								alt={''}
+								alt={'Elevators'}
 							/>
 							<span>Elevators</span>
 						</div>
 					)}
 					{amenities?.camera && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
+						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black p-3 text-center font-semibold  transition-all duration-500 ease-in-out hover:bg-primary">
 							<Image
 								src={'/icons/security-camera.png'}
 								width={60}
 								height={0}
-								alt={''}
+								alt={'Security Camera'}
 							/>
 							<span>Security Camera</span>
 						</div>
 					)}
 					{amenities?.powerBackup && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
-							<Image src={'/icons/24-7.png'} width={60} height={0} alt={''} />
+						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black p-3 text-center font-semibold  transition-all duration-500 ease-in-out hover:bg-primary">
+							<Image
+								src={'/icons/24-7.png'}
+								width={60}
+								height={0}
+								alt={'24/7 Power Backup'}
+							/>
 							<div className="">24/7 Power Backup</div>
 						</div>
 					)}
 					{amenities?.waterSupply && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
+						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black p-3  text-center font-semibold  transition-all duration-500 ease-in-out  hover:bg-primary">
 							<Image
 								src={'/icons/water-tank.png'}
 								width={60}
 								height={0}
-								alt={''}
+								alt={'24/7 Water Supply'}
 							/>
 							<span>24/7 Water Supply</span>
 						</div>
 					)}
 					{amenities?.park && (
-						<div className="flex w-full flex-col items-center  justify-center gap-2 text-center">
-							<Image src={'/icons/park.png'} width={60} height={0} alt={''} />
+						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black  p-3 text-center font-semibold  transition-all duration-500 ease-in-out hover:bg-primary">
+							<Image
+								src={'/icons/park.png'}
+								width={60}
+								height={0}
+								alt={'Garden'}
+							/>
 							<span>Garden</span>
 						</div>
 					)}
 					{amenities?.swimmingPool && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
+						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black p-3 text-center font-semibold  transition-all duration-500 ease-in-out hover:bg-primary">
 							<Image
 								src={'/icons/swimming-pool.png'}
 								width={60}
 								height={0}
-								alt={''}
+								alt={'Swimming Pool'}
 							/>
 							<span>Swimming Pool</span>
 						</div>
 					)}
-					{amenities?.electricity && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
+
+					{amenities?.carParking && (
+						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black p-3 text-center font-semibold  transition-all duration-500 ease-in-out hover:bg-primary">
 							<Image
-								src={'/icons/generator.png'}
+								src={'/icons/garage.png'}
 								width={60}
 								height={0}
-								alt={''}
+								alt={'Garage'}
 							/>
-							<span>24/7 Electricity</span>
-						</div>
-					)}
-					{amenities?.carParking && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
-							<Image src={'/icons/garage.png'} width={60} height={0} alt={''} />
-							<span>4 Wheeler Parking</span>
+							<span>4 Wheeler Garage Available</span>
 						</div>
 					)}
 					{amenities?.bikeParking && (
-						<div className="flex w-full flex-col items-center justify-center gap-2 text-center">
-							<Image src={'/icons/garage.png'} width={60} height={0} alt={''} />
-							<span>2 Wheeler Parking</span>
+						<div className="flex w-full flex-col items-center justify-evenly gap-2 rounded-lg border border-black p-3 text-center font-semibold  transition-all duration-500 ease-in-out hover:bg-primary">
+							<Image
+								src={'/icons/bike.png'}
+								width={80}
+								height={0}
+								alt={'Bike'}
+							/>
+							<span>2 Wheeler Parking Facility</span>
 						</div>
 					)}
 				</section>
