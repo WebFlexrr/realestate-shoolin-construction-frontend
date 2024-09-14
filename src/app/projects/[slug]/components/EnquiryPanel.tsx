@@ -1,29 +1,24 @@
 'use client';
-import React from 'react';
-import {
-	Form,
-	FormControl,
-	FormDescription,
-	FormField,
-	FormItem,
-	FormLabel,
-	FormMessage,
-} from './ui/form';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
+import { Button } from '@/components/ui/button';
 import {
 	Card,
 	CardContent,
-	CardDescription,
+	CardFooter,
 	CardHeader,
 	CardTitle,
-} from './ui/card';
-import Image from 'next/image';
-import logo from '../../public/logos/logo.png';
-import { headers } from 'next/headers';
+} from '@/components/ui/card';
+import {
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { zodResolver } from '@hookform/resolvers/zod';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const formSchema = z.object({
 	name: z.string().min(2).max(50),
@@ -33,7 +28,7 @@ const formSchema = z.object({
 	query: z.string(),
 });
 
-const EnquiryForm = () => {
+const EnquiryPanel = () => {
 	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -61,25 +56,25 @@ const EnquiryForm = () => {
 		}
 	};
 	return (
-		// <div className="absolute w-100% bottom-0 left-4 bg-white ">
-		<Card>
-			<CardHeader>
-				<CardTitle className="flex items-center justify-center">
-					<Image
-						src={logo}
-						width={0}
-						height={0}
-						alt=""
-						className="h-auto w-[100px]"
-					/>
-				</CardTitle>
-				<CardDescription className="flex items-center justify-center">
-					This is a Enquery Form
-				</CardDescription>
-			</CardHeader>
-			<CardContent>
-				<Form {...form}>
-					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+		<Card className=" sticky top-[8rem] h-fit w-full  max-w-[500px]  justify-end bg-background2">
+			<Form {...form}>
+				<CardHeader>
+					<CardTitle>ENQUIRE NOW</CardTitle>
+				</CardHeader>
+				<CardContent>
+					{/* <form>
+						<div className="grid w-full items-center gap-4">
+							<div className="flex flex-col space-y-2">
+								<Input id="name" placeholder="Enter Name*" />
+								<Input id="name" placeholder="Enter Mobile/Number*" />
+								<Input id="name" placeholder="Enter Email*" />
+							</div>
+						</div>
+					</form> */}
+					<form
+						onSubmit={form.handleSubmit(onSubmit)}
+						className="grid w-full items-center gap-4 space-y-8"
+					>
 						<FormField
 							control={form.control}
 							name="name"
@@ -149,13 +144,17 @@ const EnquiryForm = () => {
 								</FormItem>
 							)}
 						/>
-						<Button type="submit">Submit</Button>
 					</form>
-				</Form>
-			</CardContent>
+				</CardContent>
+				<CardFooter className="flex w-full justify-center">
+					<Button className="px-10" type="submit">
+						Submit
+					</Button>
+					{/* <Button className="px-10">Submit</Button> */}
+				</CardFooter>
+			</Form>
 		</Card>
-		// </div>
 	);
 };
 
-export default EnquiryForm;
+export default EnquiryPanel;
