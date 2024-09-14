@@ -8,15 +8,13 @@ interface AmenitiesSectionProps {
 
 const AmenitiesSection: FC<AmenitiesSectionProps> = ({ amenities }) => {
 	return (
-		// <section className="flex h-full w-full flex-col justify-start  px-5 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0">
-		// 	<section className="h-auto w-full lg:w-[75%] ">
 		//  Amenities
 		<section className="mt-10 h-auto w-full rounded-lg bg-background2 p-8 lg:px-16 lg:py-10 ">
 			<section className="w-full">
 				<h4 className=" underline">Amenities</h4>
 			</section>
 			<section className="mt-4 w-full ">
-				<section className="grid w-full grid-cols-3 gap-3 gap-y-5 lg:grid-cols-4">
+				<section className="grid w-full grid-cols-1 gap-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4">
 					{amenities?.elevators && (
 						<div className="flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-black p-3 text-center font-semibold transition-all  duration-500 ease-in-out hover:bg-primary">
 							<Image
@@ -109,8 +107,6 @@ const AmenitiesSection: FC<AmenitiesSectionProps> = ({ amenities }) => {
 				</section>
 			</section>
 		</section>
-		// 	</section>
-		// </section>
 	);
 };
 

@@ -45,9 +45,6 @@ export async function generateMetadata({
 		query: PROJECT_DETAILS_QUERY(params.slug),
 	});
 
-	// optionally access and extend (rather than replace) parent metadata
-	// const previousImages = (await parent).openGraph?.images || [];
-
 	return {
 		title: project.title,
 		description: project.description,
@@ -81,7 +78,6 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 			/>
 
 			<section className="  my-10 flex  w-full flex-col  px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
-				{/* <section className="  flex h-full w-full flex-col px-5 sm:px-16   xl:mx-auto xl:max-w-7xl xl:px-0"> */}
 				<section className="h-auto  w-full gap-10  lg:w-[75%] ">
 					<PictureSlider
 						thumbnail={
@@ -104,10 +100,7 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 					<AmenitiesSection amenities={project.amenities} />
 					<LayoutSection unit_layout_plan={project.unit_layout_plan} />
 					{/* <CurrentBookingStatusSection /> */}
-					<LocationMapSection
-						location={project.location}
-						mapsLocation={project.mapsLocation}
-					/>
+					<LocationMapSection mapsLocation={project.mapsLocation} />
 					<ScheduleSiteVisitSection />
 					<LoansBannerSection />
 					<ConstructionStatusSection

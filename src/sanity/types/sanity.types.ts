@@ -93,6 +93,8 @@ export type Project = {
 		};
 		hotspot?: SanityImageHotspot;
 		crop?: SanityImageCrop;
+		caption?: string;
+		alternative?: string;
 		_type: 'image';
 	};
 	projectImages?: Array<{
@@ -104,7 +106,8 @@ export type Project = {
 		};
 		hotspot?: SanityImageHotspot;
 		crop?: SanityImageCrop;
-		_type: 'image';
+		alternative?: string;
+		_type: 'projectImage';
 		_key: string;
 	}>;
 	bhks?: Array<number>;
@@ -162,6 +165,15 @@ export type unit_layout_plan = Array<{
 		hotspot?: SanityImageHotspot;
 		crop?: SanityImageCrop;
 		_type: 'image';
+	};
+	floorImageInFile?: {
+		asset?: {
+			_ref: string;
+			_type: 'reference';
+			_weak?: boolean;
+			[internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
+		};
+		_type: 'file';
 	};
 	flats?: Array<{
 		flatName?: string;

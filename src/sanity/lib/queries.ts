@@ -12,7 +12,8 @@ export const PROJECT_DETAILS_QUERY = (slug: string) => {
 	const PROJECT_QUERY = defineQuery(
 		`*[_type == "project" && slug.current == "${slug}"][0]{
 		_id, _type, _createdAt, _updatedAt, _rev, title, slug, location, tags, status, price, description, 
-		thumbnail, projectImages, bhks, total_units, possession_date, floors, amenities, unit_layout_plan,
+		thumbnail, projectImages, bhks, total_units, possession_date, floors, amenities, unit_layout_plan[]{
+          floorImage,floor,"floorImageInFile":floorImageInFile.asset->url},
 		mapsLocation, "brochure": brochure.asset->url, construction_progress[]{date,"file":file[].asset->url}}`
 	);
 	return PROJECT_QUERY;

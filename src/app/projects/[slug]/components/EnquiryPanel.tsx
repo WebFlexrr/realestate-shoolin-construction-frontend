@@ -142,6 +142,11 @@ const EnquiryPanel = () => {
 						Submit
 					</Button>
 					{/* <Button className="px-10">Submit</Button> */}
+					<span className="text-sm">
+						The Site visit booking feature is for New Bookings only and the
+						final Site Visit Booking confirmation shall be done by our agents
+						through a return call.
+					</span>
 				</CardFooter>
 			</Form>
 		</Card>
