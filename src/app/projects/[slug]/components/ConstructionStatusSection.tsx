@@ -1,9 +1,7 @@
 'use client';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import SwiperGallery from '@/components/ui/SwiperGallery';
-import { imageUrlFor } from '@/sanity/lib/imageUrlFor';
 import { construction_progress } from '@/sanity/types/sanity.types';
-import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
@@ -15,8 +13,6 @@ const ConstructionStatusSection: FC<ConstructionStatusSectionProps> = ({
 	construction_progress,
 }) => {
 	return (
-		// <section className="flex h-full w-full flex-col justify-start px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
-		// 	<section className="h-auto w-full lg:w-[75%] ">
 		//  Construction Status
 		<section className=" h-auto w-full ">
 			{construction_progress && (
@@ -30,7 +26,6 @@ const ConstructionStatusSection: FC<ConstructionStatusSectionProps> = ({
 								<DialogTrigger>
 									<section className="group relative flex aspect-square w-full flex-col items-center">
 										<Image
-											// src={'/picture/pic1.jpg'}
 											src={
 												progress.file?.find(
 													(file) => file.split('.')[3] === 'jpg'
@@ -59,8 +54,6 @@ const ConstructionStatusSection: FC<ConstructionStatusSectionProps> = ({
 				</section>
 			)}
 		</section>
-		// 	</section>
-		// </section>
 	);
 };
 

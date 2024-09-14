@@ -42,7 +42,9 @@ const formSchema = z.object({
 			required_error: 'mobile number is required',
 			invalid_type_error: 'mobile number must be a number',
 		})
-		.int(),
+		.int()
+		.max(12)
+		.min(10),
 	date: z.date({
 		required_error: 'Please select a date and time',
 		invalid_type_error: "That's not a date!",
@@ -61,8 +63,6 @@ const ScheduleSiteVisitSection = () => {
 		console.log(value);
 	};
 	return (
-		// <section className="flex h-full w-full flex-col justify-start px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
-		// 	<section className="h-auto w-full lg:w-[75%] ">
 		//  Schedule a site visit
 		<section className="h-auto w-full">
 			<section className="mt-10 h-auto w-full rounded-lg bg-background2 p-8 lg:px-16 lg:py-10 ">
@@ -72,7 +72,7 @@ const ScheduleSiteVisitSection = () => {
 				<section className="mt-7 flex w-full ">
 					<Form {...form}>
 						<form
-							onSubmit={() => form.handleSubmit(handleSubmit)}
+							onSubmit={form.handleSubmit(handleSubmit)}
 							className="flex flex-wrap"
 						>
 							<FormField
@@ -118,6 +118,7 @@ const ScheduleSiteVisitSection = () => {
 										<FormLabel>Phone Number</FormLabel>
 										<FormControl>
 											<input
+												type="number"
 												className="  border-b border-black bg-background2 py-2 outline-0 "
 												placeholder="Enter your phone number"
 												{...field}
@@ -127,7 +128,7 @@ const ScheduleSiteVisitSection = () => {
 									</FormItem>
 								)}
 							/>
-							<FormField
+							{/* <FormField
 								control={form.control}
 								name="date"
 								render={({ field }) => (
@@ -155,7 +156,7 @@ const ScheduleSiteVisitSection = () => {
 										<FormMessage />
 									</FormItem>
 								)}
-							/>
+							/> */}
 							<section className="mt-8 flex w-full flex-col gap-5 sm:flex-row sm:items-center sm:justify-end ">
 								<Button
 									type={'submit'}
@@ -172,8 +173,6 @@ const ScheduleSiteVisitSection = () => {
 				</section>
 			</section>
 		</section>
-		// 	</section>
-		// </section>
 	);
 };
 

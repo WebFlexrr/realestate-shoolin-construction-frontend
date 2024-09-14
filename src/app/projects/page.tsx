@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import React from 'react';
 import { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
-import { client, sanityFetch } from '@/sanity/lib/client';
+import { sanityFetch } from '@/sanity/lib/client';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
 import Projects from '@/components/Projects';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';

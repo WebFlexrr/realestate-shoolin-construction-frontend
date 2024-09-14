@@ -56,24 +56,15 @@ const EnquiryPanel = () => {
 		}
 	};
 	return (
-		<Card className=" sticky top-[8rem] h-fit w-full  max-w-[500px]  justify-end bg-background2">
+		<Card className=" sticky top-[8rem] h-fit w-full  max-w-[500px]  justify-end bg-slate-200 shadow-xl">
 			<Form {...form}>
 				<CardHeader>
-					<CardTitle>ENQUIRE NOW</CardTitle>
+					<CardTitle className="font-semibold">Put Your Enquiry</CardTitle>
 				</CardHeader>
 				<CardContent>
-					{/* <form>
-						<div className="grid w-full items-center gap-4">
-							<div className="flex flex-col space-y-2">
-								<Input id="name" placeholder="Enter Name*" />
-								<Input id="name" placeholder="Enter Mobile/Number*" />
-								<Input id="name" placeholder="Enter Email*" />
-							</div>
-						</div>
-					</form> */}
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
-						className="grid w-full items-center gap-4 space-y-8"
+						className="grid w-full items-center gap-2"
 					>
 						<FormField
 							control={form.control}
@@ -151,6 +142,11 @@ const EnquiryPanel = () => {
 						Submit
 					</Button>
 					{/* <Button className="px-10">Submit</Button> */}
+					<span className="text-sm">
+						The Site visit booking feature is for New Bookings only and the
+						final Site Visit Booking confirmation shall be done by our agents
+						through a return call.
+					</span>
 				</CardFooter>
 			</Form>
 		</Card>

@@ -68,7 +68,7 @@ const PictureSlider: FC<PictureSliderProps> = ({
 							</Carousel>
 						</DialogTrigger>
 
-						<DialogContent className="max-w-5xl bg-gray-300 p-10">
+						<DialogContent className="w-full max-w-5xl bg-gray-300 p-10">
 							<SwiperGallery
 								// data={['/picture/pic1.jpg', '/picture/pic4.jpg']}
 								data={projectImages}

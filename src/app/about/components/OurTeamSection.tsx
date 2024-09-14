@@ -21,25 +21,25 @@ const OurTeamSection = () => {
 			<section className=" mx-auto flex h-auto w-full max-w-7xl flex-col px-5 xl:px-0">
 				<SectionHeading subTitle={'Members'} mainTitle={'Meet Our Team'} />
 				<section className="flex h-auto w-full flex-col  gap-10 lg:flex-row  xl:gap-0 ">
-					<div className="flex h-auto w-full justify-between gap-3  border-black  lg:w-1/3">
-						<Card className="flex w-full flex-col  border-none  lg:w-[460px]">
-							<CardHeader className="px-0 pb-5 pt-0">
+					<section className="flex h-auto w-full justify-start gap-3    lg:w-1/3">
+						<div className=" w-full space-y-5  ">
+							<div className="w-full">
 								<Image
-									src={
-										'https://assets-global.website-files.com/659508024773365d154788a8/65cf307bcf5bbed241bbffa6_img-4-p-500.jpg'
-									}
+									src={'/assets/sunil-das-image.jpg'}
 									width={1000}
 									height={0}
-									alt={''}
-									className="aspect-[4/5] w-full rounded-lg border border-primary-foreground lg:w-[300px]"
+									alt={'Sunil Das'}
+									className="aspect-[4/5] w-full rounded-lg border border-primary-foreground "
 								/>
-							</CardHeader>
-							<CardContent className="p-0">
-								<CardTitle>Tejodeep Mitra Roy</CardTitle>
-								<CardDescription className="mt-2">Manager</CardDescription>
-							</CardContent>
-						</Card>
-					</div>
+							</div>
+							<div className=" ">
+								<CardTitle>Sunil Das</CardTitle>
+								<CardDescription className="mt-2">
+									CEO & Founder
+								</CardDescription>
+							</div>
+						</div>
+					</section>
 
 					<section className="h-auto w-full  lg:w-full lg:pl-10 xl:pl-20 ">
 						<section className="h-auto w-full">

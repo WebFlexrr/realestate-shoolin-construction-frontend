@@ -8,9 +8,9 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from '@/components/ui/dialog';
-import Link from 'next/link';
+
 import React, { FC } from 'react';
-import { FaFilePdf } from 'react-icons/fa';
+
 import { FaMapLocationDot } from 'react-icons/fa6';
 
 interface HeadingSection {
@@ -18,16 +18,9 @@ interface HeadingSection {
 	location?: string;
 	price?: number;
 	tags?: string[];
-	// brochure?: string;
 }
 
-const HeadingSection: FC<HeadingSection> = ({
-	title,
-	location,
-	price,
-	tags,
-	// brochure,
-}) => {
+const HeadingSection: FC<HeadingSection> = ({ title, location, price }) => {
 	console.log(title, location);
 	return (
 		<section className="h-auto w-full">
@@ -41,7 +34,10 @@ const HeadingSection: FC<HeadingSection> = ({
 							<div className="flex items-center gap-2">
 								<FaMapLocationDot /> {location}
 							</div>
-							<div>Price : {price} Lacs onwards</div>
+							<div className="mt-2 text-lg">
+								Flat starting price{' '}
+								<span className="text-2xl font-semibold">{price} Lacs </span>
+							</div>
 							<div>All inclusive price</div>
 						</section>
 						<section className="mt-4 flex h-full w-full items-center justify-center gap-3 lg:mt-0 lg:max-w-60 lg:flex-col lg:gap-4 ">
@@ -63,7 +59,7 @@ const HeadingSection: FC<HeadingSection> = ({
 						</section>
 					</section>
 					<section className="flex h-auto w-[25%] justify-end">
-						<section className="fixed bottom-0 left-0 z-40 flex h-14 w-full lg:relative lg:z-0 lg:h-auto lg:w-fit lg:flex-col  lg:gap-5">
+						<section className="fixed bottom-0 left-0 z-40 flex h-14 w-full lg:relative lg:z-0 lg:hidden lg:h-auto lg:w-fit lg:flex-col  lg:gap-5">
 							<Dialog>
 								<DialogTrigger asChild>
 									<Button
