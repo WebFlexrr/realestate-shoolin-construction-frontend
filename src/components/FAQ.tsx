@@ -25,7 +25,7 @@ const FAQ = async (): Promise<React.JSX.Element> => {
 						<section className="flex flex-col gap-10 lg:flex-row lg:gap-0">
 							<section className="h-auto w-full  lg:w-[40%]">
 								<Image
-									src={'/picture/pic4.jpg'}
+									src={'/picture/pic9.jpeg'}
 									width={1000}
 									height={0}
 									alt={''}

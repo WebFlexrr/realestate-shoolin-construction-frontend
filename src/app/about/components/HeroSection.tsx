@@ -22,7 +22,7 @@ const HeroSection = () => {
 					</section>
 					<section className=" order-2 h-auto w-full ">
 						<Image
-							src={'/picture/pic2.jpg'}
+							src={'/picture/pic6.jpg'}
 							width={1000}
 							height={0}
 							className=" aspect-[4/2.5] h-auto w-full rounded-lg"
@@ -45,7 +45,7 @@ const HeroSection = () => {
 					</section>
 					<section className="order-4 h-auto w-full">
 						<Image
-							src={'/picture/pic3.jpg'}
+							src={'/picture/pic10.jpeg'}
 							width={1000}
 							height={0}
 							className=" aspect-[4/3] h-auto w-full rounded-lg"

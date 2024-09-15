@@ -57,7 +57,7 @@ const AboutSection = (): JSX.Element => {
 					</section>
 					<section className="flex h-auto w-full md:w-1/2 lg:w-[30%] ">
 						<Image
-							src={'/picture/pic8.jpg'}
+							src={'/picture/pic11.jpeg'}
 							width={1000}
 							height={0}
 							className=" aspect-square h-auto w-full rounded-lg md:aspect-[4/5]"

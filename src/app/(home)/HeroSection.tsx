@@ -43,7 +43,7 @@ const HeroSection = (): React.JSX.Element => {
 					</section>
 					<section className="mt-20 flex w-full items-start justify-start">
 						<Image
-							src={'/picture/pic1.jpg'}
+							src={'/picture/pic7.jpg'}
 							width={1000}
 							height={0}
 							alt=""
@@ -53,44 +53,13 @@ const HeroSection = (): React.JSX.Element => {
 				</section>
 
 				<section className="flex h-full w-full flex-col items-center justify-center gap-4 pt-10 md:w-1/2 md:pt-40 ">
-					<Carousel
-						plugins={[
-							Autoplay({
-								delay: 5000,
-							}),
-						]}
-						className=" border-text aspect-square rounded-lg "
-					>
-						<CarouselContent>
-							<CarouselItem>
-								<Image
-									src={'/picture/pic7.jpg'}
-									width={1000}
-									height={0}
-									alt=""
-									className=" border-text aspect-square rounded-lg border"
-								/>
-							</CarouselItem>
-							<CarouselItem>
-								<Image
-									src={'/picture/pic6.jpg'}
-									width={1000}
-									height={0}
-									alt=""
-									className=" border-text aspect-square rounded-lg border"
-								/>
-							</CarouselItem>
-							<CarouselItem>
-								<Image
-									src={'/picture/pic5.jpg'}
-									width={1000}
-									height={0}
-									alt=""
-									className=" border-text aspect-square rounded-lg border"
-								/>
-							</CarouselItem>
-						</CarouselContent>
-					</Carousel>
+					<Image
+						src={'/picture/pic1.jpg'}
+						width={1000}
+						height={0}
+						alt="Main Hero Section Picture"
+						className=" border-text aspect-square rounded-lg border"
+					/>
 					<section className="flex h-auto w-full justify-end">
 						Architectural Excellence
 					</section>

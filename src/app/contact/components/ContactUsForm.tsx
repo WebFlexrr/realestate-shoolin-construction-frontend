@@ -16,7 +16,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import Link from 'next/link';
 import { GoArrowUpRight } from 'react-icons/go';
 import axios from 'axios';
-import { useToast } from '@/components/ui/use-toast';
+import toast from 'react-hot-toast';
 
 const formSchema = z.object({
 	firstName: z
@@ -42,10 +42,10 @@ const formSchema = z.object({
 			invalid_type_error: 'email must be string',
 		})
 		.email({ message: 'Invalid email address' }),
-	phone: z.string({
+	mobile: z.string({
 		required_error: 'phone number is required',
 	}),
-	message: z.string({
+	query: z.string({
 		required_error: 'message is required',
 	}),
 	terms: z
@@ -59,63 +59,48 @@ type FromData = z.infer<typeof formSchema>;
 
 const ContactUsForm = () => {
 	const [loading, setLoading] = useState<boolean>(false);
-	const { toast } = useToast();
 	const form = useForm<FromData>({
 		resolver: zodResolver(formSchema),
 	});
 
-	const handleSubmit = async (value: FromData) => {
-		// console.log(value);
-		const { firstName, lastName, email, phone, message, terms } = value;
+	const onSubmit = async (values: FromData) => {
+		const { firstName, lastName, email, mobile, query, terms } = values;
+
+		const newValues = {
+			name: `${firstName} ${lastName}`,
+			email,
+			mobile,
+			query,
+			messageType: 'Enquiry',
+		};
+		console.log(newValues);
 
 		if (!terms) {
-			toast({
-				title: 'oh Something Wrong',
-				description: 'pls select Term & Policy Checkout',
-			});
+			toast.error('Oh! Something Wrong, pls select Term & Policy Checkout');
 			return;
 		}
 
-		try {
-			setLoading(true);
-			const { data } = await axios.post(
-				`${process.env.NEXT_PUBLIC_API_URL}/enquiry/createEnquiry`,
-				{
-					name: `${firstName} ${lastName}`,
-					email,
-					phone,
-					message,
+		setLoading(true);
+		await toast.promise(
+			fetch('/api/enquiry', {
+				method: 'POST',
+				body: JSON.stringify(newValues),
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8',
 				},
-				{
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				}
-			);
-
-			toast({
-				title: 'Message Successfully Send',
-				description: data.message,
-			});
-			form.reset({
-				firstName: '',
-				lastName: '',
-				email: '',
-				phone: '',
-				message: '',
-				terms: false,
-			});
-			setLoading(false);
-		} catch (error: any) {
-			setLoading(false);
-
-			toast({
-				variant: 'destructive',
-
-				title: error.message,
-				description: 'There was a problem with your request.',
-			});
-		}
+			}),
+			{
+				loading: 'Wait for Sending...',
+				success: (data) => {
+					setLoading(false);
+					return <b>Request Send Successfully</b>;
+				},
+				error: (data) => {
+					setLoading(false);
+					return <b>Error Occurred.</b>;
+				},
+			}
+		);
 	};
 
 	return (
@@ -125,7 +110,7 @@ const ContactUsForm = () => {
 					<section className="flex h-auto w-full items-center  lg:w-[55%] lg:pr-16 ">
 						<Form {...form}>
 							<form
-								onSubmit={form.handleSubmit(handleSubmit)}
+								onSubmit={form.handleSubmit(onSubmit)}
 								className="flex flex-wrap"
 							>
 								<FormField
@@ -182,7 +167,7 @@ const ContactUsForm = () => {
 								/>
 								<FormField
 									control={form.control}
-									name="phone"
+									name="mobile"
 									render={({ field }) => (
 										<FormItem className="my-5 flex w-full flex-col  sm:w-1/2 sm:pl-5  ">
 											<FormLabel>Phone Number</FormLabel>
@@ -199,7 +184,7 @@ const ContactUsForm = () => {
 								/>
 								<FormField
 									control={form.control}
-									name="message"
+									name="query"
 									render={({ field }) => (
 										<FormItem className="my-5 flex w-full  flex-col  ">
 											<FormLabel>Message</FormLabel>
@@ -246,15 +231,6 @@ const ContactUsForm = () => {
 											</FormItem>
 										)}
 									/>
-									{/* <Checkbox
-											checked={field.value}
-											onCheckedChange={field.onChange}
-										/>
-										<Label htmlFor="terms">
-											I agree to <Link href={''}>Terms</Link> &{' '}
-											<Link href={''}>privacy policy</Link>
-										</Label> */}
-									{/* </div> */}
 
 									<Button
 										type={'submit'}
@@ -295,19 +271,12 @@ const ContactUsForm = () => {
 					</section>
 					<section className="h-auto w-full lg:w-[45%] ">
 						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.15709049659662!2d88.40971674408956!3d22.634637390352523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e0d3e60c855%3A0xc1f123eb251d85b0!2s14%2C%20Subhas%20Nagar%20Rd%2C%20Rail%20Gate%20Colony%2C%20Dum%20Dum%20Cantonment%2C%20Subhash%20Nagar%2C%20Dum%20Dum%2C%20Kolkata%2C%20West%20Bengal%20700065!5e0!3m2!1sen!2sin!4v1711185861459!5m2!1sen!2sin"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.1586890709679!2d88.4084697788754!3d22.63368297871605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e0d3e85ef57%3A0xeeb4c142fb8ab5db!2sShoolin%20construction!5e0!3m2!1sen!2sin!4v1726435368166!5m2!1sen!2sin"
 							allowFullScreen={true}
 							loading="lazy"
 							referrerPolicy="no-referrer-when-downgrade"
 							className="aspect-square w-full rounded-lg"
-						></iframe>
-						{/* <Image
-							src={'/picture/pic4.jpg'}
-							width={1000}
-							height={0}
-							className="aspect-square w-full rounded-lg"
-							alt={''}
-						/> */}
+						/>
 					</section>
 				</section>
 			</section>
