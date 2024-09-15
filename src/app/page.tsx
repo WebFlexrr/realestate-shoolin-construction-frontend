@@ -17,7 +17,7 @@ export default async function Home() {
 			<HeroSection />
 			<ProjectSection />
 			<AboutSection />
-			<Testimonials testimonials={testimonials} />
+			{/* <Testimonials testimonials={testimonials} /> */}
 			<FAQ />
 			<Footer />
 		</main>

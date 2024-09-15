@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { BsTwitterX } from 'react-icons/bs';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
@@ -35,51 +36,40 @@ const CompanyDetailsSection = () => {
 								<section className="flex w-full flex-row gap-6 sm:flex-col">
 									<section className="flex h-auto w-full flex-col">
 										<span className=" text-xs">Give Us a Call</span>
-										<span className=" text-base">9674128921</span>
+										<Link href={'tel:+91-8017194170'} className=" text-base">
+											+91 - 8017194170
+										</Link>
 									</section>
 									<section className="flex h-auto w-full flex-col">
 										<span className=" text-xs">Email Us</span>
-										<span className=" text-base">support@email.com</span>
+										<Link
+											href={'mailto:contact@shoolinconstruction.com'}
+											className=" text-base"
+										>
+											contact@shoolinconstruction.com
+										</Link>
 									</section>
 								</section>
 							</section>
-							{/* <section className="w-full sm:w-[40%] lg:pl-10">
-								<section className=" mb-2 text-xl">Offices</section>
-								<section className="flex w-full flex-col gap-6 text-base">
-									<section className="flex h-auto w-full flex-col gap-2 ">
-										<span>New Jersey</span>
-										<span className="text-sm">
-											2972 Westheimer Rd. Santa Ana, Illinois 85486
-										</span>
-									</section>
-									<section className="flex h-auto w-full flex-col gap-2">
-										<span>New Jersey</span>
-										<span className="text-sm">
-											2972 Westheimer Rd. Santa Ana, Illinois 85486
-										</span>
-									</section>
-									<section className="flex h-auto w-full flex-col gap-2">
-										<span>New Jersey</span>
-										<span className="text-sm">
-											2972 Westheimer Rd. Santa Ana, Illinois 85486
-										</span>
-									</section>
-								</section>
-							</section> */}
 						</section>
 						<section className="w-full">
 							<section className="flex w-fit items-center gap-5">
 								<span className=" text-lg">Follow on us</span>
 								<section className="flex items-center gap-2">
-									<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased hover:bg-neutral-400">
-										<BsTwitterX className="  group-hover:text-black" />
-									</div>
-									<div className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased hover:bg-neutral-400">
+									<Link
+										href={
+											'https://www.facebook.com/profile.php?id=61565175867835'
+										}
+										className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased  transition-all duration-500 ease-in-out hover:border-black hover:bg-neutral-400 hover:bg-primary"
+									>
 										<FaFacebookF className="  group-hover:text-black" />
-									</div>
-									<div className="group group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased hover:bg-neutral-400 ">
+									</Link>
+									<Link
+										href={'https://www.instagram.com/shoolinconstruction'}
+										className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased  transition-all duration-500 ease-in-out hover:border-black hover:bg-neutral-400 hover:bg-primary "
+									>
 										<FaInstagram className="  group-hover:text-black" />
-									</div>
+									</Link>
 								</section>
 							</section>
 						</section>

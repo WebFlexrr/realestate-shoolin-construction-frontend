@@ -22,7 +22,7 @@ const ProjectSection = async (): Promise<React.JSX.Element> => {
 					{projects.map((project) => {
 						return (
 							(project.status === 'under_construction' ||
-								project.status === 'completed') && (
+								project.status === 'not_started') && (
 								<Projects
 									key={project._id}
 									slug={project.slug}
