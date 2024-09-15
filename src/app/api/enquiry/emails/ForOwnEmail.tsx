@@ -20,6 +20,8 @@ interface ForOwnEmailProps {
 	mobile: number;
 	pincode?: number;
 	query: string;
+	propertyName: string;
+	propertyLink: string;
 }
 
 const ForOwnEmail = ({
@@ -28,6 +30,8 @@ const ForOwnEmail = ({
 	mobile,
 	pincode,
 	query,
+	propertyName,
+	propertyLink,
 }: ForOwnEmailProps): React.JSX.Element => {
 	return (
 		<Html>
@@ -72,6 +76,8 @@ const ForOwnEmail = ({
 								<Text className="text-base">Name: {name}</Text>
 								<Text className="text-base">Email: {email}</Text>
 								<Text className="text-base">mobile: {mobile}</Text>
+								<Text className="text-base">property Name: {propertyName}</Text>
+								<Text className="text-base">property Link: {propertyLink}</Text>
 								{pincode && (
 									<Text className="text-base">Pincode: {pincode}</Text>
 								)}

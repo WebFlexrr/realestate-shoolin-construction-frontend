@@ -23,13 +23,12 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 
 interface PictureSliderProps {
-	thumbnail?: string;
-	projectImages?: Array<string>;
+	projectImages?: Array<{
+		imageUrl: string;
+		alt?: string;
+	}>;
 }
-const PictureSlider: FC<PictureSliderProps> = ({
-	thumbnail,
-	projectImages,
-}) => {
+const PictureSlider: FC<PictureSliderProps> = ({ projectImages }) => {
 	return (
 		<section className=" h-auto w-full ">
 			{/* <section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0"> */}
@@ -51,27 +50,24 @@ const PictureSlider: FC<PictureSliderProps> = ({
 								className="w-full border "
 							>
 								<CarouselContent className="-ml-1 h-auto w-full  lg:aspect-video lg:w-full ">
-									{projectImages?.map((image) => (
-										<CarouselItem key={image} className=" aspect-square w-full">
+									{projectImages?.map((image, index) => (
+										<CarouselItem key={index} className=" aspect-square w-full">
 											<Image
 												className=" aspect-square h-full w-full  object-contain  "
 												width={1000}
 												height={0}
-												src={projectImages[1]}
-												alt={''}
+												src={image.imageUrl}
+												alt={image.alt ? image.alt : ' '}
 											/>
 										</CarouselItem>
 									))}
 								</CarouselContent>
-								{/* <CarouselPrevious />
-											<CarouselNext /> */}
 							</Carousel>
 						</DialogTrigger>
 
 						<DialogContent className="w-full max-w-5xl bg-gray-300 p-10">
 							<SwiperGallery
-								// data={['/picture/pic1.jpg', '/picture/pic4.jpg']}
-								data={projectImages}
+								data={projectImages?.map((image) => image.imageUrl)}
 							/>
 						</DialogContent>
 					</Dialog>
