@@ -12,7 +12,7 @@
     "prettier": "prettier . --check",
     "prettier:fix": "prettier . --write \"**/*.{ts,tsx,md}\"",
     "types": "tsc --pretty --noEmit",
-    "fix:all": "yarn lint:fix && yarn prettier:fix && yarn prettier && yarn lint && yarn types && yarn build"
+    "fix:all": "&& yarn prettier:fix && yarn prettier && yarn lint && yarn types && yarn build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -44,6 +44,7 @@
     "react-day-picker": "^8.10.0",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
     "react-player": "^2.16.0",
     "swiper": "^11.0.7",

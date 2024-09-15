@@ -75,19 +75,23 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 				location={project.location}
 				price={project.price}
 				tags={project.tags}
+				slug={project.slug?.current}
 			/>
 
 			<section className="  my-10 flex  w-full flex-col  px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
 				<section className="h-auto  w-full gap-10  lg:w-[75%] ">
 					<PictureSlider
-						thumbnail={
-							project.thumbnail
-								? imageUrlFor(project.thumbnail as SanityImageObject).url()
-								: ''
+						projectImages={
+							project.projectImages
+								? project.projectImages.map((image) => {
+										return {
+											imageUrl:
+												image && imageUrlFor(image as SanityImageObject).url(),
+											alt: image.alternative,
+										};
+									})
+								: []
 						}
-						projectImages={project.projectImages?.map(
-							(image) => image && imageUrlFor(image as SanityImageObject).url()
-						)}
 					/>
 
 					<DetailsSection
@@ -101,14 +105,20 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 					<LayoutSection unit_layout_plan={project.unit_layout_plan} />
 					{/* <CurrentBookingStatusSection /> */}
 					<LocationMapSection mapsLocation={project.mapsLocation} />
-					<ScheduleSiteVisitSection />
+					<ScheduleSiteVisitSection
+						projectTitle={project.title}
+						projectSlug={project.slug?.current}
+					/>
 					<LoansBannerSection />
 					<ConstructionStatusSection
 						construction_progress={project.construction_progress}
 					/>
 				</section>
 				<section className=" hidden h-auto w-[25%] pl-5 lg:flex">
-					<EnquiryPanel />
+					<EnquiryPanel
+						projectTitle={project.title}
+						projectSlug={project.slug?.current}
+					/>
 				</section>
 			</section>
 

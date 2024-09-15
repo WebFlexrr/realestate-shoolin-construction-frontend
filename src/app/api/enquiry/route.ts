@@ -9,12 +9,22 @@ interface Body {
 	email: string;
 	pincode: number;
 	query: string;
+	messageType: string;
+	propertyName: string;
+	propertyLink: string;
 }
-export async function POST(
-	request: NextRequest
-): Promise<NextResponse<unknown>> {
+export async function POST(request: NextRequest) {
 	const body: Body = await request.json();
-	const { name, email, mobile, pincode, query } = body;
+	const {
+		messageType,
+		propertyName,
+		propertyLink,
+		name,
+		email,
+		mobile,
+		pincode,
+		query,
+	} = body;
 	console.log(body);
 
 	try {
@@ -35,21 +45,34 @@ export async function POST(
 				mobile,
 				pincode,
 				query,
+				propertyName,
+				propertyLink,
 			})
 		);
 
-		// send mail with defined transport object
-		const forOwn = await transporter.sendMail({
-			from: 'business@shoolinconstruction.com <business@shoolinconstruction.com>', // sender address
-			to: 'contact@shoolinconstruction.com', // list of receivers
-			subject: 'A new Enquiry happened from Website', // Subject line
-
-			html: emailHtml, // html body
-		});
-
-		console.log('Message sent: %s', forOwn);
-		// Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
-		return NextResponse.json(forOwn, { status: 200 });
+		if (messageType === 'Enquiry') {
+			// send mail with defined transport object
+			const forOwn = await transporter.sendMail({
+				from: 'business@shoolinconstruction.com <business@shoolinconstruction.com>', // sender address
+				to: 'contact@shoolinconstruction.com', // list of receivers
+				subject: 'A new Enquiry from Website', // Subject line
+				html: emailHtml, // html body
+			});
+			console.log('Message sent: %s', forOwn);
+			// Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+			return NextResponse.json(forOwn, { status: 200 });
+		} else if (messageType === 'SiteVisit') {
+			// send mail with defined transport object
+			const forOwn = await transporter.sendMail({
+				from: 'business@shoolinconstruction.com <business@shoolinconstruction.com>', // sender address
+				to: 'contact@shoolinconstruction.com', // list of receivers
+				subject: 'A Site Visit Enquiry from Website', // Subject line
+				html: emailHtml, // html body
+			});
+			console.log('Message sent: %s', forOwn);
+			// Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+			return NextResponse.json(forOwn, { status: 200 });
+		}
 	} catch (error) {
 		console.log(error);
 		return NextResponse.json(error, { status: 500 });

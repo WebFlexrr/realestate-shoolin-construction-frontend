@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { FC } from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -20,6 +20,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { GoArrowUpRight } from 'react-icons/go';
 import { Calendar } from '@/components/ui/calendar';
+import toast from 'react-hot-toast';
 
 const formSchema = z.object({
 	name: z
@@ -38,29 +39,53 @@ const formSchema = z.object({
 		})
 		.email({ message: 'Invalid email address' }),
 	phoneNumber: z
-		.number({
+		.string({
 			required_error: 'mobile number is required',
 			invalid_type_error: 'mobile number must be a number',
 		})
-		.int()
-		.max(12)
-		.min(10),
-	date: z.date({
-		required_error: 'Please select a date and time',
-		invalid_type_error: "That's not a date!",
-	}),
+		.min(10)
+		.max(12),
 });
 
 type FromData = z.infer<typeof formSchema>;
 
-const ScheduleSiteVisitSection = () => {
+interface ScheduleSiteVisitSectionProps {
+	projectTitle?: string;
+	projectSlug?: string;
+}
+
+const ScheduleSiteVisitSection: FC<ScheduleSiteVisitSectionProps> = ({
+	projectTitle,
+	projectSlug,
+}) => {
 	const [date, setDate] = React.useState<Date | undefined>(new Date());
 	const form = useForm<FromData>({
 		resolver: zodResolver(formSchema),
 	});
 
-	const handleSubmit = async (value: FromData) => {
-		console.log(value);
+	const onSubmit = async (values: FromData) => {
+		const newValues = {
+			...values,
+			messageType: 'SiteVisit',
+			propertyName: projectTitle,
+			propertyLink: `http://shoolinconstruction.com/projects/${projectSlug}`,
+		};
+		console.log(newValues);
+
+		await toast.promise(
+			fetch('/api/enquiry', {
+				method: 'POST',
+				body: JSON.stringify(newValues),
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8',
+				},
+			}),
+			{
+				loading: 'Wait for Sending...',
+				success: <b>Request Send Successfully</b>,
+				error: <b>Error Occurred.</b>,
+			}
+		);
 	};
 	return (
 		//  Schedule a site visit
@@ -72,7 +97,7 @@ const ScheduleSiteVisitSection = () => {
 				<section className="mt-7 flex w-full ">
 					<Form {...form}>
 						<form
-							onSubmit={form.handleSubmit(handleSubmit)}
+							onSubmit={form.handleSubmit(onSubmit)}
 							className="flex flex-wrap"
 						>
 							<FormField

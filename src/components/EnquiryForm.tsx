@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { FC } from 'react';
 import {
 	Form,
 	FormControl,
@@ -24,6 +24,7 @@ import {
 import Image from 'next/image';
 import logo from '../../public/logos/logo.png';
 import { headers } from 'next/headers';
+import toast from 'react-hot-toast';
 
 const formSchema = z.object({
 	name: z.string().min(2).max(50),
@@ -33,7 +34,12 @@ const formSchema = z.object({
 	query: z.string(),
 });
 
-const EnquiryForm = () => {
+interface EnquiryFormProps {
+	projectTitle?: string;
+	projectSlug?: string;
+}
+
+const EnquiryForm: FC<EnquiryFormProps> = ({ projectTitle, projectSlug }) => {
 	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -46,22 +52,30 @@ const EnquiryForm = () => {
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
 		// Do something with the form values.
 		// ✅ This will be type-safe and validated.
-		console.log(values);
+		const newValues = {
+			...values,
+			messageType: 'Enquiry',
+			propertyName: projectTitle,
+			propertyLink: `http://shoolinconstruction.com/projects/${projectSlug}`,
+		};
+		console.log(newValues);
 
-		try {
-			const responsive = await fetch('/api/enquiry', {
+		await toast.promise(
+			fetch('/api/enquiry', {
 				method: 'POST',
-				body: JSON.stringify(values),
+				body: JSON.stringify(newValues),
 				headers: {
 					'Content-type': 'application/json; charset=UTF-8',
 				},
-			});
-		} catch (error) {
-			console.log(error);
-		}
+			}),
+			{
+				loading: 'Wait for Sending...',
+				success: <b>Request Send Successfully</b>,
+				error: <b>Error Occurred.</b>,
+			}
+		);
 	};
 	return (
-		// <div className="absolute w-100% bottom-0 left-4 bg-white ">
 		<Card>
 			<CardHeader>
 				<CardTitle className="flex items-center justify-center">
@@ -79,7 +93,7 @@ const EnquiryForm = () => {
 			</CardHeader>
 			<CardContent>
 				<Form {...form}>
-					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
 						<FormField
 							control={form.control}
 							name="name"
@@ -154,7 +168,6 @@ const EnquiryForm = () => {
 				</Form>
 			</CardContent>
 		</Card>
-		// </div>
 	);
 };
 

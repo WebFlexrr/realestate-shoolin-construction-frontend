@@ -18,9 +18,15 @@ interface HeadingSection {
 	location?: string;
 	price?: number;
 	tags?: string[];
+	slug?: string;
 }
 
-const HeadingSection: FC<HeadingSection> = ({ title, location, price }) => {
+const HeadingSection: FC<HeadingSection> = ({
+	title,
+	location,
+	price,
+	slug,
+}) => {
 	console.log(title, location);
 	return (
 		<section className="h-auto w-full">
@@ -49,7 +55,7 @@ const HeadingSection: FC<HeadingSection> = ({ title, location, price }) => {
 							<section className="flex w-full flex-wrap gap-3 text-xs lg:text-base">
 								{/* {tags?.map((tag, index) => ( */}
 								<div className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1">
-									100% Brokerage Free
+									Brokerage Free
 								</div>
 								<div className="w-fit rounded-full border-2  border-black  bg-primary px-3 py-1">
 									Residential
@@ -73,7 +79,7 @@ const HeadingSection: FC<HeadingSection> = ({ title, location, price }) => {
 									</Button>
 								</DialogTrigger>
 								<DialogContent>
-									<EnquiryForm />
+									<EnquiryForm projectTitle={title} projectSlug={slug} />
 								</DialogContent>
 							</Dialog>
 

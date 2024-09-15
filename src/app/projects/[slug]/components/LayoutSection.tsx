@@ -23,17 +23,6 @@ interface LayoutSectionProps {
 	unit_layout_plan?: unit_layout_plan;
 }
 const LayoutSection: FC<LayoutSectionProps> = ({ unit_layout_plan }) => {
-	const downloadImage = async (imageUrl: string) => {
-		const response = await fetch(imageUrl);
-		const blob = await response.blob();
-		const url = window.URL.createObjectURL(blob);
-		const link = document.createElement('a');
-		link.href = url;
-		link.setAttribute('download', 'sanity-image.jpg'); // Filename for download
-		document.body.appendChild(link);
-		link.click();
-		link.remove();
-	};
 	return (
 		//  Layout & Floor Plans
 
