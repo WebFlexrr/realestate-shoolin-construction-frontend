@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { BsTwitterX } from 'react-icons/bs';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const CompanyDetailsSection = () => {
@@ -25,13 +24,12 @@ const CompanyDetailsSection = () => {
 								<section className="flex h-auto w-full flex-col gap-2 ">
 									<div className=" text-xl">Office</div>
 									<p>
-										Shop 13, Rail Gate Colony, Dum Dum Cantonment, Subhash
-										Nagar, Dum Dum, Kolkata, West Bengal 700065
+										132, Subhash Nagar Road,Dum Dum Cantonment, near Subhash
+										Nagar Stadium & Water Tanks, Kolkata - 700065
 									</p>
 								</section>
 								<section className="flex h-auto w-full flex-col gap-2 text-sm ">
-									<span>Monday to Friday - 9AM to 5PM</span>
-									<span>Saturday & Sunday only 10AM to 12PM.</span>
+									<span>Monday to Sunday - 10 Am to 3 Pm & 6 Pm to 8 Pm</span>
 								</section>
 								<section className="flex w-full flex-row gap-6 sm:flex-col">
 									<section className="flex h-auto w-full flex-col">
