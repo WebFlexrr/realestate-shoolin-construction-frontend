@@ -29,12 +29,12 @@ export async function POST(request: NextRequest) {
 
 	try {
 		const transporter = nodemailer.createTransport({
-			host: 'smtp.hostinger.com',
+			host: process.env.NEXT_NODEMAILER_HOST,
 			port: 465,
 			secure: true, // true for port 465, false for other ports
 			auth: {
-				user: 'business@shoolinconstruction.com',
-				pass: 'Shoolin@54321',
+				user: process.env.NEXT_NODEMAILER_USERNAME,
+				pass: process.env.NEXT_NODEMAILER_PASSWORD,
 			},
 		});
 

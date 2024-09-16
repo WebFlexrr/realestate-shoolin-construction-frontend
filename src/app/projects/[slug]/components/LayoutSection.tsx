@@ -17,7 +17,32 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from '@/components/ui/dialog';
-import { Download, Search } from 'lucide-react';
+import { Download, Minimize, Minus, Plus, Search } from 'lucide-react';
+import {
+	TransformComponent,
+	TransformWrapper,
+	useControls,
+} from 'react-zoom-pan-pinch';
+
+const Controls = () => {
+	const { zoomIn, zoomOut, resetTransform } = useControls();
+
+	return (
+		<div className="flex gap-2 ">
+			<Button size={'icon'} onClick={() => zoomIn()}>
+				<Plus />
+			</Button>
+			<Button size={'icon'} onClick={() => zoomOut()}>
+				{' '}
+				<Minus />
+			</Button>
+			<Button size={'icon'} onClick={() => resetTransform()}>
+				{' '}
+				<Minimize />
+			</Button>
+		</div>
+	);
+};
 
 interface LayoutSectionProps {
 	unit_layout_plan?: unit_layout_plan;
@@ -53,16 +78,25 @@ const LayoutSection: FC<LayoutSectionProps> = ({ unit_layout_plan }) => {
 													<Search size={20} />
 												</div>
 											</DialogTrigger>
-											<DialogContent className="w-full max-w-4xl bg-gray-300 p-7">
-												<Image
-													src={imageUrlFor(
-														layout.floorImage as SanityImageObject
-													).url()}
-													width={1000}
-													height={0}
-													alt={''}
-													className=" flex aspect-[4/4]  w-full items-center justify-center rounded-lg border "
-												/>
+											<DialogContent className="w-full max-w-3xl bg-gray-300 p-7">
+												<TransformWrapper smooth>
+													{({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+														<>
+															<TransformComponent>
+																<Image
+																	src={imageUrlFor(
+																		layout.floorImage as SanityImageObject
+																	).url()}
+																	width={1000}
+																	height={0}
+																	alt={''}
+																	className=" flex  aspect-square w-full items-center justify-center rounded-lg border "
+																/>
+															</TransformComponent>
+															<Controls />
+														</>
+													)}
+												</TransformWrapper>
 											</DialogContent>
 										</Dialog>
 										<Link
