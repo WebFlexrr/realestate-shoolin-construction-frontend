@@ -101,6 +101,15 @@ const Footer = (): React.JSX.Element => {
 													Terms & Conditions
 												</Link>
 											</li>
+											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+												<Link
+													href={'/sitemap.xml'}
+													className="flex items-center"
+												>
+													<ChevronRight />
+													Sitemap
+												</Link>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -145,33 +154,18 @@ const Footer = (): React.JSX.Element => {
 								</div>
 							</section>
 						</section>
-						{/* <section className="flex w-full font-medium">
-							<div className="flex w-fit flex-col ">
-								<div>Subscribe for more updates!</div>
-								<div>
-									Stay updated with our latest design insights by entering your
-									email below.
-								</div>
-								<div className=" mt-3 flex w-full border-b border-neutral-400 py-3 text-neutral-400 ">
-									<IoMailOutline className="text-xl" />
-									<input
-										type="text"
-										title="subscribe"
-										className=" mx-3 w-full bg-transparent focus:no-underline focus:outline-none"
-										placeholder={'Enter your email here'}
-									/>
-									<button title="submit">
-										<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
-									</button>
-								</div>
-							</div>
-						</section> */}
 					</section>
 				</section>
 				<section className="h-auto w-full border-t border-gray-300  ">
 					<section className="mx-auto  flex h-auto w-full max-w-7xl flex-col-reverse items-center justify-between gap-3 px-10 py-2 text-sm text-neutral-400  md:flex-row">
 						<section className="w-fit">
-							Design by Webflexrr Digital Services
+							Design by{' '}
+							<Link
+								href={'https://www.webflexrr.com'}
+								className="mt-2 w-full  text-neutral-400 transition-all duration-500 ease-in-out hover:text-primary"
+							>
+								Webflexrr Digital Services
+							</Link>
 						</section>
 						<section className="flex gap-2 ">
 							<Link

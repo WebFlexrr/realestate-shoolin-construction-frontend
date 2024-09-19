@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
 	return (
-		<div className="flex h-full w-full flex-col items-center justify-center gap-3">
+		<div className="flex h-screen w-full flex-col items-center justify-center gap-3">
 			<Image
 				src={'/logos/logo.png'}
 				width={'100'}
