@@ -70,7 +70,6 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 					</section>
 				</section>
 			</section>
-			<Footer />
 		</main>
 	);
 };

@@ -1,28 +1,8 @@
-import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
-import EnquiryForm from '@/components/EnquiryForm';
 import { Toaster } from 'react-hot-toast';
-
-export const metadata: Metadata = {
-	title: {
-		default:
-			'Shoolin Construction | Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
-		template:
-			'%s - Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
-	},
-	description:
-		'Provides Residential Real estate Property-Buy-Sell-Developer Company',
-	generator: 'Next.js',
-	applicationName: 'Next.js',
-	referrer: 'origin-when-cross-origin',
-	keywords: ['Next.js', 'React', 'JavaScript'],
-	twitter: {
-		card: 'summary_large_image',
-	},
-};
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export default function RootLayout({
 	children,
@@ -31,11 +11,13 @@ export default function RootLayout({
 }>): JSX.Element {
 	return (
 		<html lang="en">
+			<GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER!} />
 			<body>
 				<Navbar />
 				{children}
 				<Toaster />
 				{/* <EnquiryForm /> */}
+				<Footer />
 			</body>
 		</html>
 	);

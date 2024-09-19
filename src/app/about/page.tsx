@@ -1,5 +1,4 @@
 import FAQ from '@/components/FAQ';
-import Footer from '@/components/Footer';
 import HeroHeading from '@/components/HeroHeading';
 import HeroSection from '@/app/about/components/HeroSection';
 import OurServicesSection from '@/app/about/components/OurServicesSection';
@@ -23,7 +22,6 @@ const AboutPage = (): React.JSX.Element => {
 			<OurValuesSection />
 			<OurTeamSection />
 			<FAQ />
-			<Footer />
 		</main>
 	);
 };
