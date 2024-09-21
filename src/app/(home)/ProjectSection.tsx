@@ -3,9 +3,9 @@ import { GoArrowUpRight } from 'react-icons/go';
 import SectionHeading from '@/components/SectionHeading';
 import Link from 'next/link';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
-import { client, sanityFetch } from '@/sanity/lib/client';
+import { sanityFetch } from '@/sanity/lib/client';
 import { Project } from '@/sanity/types/sanity.types';
-import Projects from '@/components/Projects';
+import Projects from '@/components/ProjectCard';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 
 const ProjectSection = async (): Promise<React.JSX.Element> => {
@@ -26,10 +26,9 @@ const ProjectSection = async (): Promise<React.JSX.Element> => {
 								<Projects
 									key={project._id}
 									slug={project.slug}
-									image={project.thumbnail as SanityImageObject}
+									thumbnail={project.thumbnail}
 									status={project.status}
 									name={project.title}
-									description={project.description}
 									address={project.location}
 								/>
 							)

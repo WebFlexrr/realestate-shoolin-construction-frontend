@@ -78,7 +78,7 @@ const EnquiryPanel: FC<EnquiryPanelProps> = ({ projectTitle, projectSlug }) => {
 					<CardTitle className="font-semibold">Yes, I am interested!</CardTitle>
 					<CardDescription className="flex flex-col gap-2">
 						Send me more information about the project through email/ SMS.
-						<div>* fields are mandatory</div>
+						<span>* fields are mandatory</span>
 					</CardDescription>
 				</CardHeader>
 				<CardContent>

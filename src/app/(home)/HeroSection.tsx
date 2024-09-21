@@ -2,13 +2,6 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
-// import { SlMouse } from 'react-icons/sl';
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
 import { GoArrowUpRight } from 'react-icons/go';
 import Link from 'next/link';
 
@@ -46,8 +39,9 @@ const HeroSection = (): React.JSX.Element => {
 							src={'/picture/pic7.jpg'}
 							width={1000}
 							height={0}
-							alt=""
-							className="aspect-[4/3.5] w-full rounded-lg md:w-[25rem]"
+							alt="2nd Building Picture for Hero "
+							className=" w-full rounded-lg md:w-[25rem]"
+							priority={true}
 						/>
 					</section>
 				</section>
@@ -58,7 +52,8 @@ const HeroSection = (): React.JSX.Element => {
 						width={1000}
 						height={0}
 						alt="Main Hero Section Picture"
-						className=" border-text aspect-square rounded-lg border"
+						className="   rounded-lg border"
+						priority={true}
 					/>
 					<section className="flex h-auto w-full justify-end">
 						Architectural Excellence

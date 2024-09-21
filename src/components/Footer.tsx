@@ -169,12 +169,14 @@ const Footer = (): React.JSX.Element => {
 						</section>
 						<section className="flex gap-2 ">
 							<Link
+								aria-label="This is Facebook Logo for visit our Facebook Page"
 								href={'https://www.facebook.com/profile.php?id=61565175867835'}
 								className="group flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary"
 							>
 								<FaFacebookF className=" transition-all duration-500 ease-in-out group-hover:text-black" />
 							</Link>
 							<Link
+								aria-label="This is Instagram Logo for visit our Instagram Page"
 								href={'https://www.instagram.com/shoolinconstruction'}
 								className="group  flex items-center justify-center rounded-full border border-neutral-400 p-2 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary "
 							>

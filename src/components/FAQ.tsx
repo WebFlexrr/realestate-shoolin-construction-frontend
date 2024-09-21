@@ -28,7 +28,7 @@ const FAQ = async (): Promise<React.JSX.Element> => {
 									src={'/picture/pic9.jpeg'}
 									width={1000}
 									height={0}
-									alt={''}
+									alt={'Rudra Apartment Front View'}
 									className=" aspect-square w-full rounded-lg lg:aspect-[3/3.8]"
 								/>
 							</section>

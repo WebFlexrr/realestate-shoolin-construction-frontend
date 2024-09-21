@@ -34,12 +34,14 @@ const Navbar = (): JSX.Element => {
 					<div className="mx-auto flex w-full  max-w-[90rem] items-center justify-end gap-10">
 						<div className="flex items-center gap-2">
 							<Link
+								aria-label="This is Facebook Logo for visit our Facebook Page"
 								href={'https://www.facebook.com/profile.php?id=61565175867835'}
 								className="group flex items-center justify-center rounded-full border border-neutral-400 p-1 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary"
 							>
 								<FaFacebookF className=" text-xs transition-all duration-500 ease-in-out group-hover:text-black" />
 							</Link>
 							<Link
+								aria-label="This is Instagram Logo for visit our Instagram Page"
 								href={'https://www.instagram.com/shoolinconstruction'}
 								className="group flex items-center justify-center rounded-full border border-neutral-400 p-1 subpixel-antialiased transition-all duration-500 ease-in-out hover:bg-primary"
 							>
@@ -66,12 +68,12 @@ const Navbar = (): JSX.Element => {
 			<section className="flex h-[5rem] w-full justify-center bg-background2">
 				<section className="mx-5 flex w-full items-center justify-between bg-background2  py-2  xl:mx-auto xl:max-w-7xl ">
 					{/* Logo */}
-					<Link href={'/'}>
+					<Link href={'/'} aria-label="Company logo for Back to Home page">
 						<Image
 							src={logo}
 							width={1000}
 							height={0}
-							alt=""
+							alt="Company Logo"
 							className=" w-[80px]  md:w-44"
 						/>
 					</Link>
@@ -81,35 +83,38 @@ const Navbar = (): JSX.Element => {
 							<NavigationMenu>
 								<NavigationMenuList>
 									<NavigationMenuItem className="cursor-pointer ">
-										<Link
+										{/* <Link
 											href={'/about'}
 											legacyBehavior
 											className="hover:text-white"
+										> */}
+										<NavigationMenuLink
+											href={'/about'}
+											className={navigationMenuTriggerStyle()}
 										>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												<span className="text-lg">About Us</span>
-											</NavigationMenuLink>
-										</Link>
+											<span className="text-lg">About Us</span>
+										</NavigationMenuLink>
+										{/* </Link> */}
 									</NavigationMenuItem>
 									<NavigationMenuItem className="cursor-pointer">
-										<Link href={'/projects'} legacyBehavior>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												<span className="text-lg">Projects</span>
-											</NavigationMenuLink>
-										</Link>
+										{/* <Link href={'/projects'} legacyBehavior> */}
+										<NavigationMenuLink
+											href={'/projects'}
+											className={navigationMenuTriggerStyle()}
+										>
+											<span className="text-lg">Projects</span>
+										</NavigationMenuLink>
+										{/* </Link> */}
 									</NavigationMenuItem>
 									<NavigationMenuItem className="cursor-pointer">
-										<Link href={'/contact'} legacyBehavior>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												<span className="text-lg">Contacts</span>
-											</NavigationMenuLink>
-										</Link>
+										{/* <Link href={'/contact'} legacyBehavior> */}
+										<NavigationMenuLink
+											href={'/contact'}
+											className={navigationMenuTriggerStyle()}
+										>
+											<span className="text-lg">Contacts</span>
+										</NavigationMenuLink>
+										{/* </Link> */}
 									</NavigationMenuItem>
 									<NavigationMenuItem className="cursor-pointer">
 										<Link href={'/projects'}>
@@ -126,7 +131,7 @@ const Navbar = (): JSX.Element => {
 					<section className=" lg:hidden">
 						<Sheet>
 							<SheetTrigger asChild>
-								<Button variant={'outline-rounded'}>
+								<Button id="text" aria-label="Menu" variant={'outline-rounded'}>
 									<RxHamburgerMenu className="text-2xl " />
 								</Button>
 							</SheetTrigger>
@@ -186,7 +191,6 @@ const Navbar = (): JSX.Element => {
 					</section>
 				</section>
 			</section>
-			{/* <Separator /> */}
 		</nav>
 	);
 };

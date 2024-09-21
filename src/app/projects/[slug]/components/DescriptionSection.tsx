@@ -1,5 +1,3 @@
-import { PTComponents } from '@/components/PortableText';
-import { PortableText } from 'next-sanity';
 import React, { FC } from 'react';
 
 interface DescriptionSectionProps {
@@ -13,7 +11,9 @@ const DescriptionSection: FC<DescriptionSectionProps> = ({ description }) => {
 			<section className="w-full">
 				<h4 className=" underline">Description</h4>
 			</section>
-			<section className="mt-4 w-full space-y-4">{description}</section>
+			<section className="mt-4 w-full space-y-4">
+				<p>{description}</p>
+			</section>
 		</section>
 	);
 };

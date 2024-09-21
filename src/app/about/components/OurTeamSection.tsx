@@ -28,7 +28,7 @@ const OurTeamSection = () => {
 									src={'/assets/sunil-das-image.jpg'}
 									width={1000}
 									height={0}
-									alt={'Sunil Das'}
+									alt={`Sunil Das's Profile Image`}
 									className="aspect-[4/5] w-full rounded-lg border border-primary-foreground "
 								/>
 							</div>
