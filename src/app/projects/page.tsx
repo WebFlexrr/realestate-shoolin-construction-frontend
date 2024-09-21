@@ -1,13 +1,12 @@
 import HeroHeading from '@/components/HeroHeading';
-import Footer from '@/components/Footer';
 import React from 'react';
 import { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import { sanityFetch } from '@/sanity/lib/client';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
-import Projects from '@/components/Projects';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { Project } from '@/sanity/types/sanity.types';
+import ProjectCard from '@/components/ProjectCard';
 
 export const metadata: Metadata = {
 	title: 'Projects',
@@ -18,7 +17,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 	const projects = await sanityFetch<Project[]>({
 		query: PROJECTS_QUERY,
 	});
-	console.log('Projects====>', projects);
+	// console.log('Projects====>', projects);
 	return (
 		<main className="mt-[7rem] h-auto w-full">
 			<HeroHeading heading={'Our Projects'} subHeading={'Projects'} />
@@ -34,13 +33,12 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 								return (
 									(project.status === 'under_construction' ||
 										project.status === 'not_started') && (
-										<Projects
+										<ProjectCard
 											key={project._id}
 											slug={project.slug}
-											image={project.thumbnail as SanityImageObject}
+											thumbnail={project.thumbnail}
 											status={project.status}
 											name={project.title}
-											description={project.description}
 											address={project.location}
 										/>
 									)
@@ -55,13 +53,12 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 								(project) =>
 									(project.status === 'completed' ||
 										project.status === 'ready_to_move') && (
-										<Projects
+										<ProjectCard
 											key={project._id}
 											slug={project.slug}
-											image={project.thumbnail as SanityImageObject}
+											thumbnail={project.thumbnail}
 											status={project.status}
 											name={project.title}
-											description={project.description}
 											address={project.location}
 										/>
 									)

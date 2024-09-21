@@ -15,7 +15,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
 				'/projects',
 				...projects.map((project) => `/projects/${project.slug?.current}`),
 			],
-			disallow: '/private',
+			// disallow: '/private',
 		},
 		sitemap: 'https://shoolinconstruction.com/sitemap.xml',
 	};

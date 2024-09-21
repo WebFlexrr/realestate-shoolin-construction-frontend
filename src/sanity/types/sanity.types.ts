@@ -71,6 +71,21 @@ export type Faq = {
 	answer?: string;
 };
 
+export type Booking = {
+	_id: string;
+	_type: 'booking';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	question?: string;
+	project?: {
+		_ref: string;
+		_type: 'reference';
+		_weak?: boolean;
+		[internalGroqTypeReferenceTo]?: 'project';
+	};
+};
+
 export type Project = {
 	_id: string;
 	_type: 'project';
@@ -79,24 +94,12 @@ export type Project = {
 	_rev: string;
 	title?: string;
 	slug?: Slug;
+	seo?: SeoMetaFields;
 	location?: string;
-	tags?: Array<string>;
 	status?: 'under_construction' | 'ready_to_move' | 'completed' | 'not_started';
 	price?: number;
 	description?: string;
-	thumbnail?: {
-		asset?: {
-			_ref: string;
-			_type: 'reference';
-			_weak?: boolean;
-			[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-		};
-		hotspot?: SanityImageHotspot;
-		crop?: SanityImageCrop;
-		caption?: string;
-		alternative?: string;
-		_type: 'image';
-	};
+	thumbnail?: ImageWithAlt;
 	projectImages?: Array<{
 		asset?: {
 			_ref: string;
@@ -119,6 +122,138 @@ export type Project = {
 	brochure?: string;
 	mapsLocation?: string;
 	construction_progress?: construction_progress;
+};
+
+export type ImageWithAlt = {
+	asset?: {
+		_ref: string;
+		_type: 'reference';
+		_weak?: boolean;
+		[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+	};
+	hotspot?: SanityImageHotspot;
+	crop?: SanityImageCrop;
+	alternative?: string;
+	_type: 'image';
+};
+
+export type Twitter = {
+	_type: 'twitter';
+	cardType?: string;
+	creator?: string;
+	site?: string;
+	handle?: string;
+};
+
+export type TermsConditions = {
+	_id: string;
+	_type: 'termsConditions';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	question?: string;
+	answer?: string;
+};
+export type PrivacyPolicy = {
+	_id: string;
+	_type: 'privacyPolicy';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	question?: string;
+	answer?: string;
+};
+
+export type Aboutpage = {
+	_id: string;
+	_type: 'aboutpage';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	seo?: SeoMetaFields;
+};
+
+export type Homepage = {
+	_id: string;
+	_type: 'homepage';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	title?: string;
+	subTitle?: string;
+	seo?: SeoMetaFields;
+};
+
+export type MetaTag = {
+	_type: 'metaTag';
+	metaAttributes?: Array<
+		{
+			_key: string;
+		} & MetaAttribute
+	>;
+};
+
+export type MetaAttribute = {
+	_type: 'metaAttribute';
+	attributeKey?: string;
+	attributeType?: 'string' | 'image';
+	attributeValueImage?: {
+		asset?: {
+			_ref: string;
+			_type: 'reference';
+			_weak?: boolean;
+			[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+		};
+		hotspot?: SanityImageHotspot;
+		crop?: SanityImageCrop;
+		_type: 'image';
+	};
+	attributeValueString?: string;
+};
+
+export type SeoMetaFields = {
+	_type: 'seoMetaFields';
+	nofollowAttributes?: boolean;
+	metaTitle?: string;
+	metaDescription?: string;
+	metaImage?: {
+		asset?: {
+			_ref: string;
+			_type: 'reference';
+			_weak?: boolean;
+			[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+		};
+		hotspot?: SanityImageHotspot;
+		crop?: SanityImageCrop;
+		_type: 'image';
+	};
+	seoKeywords?: Array<string>;
+	openGraph?: OpenGraph;
+	additionalMetaTags?: Array<
+		{
+			_key: string;
+		} & MetaTag
+	>;
+	twitter?: Twitter;
+};
+
+export type OpenGraph = {
+	_type: 'openGraph';
+	url?: string;
+	image?: {
+		asset?: {
+			_ref: string;
+			_type: 'reference';
+			_weak?: boolean;
+			[internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+		};
+		hotspot?: SanityImageHotspot;
+		crop?: SanityImageCrop;
+		_type: 'image';
+	};
+	title?: string;
+	description?: string;
+	siteName?: string;
 };
 
 export type amenities = {
@@ -164,6 +299,7 @@ export type unit_layout_plan = Array<{
 		};
 		hotspot?: SanityImageHotspot;
 		crop?: SanityImageCrop;
+		alternative?: string;
 		_type: 'image';
 	};
 	floorImageInFile?: {
@@ -202,13 +338,6 @@ export type unit_layout_plan = Array<{
 	_key: string;
 }>;
 
-export type Geopoint = {
-	_type: 'geopoint';
-	lat?: number;
-	lng?: number;
-	alt?: number;
-};
-
 export type SanityFileAsset = {
 	_id: string;
 	_type: 'sanity.fileAsset';
@@ -230,7 +359,6 @@ export type SanityFileAsset = {
 	url?: string;
 	source?: SanityAssetSourceData;
 };
-
 export type SanityImageCrop = {
 	_type: 'sanity.imageCrop';
 	top?: number;
@@ -277,6 +405,13 @@ export type SanityAssetSourceData = {
 	url?: string;
 };
 
+export type Geopoint = {
+	_type: 'geopoint';
+	lat?: number;
+	lng?: number;
+	alt?: number;
+};
+
 export type SanityImageMetadata = {
 	_type: 'sanity.imageMetadata';
 	location?: Geopoint;
@@ -286,6 +421,15 @@ export type SanityImageMetadata = {
 	blurHash?: string;
 	hasAlpha?: boolean;
 	isOpaque?: boolean;
+};
+
+export type MediaTag = {
+	_id: string;
+	_type: 'media.tag';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	name?: Slug;
 };
 
 export type Slug = {
@@ -298,15 +442,26 @@ export type AllSanitySchemaTypes =
 	| SanityImagePaletteSwatch
 	| SanityImagePalette
 	| SanityImageDimensions
+	| Geopoint
 	| Testimonial
 	| Faq
+	| Booking
 	| Project
-	| Geopoint
 	| SanityFileAsset
+	| TermsConditions
+	| PrivacyPolicy
+	| Aboutpage
+	| Homepage
+	| MetaTag
+	| MetaAttribute
+	| SeoMetaFields
+	| Twitter
+	| OpenGraph
 	| SanityImageCrop
 	| SanityImageHotspot
 	| SanityImageAsset
 	| SanityAssetSourceData
 	| SanityImageMetadata
+	| MediaTag
 	| Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;

@@ -21,7 +21,7 @@ const OurServicesSection = () => {
 									src={'/picture/pic7.jpg'}
 									width={1000}
 									height={0}
-									alt={''}
+									alt={'side view of Gitanjali Apartment'}
 									className=" aspect-[3/3.5] w-full rounded-lg"
 								/>
 							</section>

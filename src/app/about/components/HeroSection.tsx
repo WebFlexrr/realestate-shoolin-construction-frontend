@@ -26,7 +26,7 @@ const HeroSection = () => {
 							width={1000}
 							height={0}
 							className=" aspect-[4/2.5] h-auto w-full rounded-lg"
-							alt={''}
+							alt={'Front view of Gitanjali Apartment'}
 						/>
 						<section className="my-3 flex w-full flex-wrap gap-3 md:my-6">
 							<Button variant={'outline-rounded'} size={'sm'}>
@@ -49,7 +49,7 @@ const HeroSection = () => {
 							width={1000}
 							height={0}
 							className=" aspect-[4/3] h-auto w-full rounded-lg"
-							alt={''}
+							alt={'side view of Pashupati Apartment '}
 						/>
 					</section>
 				</section>
