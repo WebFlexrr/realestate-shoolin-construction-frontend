@@ -23,7 +23,12 @@ export const HOME_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "homepage"][0]{ _createdAt,
 _type,_id,seo,title,_updatedAt,subTitle
 }`);
+
 export const ABOUT_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "aboutpage"][0]{ _createdAt,
 _type,_id,seo,title,_updatedAt,subTitle
 }`);
+
+export const PRIVACY_POLICY_QUERY = defineQuery(
+	`*[_type == "privacyPolicy"][0]`
+);

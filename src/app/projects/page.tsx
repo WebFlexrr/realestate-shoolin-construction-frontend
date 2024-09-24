@@ -4,7 +4,6 @@ import { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import { sanityFetch } from '@/sanity/lib/client';
 import { PROJECTS_QUERY } from '@/sanity/lib/queries';
-import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { Project } from '@/sanity/types/sanity.types';
 import ProjectCard from '@/components/ProjectCard';
 
@@ -17,7 +16,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 	const projects = await sanityFetch<Project[]>({
 		query: PROJECTS_QUERY,
 	});
-	// console.log('Projects====>', projects);
+
 	return (
 		<main className="mt-[7rem] h-auto w-full">
 			<HeroHeading heading={'Our Projects'} subHeading={'Projects'} />

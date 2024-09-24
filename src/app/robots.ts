@@ -13,10 +13,12 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
 				'/about',
 				'/contact',
 				'/projects',
+				'/privacy-policy',
+				'/faq',
 				...projects.map((project) => `/projects/${project.slug?.current}`),
 			],
-			// disallow: '/private',
+			disallow: '/private',
 		},
-		sitemap: 'https://shoolinconstruction.com/sitemap.xml',
+		sitemap: 'https://www.shoolinconstruction.com/sitemap.xml',
 	};
 }

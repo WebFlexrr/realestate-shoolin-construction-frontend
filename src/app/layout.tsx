@@ -6,12 +6,11 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	// title: {
-	// 	default:
-	// 		'Shoolin Construction | Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
-	// 	template:
-	// 		'%s - Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
-	// },
+	title: {
+		default:
+			'Shoolin Construction | Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
+		template: '%s - Shoolin Construction ',
+	},
 	// description:
 	// 	'Provides Residential Real estate Property-Buy-Sell-Developer Company',
 	applicationName: 'Next.js',
