@@ -43,6 +43,9 @@ export async function generateMetadata({
 						.url()
 				: '',
 		},
+		alternates: {
+			canonical: `/projects/${project.slug?.current}`,
+		},
 		twitter: {
 			siteId: project.seo?.twitter?.site,
 			creator: project.seo?.twitter?.creator,
@@ -112,8 +115,6 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 					/>
 				</section>
 			</section>
-
-			<Footer />
 		</main>
 	);
 };

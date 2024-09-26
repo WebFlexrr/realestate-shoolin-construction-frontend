@@ -30,6 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
 						.url()
 				: '',
 		},
+		alternates: {
+			canonical: '/',
+		},
 		twitter: {
 			siteId: homePage.seo?.twitter?.site,
 			creator: homePage.seo?.twitter?.creator,

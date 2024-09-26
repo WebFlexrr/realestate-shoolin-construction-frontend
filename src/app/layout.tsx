@@ -17,11 +17,7 @@ export const metadata: Metadata = {
 	creator: 'Webflexrr.com',
 	publisher: 'Webflexrr.com',
 	metadataBase: new URL(`${process.env.NEXT_PUBLIC_WEBSITE_URL}`),
-	alternates: {
-		canonical: '/',
-	},
 	category: 'real-estate',
-
 	// formatDetection: {
 	// 	email: false,
 	// 	address: false,
