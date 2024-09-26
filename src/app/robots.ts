@@ -19,6 +19,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
 			],
 			disallow: '/private',
 		},
-		sitemap: 'https://www.shoolinconstruction.com/sitemap.xml',
+		sitemap: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/sitemap.xml`,
 	};
 }

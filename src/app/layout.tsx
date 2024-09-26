@@ -15,16 +15,11 @@ export const metadata: Metadata = {
 	// 	'Provides Residential Real estate Property-Buy-Sell-Developer Company',
 	applicationName: 'Next.js',
 	referrer: 'origin-when-cross-origin',
-	keywords: ['Next.js', 'React', 'JavaScript'],
 	creator: 'Webflexrr.com',
 	publisher: 'Webflexrr.com',
-	metadataBase: new URL('https://www.shoolinconstruction.com/'),
+	metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL!),
 	alternates: {
 		canonical: '/',
-		languages: {
-			'en-US': '/en-US',
-			'de-DE': '/de-DE',
-		},
 	},
 	category: 'real-estate',
 

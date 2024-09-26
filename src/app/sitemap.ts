@@ -7,43 +7,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const projects = await sanityFetch<Project[]>({ query: PROJECTS_QUERY });
 	return [
 		{
-			url: 'https://www.shoolinconstruction.com',
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
 			lastModified: new Date(),
 			changeFrequency: 'yearly',
 			priority: 1,
 		},
 		{
-			url: 'https://www.shoolinconstruction.com/about',
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/about`,
 			lastModified: new Date(),
 			changeFrequency: 'monthly',
 			priority: 0.8,
 		},
 		{
-			url: 'https://www.shoolinconstruction.com/contact',
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact`,
 			lastModified: new Date(),
 			changeFrequency: 'weekly',
 			priority: 0.5,
 		},
 		{
-			url: 'https://www.shoolinconstruction.com/projects',
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/projects`,
 			lastModified: new Date(),
 			changeFrequency: 'weekly',
 			priority: 0.5,
 		},
 		{
-			url: 'https://www.shoolinconstruction.com/privacy-policy',
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/privacy-policy`,
 			lastModified: new Date(),
 			changeFrequency: 'weekly',
 			priority: 0.5,
 		},
 		{
-			url: 'https://www.shoolinconstruction.com/faq',
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/faq`,
 			lastModified: new Date(),
 			changeFrequency: 'weekly',
 			priority: 0.5,
 		},
 		...projects.map((project) => ({
-			url: `https://www.shoolinconstruction.com/projects/${project.slug?.current}`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/projects/${project.slug?.current}`,
 			lastModified: new Date(),
 			priority: 0.5,
 		})),
