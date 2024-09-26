@@ -11,13 +11,12 @@ export const metadata: Metadata = {
 			'Shoolin Construction | Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
 		template: '%s - Shoolin Construction ',
 	},
-	// description:
-	// 	'Provides Residential Real estate Property-Buy-Sell-Developer Company',
+
 	applicationName: 'Next.js',
 	referrer: 'origin-when-cross-origin',
 	creator: 'Webflexrr.com',
 	publisher: 'Webflexrr.com',
-	metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL!),
+	metadataBase: new URL(`${process.env.NEXT_PUBLIC_WEBSITE_URL}`),
 	alternates: {
 		canonical: '/',
 	},
