@@ -6,12 +6,8 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: {
-		default:
-			'Shoolin Construction | Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
-		template: '%s - Shoolin Construction ',
-	},
-
+	title:
+		'Shoolin Construction | Provides Commercial & Residential Real estate Property-Buy-Sell-Rent Company',
 	applicationName: 'Next.js',
 	referrer: 'origin-when-cross-origin',
 	creator: 'Webflexrr.com',

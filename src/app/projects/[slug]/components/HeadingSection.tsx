@@ -27,7 +27,7 @@ const HeadingSection: FC<HeadingSection> = ({
 	price,
 	slug,
 }) => {
-	console.log(title, location);
+	// console.log(title, location);
 	return (
 		<section className="h-auto w-full">
 			<section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">

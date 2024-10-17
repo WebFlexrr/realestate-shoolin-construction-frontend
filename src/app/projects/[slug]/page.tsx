@@ -59,8 +59,8 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 		query: PROJECT_DETAILS_QUERY(params.slug),
 	});
 
-	console.log('params Project or Slug--------->', params.slug);
-	console.log('File Url--------->', project);
+	// console.log('params Project or Slug--------->', params.slug);
+	// console.log('File Url--------->', project);
 
 	return (
 		<main className="relative h-auto w-full  pt-[7rem]">

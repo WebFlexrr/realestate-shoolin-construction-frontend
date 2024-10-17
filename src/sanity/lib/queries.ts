@@ -20,15 +20,31 @@ export const PROJECT_DETAILS_QUERY = (slug: string) => {
 };
 
 export const HOME_PAGE_SEO_QUERY =
-	defineQuery(`*[_type == "homepage"][0]{ _createdAt,
+	defineQuery(`*[_type == "homePage"][0]{ _createdAt,
 _type,_id,seo,title,_updatedAt,subTitle
 }`);
 
 export const ABOUT_PAGE_SEO_QUERY =
-	defineQuery(`*[_type == "aboutpage"][0]{ _createdAt,
+	defineQuery(`*[_type == "aboutPage"][0]{ _createdAt,
+_type,_id,seo,title,_updatedAt,subTitle
+}`);
+export const PROJECTS_PAGE_SEO_QUERY =
+	defineQuery(`*[_type == "projectsPage"][0]{ _createdAt,
+_type,_id,seo,title,_updatedAt,subTitle
+}`);
+export const CONTACT_PAGE_SEO_QUERY =
+	defineQuery(`*[_type == "contactPage"][0]{ _createdAt,
 _type,_id,seo,title,_updatedAt,subTitle
 }`);
 
 export const PRIVACY_POLICY_QUERY = defineQuery(
 	`*[_type == "privacyPolicy"][0]`
+);
+
+export const TERMS_CONDITIONS_QUERY = defineQuery(
+	`*[_type == "termsConditions"][0]`
+);
+
+export const PROPERTY_FOR_SALE_QUERY = defineQuery(
+	`*[_type == "booking"][0]{"slug":project->slug}`
 );

@@ -58,12 +58,12 @@ const Footer = (): React.JSX.Element => {
 													Projects
 												</Link>
 											</li>
-											<li className="transition-all duration-500 ease-in-out hover:text-primary">
+											{/* <li className="transition-all duration-500 ease-in-out hover:text-primary">
 												<Link href={'/projects'} className="flex items-center">
 													<ChevronRight />
 													Media
 												</Link>
-											</li>
+											</li> */}
 											<li className="transition-all duration-500 ease-in-out hover:text-primary">
 												<Link href={'/faq'} className="flex items-center">
 													<ChevronRight />
@@ -96,7 +96,10 @@ const Footer = (): React.JSX.Element => {
 												</Link>
 											</li>
 											<li className="transition-all duration-500 ease-in-out hover:text-primary">
-												<Link href={'/terms'} className="flex items-center">
+												<Link
+													href={'/terms-condition'}
+													className="flex items-center"
+												>
 													<ChevronRight />
 													Terms & Conditions
 												</Link>

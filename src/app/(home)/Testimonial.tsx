@@ -31,7 +31,6 @@ const Testimonials = ({
 }: {
 	testimonials: Testimonial[];
 }): React.JSX.Element => {
-	console.log(testimonials);
 	return (
 		<section className="h-auto w-full">
 			<section className="mx-auto h-auto w-full max-w-7xl px-5 py-20 sm:px-16 xl:px-0">

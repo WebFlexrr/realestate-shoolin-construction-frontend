@@ -145,23 +145,15 @@ export type Twitter = {
 	handle?: string;
 };
 
-export type TermsConditions = {
+export type AboutPage = {
 	_id: string;
-	_type: 'termsConditions';
+	_type: 'aboutPage';
 	_createdAt: string;
 	_updatedAt: string;
 	_rev: string;
-	question?: string;
-	answer?: string;
-};
-
-export type Aboutpage = {
-	_id: string;
-	_type: 'aboutpage';
-	_createdAt: string;
-	_updatedAt: string;
-	_rev: string;
+	about?: string;
 	seo?: SeoMetaFields;
+	values?: string;
 };
 
 export type Homepage = {
@@ -172,6 +164,26 @@ export type Homepage = {
 	_rev: string;
 	title?: string;
 	subTitle?: string;
+	seo?: SeoMetaFields;
+};
+
+export type ContactPage = {
+	_id: string;
+	_type: 'contactPage';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	title?: string;
+	seo?: SeoMetaFields;
+};
+
+export type ProjectsPage = {
+	_id: string;
+	_type: 'projectsPage';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	title?: string;
 	seo?: SeoMetaFields;
 };
 
@@ -456,6 +468,33 @@ export type PrivacyPolicy = {
 	}>;
 };
 
+export type TermsConditions = {
+	_id: string;
+	_type: 'termsConditions';
+	_createdAt: string;
+	_updatedAt: string;
+	_rev: string;
+	name?: string;
+	terms?: Array<{
+		children?: Array<{
+			marks?: Array<string>;
+			text?: string;
+			_type: 'span';
+			_key: string;
+		}>;
+		style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
+		listItem?: 'bullet' | 'number';
+		markDefs?: Array<{
+			href?: string;
+			_type: 'link';
+			_key: string;
+		}>;
+		level?: number;
+		_type: 'block';
+		_key: string;
+	}>;
+};
+
 export type AllSanitySchemaTypes =
 	| SanityImagePaletteSwatch
 	| SanityImagePalette
@@ -468,7 +507,9 @@ export type AllSanitySchemaTypes =
 	| SanityFileAsset
 	| TermsConditions
 	| PrivacyPolicy
-	| Aboutpage
+	| ContactPage
+	| ProjectsPage
+	| AboutPage
 	| Homepage
 	| MetaTag
 	| MetaAttribute
