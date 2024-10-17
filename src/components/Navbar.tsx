@@ -1,16 +1,8 @@
-'use client';
 import React from 'react';
 import Image from 'next/image';
 import logo from '../../public/logos/logo.png';
 import { HiMiniDevicePhoneMobile } from 'react-icons/hi2';
 import { HiOutlineMailOpen } from 'react-icons/hi';
-import {
-	NavigationMenu,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
 import {
 	Sheet,
 	SheetClose,
@@ -27,19 +19,17 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { sanityFetch } from '@/sanity/lib/client';
 import { Slug } from '@/sanity/types/sanity.types';
-import { useRouter } from 'next/navigation';
 import { PROPERTY_FOR_SALE_QUERY } from '@/sanity/lib/queries';
 
-const Navbar = (): JSX.Element => {
-	const router = useRouter();
+interface PropertyForSale {
+	slug: Slug;
+}
+const Navbar = async (): Promise<JSX.Element> => {
+	const slug = await sanityFetch<PropertyForSale>({
+		query: PROPERTY_FOR_SALE_QUERY,
+	});
 
-	const onPropertySaleRedirect = async () => {
-		const slug = await sanityFetch<Slug>({
-			query: PROPERTY_FOR_SALE_QUERY,
-		});
-
-		router.push(`/projects/${slug}`);
-	};
+	console.log(slug.slug ? `/projects/${slug?.slug.current}` : '/projects');
 
 	return (
 		<nav className="fixed top-0 z-20 h-auto w-full">
@@ -94,55 +84,43 @@ const Navbar = (): JSX.Element => {
 
 					<section className="flex w-fit flex-col gap-2">
 						<section className="hidden w-fit items-center gap-10 lg:flex ">
-							<NavigationMenu>
-								<NavigationMenuList>
-									<NavigationMenuItem className="cursor-pointer ">
-										{/* <Link
-											href={'/about'}
-											legacyBehavior
-											className="hover:text-white"
-										> */}
-										<NavigationMenuLink
-											href={'/about'}
-											className={navigationMenuTriggerStyle()}
-										>
-											<span className="text-lg">About Us</span>
-										</NavigationMenuLink>
-										{/* </Link> */}
-									</NavigationMenuItem>
-									<NavigationMenuItem className="cursor-pointer">
-										{/* <Link href={'/projects'} legacyBehavior> */}
-										<NavigationMenuLink
-											href={'/projects'}
-											className={navigationMenuTriggerStyle()}
-										>
-											<span className="text-lg">Projects</span>
-										</NavigationMenuLink>
-										{/* </Link> */}
-									</NavigationMenuItem>
-									<NavigationMenuItem className="cursor-pointer">
-										{/* <Link href={'/contact'} legacyBehavior> */}
-										<NavigationMenuLink
-											href={'/contact'}
-											className={navigationMenuTriggerStyle()}
-										>
-											<span className="text-lg">Contacts</span>
-										</NavigationMenuLink>
-										{/* </Link> */}
-									</NavigationMenuItem>
-									<NavigationMenuItem className="cursor-pointer">
-										{/* <Link href={'/projects'}> */}
-										<Button
-											onClick={() => onPropertySaleRedirect()}
-											className="group border border-primary text-lg transition-all duration-500 ease-in-out hover:bg-background2"
-										>
-											Book Online
-											<GoArrowUpRight className=" text-2xl  group-hover:duration-500  group-hover:ease-in-out" />
-										</Button>
-										{/* </Link> */}
-									</NavigationMenuItem>
-								</NavigationMenuList>
-							</NavigationMenu>
+							<section>
+								<Link href={'/about'} className="hover:text-white">
+									<Button
+										variant={'ghost'}
+										className="transition-all duration-500 ease-in-out hover:bg-primary "
+									>
+										<span className="text-lg">About Us</span>
+									</Button>
+								</Link>
+								<Link href={'/projects'} className="hover:text-white">
+									<Button
+										variant={'ghost'}
+										className="transition-all duration-500 ease-in-out hover:bg-primary "
+									>
+										<span className="text-lg">Our Projects</span>
+									</Button>
+								</Link>
+								<Link href={'/contact'} className="hover:text-white">
+									<Button
+										variant={'ghost'}
+										className="transition-all duration-500 ease-in-out hover:bg-primary "
+									>
+										<span className="text-lg">Contact Us</span>
+									</Button>
+								</Link>
+								<Link
+									href={
+										slug.slug ? `/projects/${slug?.slug.current}` : '/projects'
+									}
+									className="ml-3 hover:text-white"
+								>
+									<Button className="group border border-primary text-lg transition-all duration-500 ease-in-out hover:bg-background2">
+										Property for Sale
+										<GoArrowUpRight className=" text-2xl  group-hover:duration-500  group-hover:ease-in-out" />
+									</Button>
+								</Link>
+							</section>
 						</section>
 					</section>
 					<section className=" lg:hidden">
@@ -195,10 +173,15 @@ const Navbar = (): JSX.Element => {
 									</SheetClose>
 									<SheetClose asChild>
 										<Link
-											href={'/bookonline'}
+											// href={`/projects/${slug.slug.current}`}
+											href={
+												slug.slug
+													? `/projects/${slug?.slug.current}`
+													: '/projects'
+											}
 											className="flex w-full items-center justify-between border-b border-black py-4"
 										>
-											Book Online
+											Property for Sale
 											<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
 										</Link>
 									</SheetClose>
