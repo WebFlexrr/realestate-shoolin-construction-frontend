@@ -18,7 +18,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 	slug,
 	address,
 }) => {
-	console.log('Alt Text from Image', name, thumbnail);
+	// console.log('Alt Text from Image', name, thumbnail);
 	return (
 		<div className="relative h-auto w-full rounded ">
 			<section className="relative z-10 aspect-[16/9] h-auto w-full transition-all duration-500 ease-in-out hover:scale-105 md:aspect-square lg:aspect-[16/10]">

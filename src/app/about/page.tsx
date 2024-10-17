@@ -7,19 +7,19 @@ import OurValuesSection from '@/app/about/components/OurValuesSection';
 import React from 'react';
 import { Metadata } from 'next';
 import { sanityFetch } from '@/sanity/lib/client';
-import { Aboutpage } from '@/sanity/types/sanity.types';
+
 import { ABOUT_PAGE_SEO_QUERY } from '@/sanity/lib/queries';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { imageUrlFor } from '@/sanity/lib/imageUrlFor';
+import { AboutPage as AboutPageTypes } from '@/sanity/types/sanity.types';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const aboutPage = await sanityFetch<Aboutpage>({
+	const aboutPage = await sanityFetch<AboutPageTypes>({
 		query: ABOUT_PAGE_SEO_QUERY,
 	});
 
-	console.log(aboutPage);
 	return {
-		title: aboutPage.seo?.metaTitle,
+		title: `About Us - ${aboutPage.seo?.metaTitle}`,
 		description: aboutPage.seo?.metaDescription,
 		keywords: aboutPage.seo?.seoKeywords,
 		openGraph: {

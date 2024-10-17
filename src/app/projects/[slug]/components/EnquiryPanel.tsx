@@ -54,7 +54,7 @@ const EnquiryPanel: FC<EnquiryPanelProps> = ({ projectTitle, projectSlug }) => {
 			propertyName: projectTitle,
 			propertyLink: `http://shoolinconstruction.com/projects/${projectSlug}`,
 		};
-		console.log(newValues);
+		// console.log(newValues);
 
 		await toast.promise(
 			fetch('/api/enquiry', {

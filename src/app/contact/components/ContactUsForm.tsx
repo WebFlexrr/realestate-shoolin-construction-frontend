@@ -73,7 +73,7 @@ const ContactUsForm = () => {
 			query,
 			messageType: 'Enquiry',
 		};
-		console.log(newValues);
+		// console.log(newValues);
 
 		if (!terms) {
 			toast.error('Oh! Something Wrong, pls select Term & Policy Checkout');

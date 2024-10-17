@@ -25,7 +25,6 @@ export async function POST(request: NextRequest) {
 		pincode,
 		query,
 	} = body;
-	console.log(body);
 
 	try {
 		const transporter = nodemailer.createTransport({
@@ -58,7 +57,7 @@ export async function POST(request: NextRequest) {
 				subject: 'A new Enquiry from Website', // Subject line
 				html: emailHtml, // html body
 			});
-			console.log('Message sent: %s', forOwn);
+			// console.log('Message sent: %s', forOwn);
 			// Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 			return NextResponse.json(forOwn, { status: 200 });
 		} else if (messageType === 'SiteVisit') {
@@ -69,12 +68,12 @@ export async function POST(request: NextRequest) {
 				subject: 'A Site Visit Enquiry from Website', // Subject line
 				html: emailHtml, // html body
 			});
-			console.log('Message sent: %s', forOwn);
+			// console.log('Message sent: %s', forOwn);
 			// Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 			return NextResponse.json(forOwn, { status: 200 });
 		}
 	} catch (error) {
-		console.log(error);
+		// console.log(error);
 		return NextResponse.json(error, { status: 500 });
 	}
 }

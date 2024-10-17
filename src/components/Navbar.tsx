@@ -25,14 +25,28 @@ import Link from 'next/link';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { sanityFetch } from '@/sanity/lib/client';
+import { Slug } from '@/sanity/types/sanity.types';
+import { useRouter } from 'next/navigation';
+import { PROPERTY_FOR_SALE_QUERY } from '@/sanity/lib/queries';
 
 const Navbar = (): JSX.Element => {
+	const router = useRouter();
+
+	const onPropertySaleRedirect = async () => {
+		const slug = await sanityFetch<Slug>({
+			query: PROPERTY_FOR_SALE_QUERY,
+		});
+
+		router.push(`/projects/${slug}`);
+	};
+
 	return (
 		<nav className="fixed top-0 z-20 h-auto w-full">
-			<section className="hidden h-7 w-full items-center gap-10 bg-[#4C4C6D] text-white lg:flex">
+			<section className=" flex h-7 w-full items-center gap-10 bg-[#4C4C6D] text-white">
 				<section className="mx-5 flex w-full items-center justify-end  py-2  xl:mx-auto xl:max-w-7xl ">
 					<div className="mx-auto flex w-full  max-w-[90rem] items-center justify-end gap-10">
-						<div className="flex items-center gap-2">
+						<div className="hidden items-center gap-2 lg:flex">
 							<Link
 								aria-label="This is Facebook Logo for visit our Facebook Page"
 								href={'https://www.facebook.com/profile.php?id=61565175867835'}
@@ -74,7 +88,7 @@ const Navbar = (): JSX.Element => {
 							width={1000}
 							height={0}
 							alt="Company Logo"
-							className=" w-[80px]  md:w-44"
+							className="w-36  md:w-44"
 						/>
 					</Link>
 
@@ -117,12 +131,15 @@ const Navbar = (): JSX.Element => {
 										{/* </Link> */}
 									</NavigationMenuItem>
 									<NavigationMenuItem className="cursor-pointer">
-										<Link href={'/projects'}>
-											<Button className="group border border-primary text-lg transition-all duration-500 ease-in-out hover:bg-background2">
-												Book Online
-												<GoArrowUpRight className=" text-2xl  group-hover:duration-500  group-hover:ease-in-out" />
-											</Button>
-										</Link>
+										{/* <Link href={'/projects'}> */}
+										<Button
+											onClick={() => onPropertySaleRedirect()}
+											className="group border border-primary text-lg transition-all duration-500 ease-in-out hover:bg-background2"
+										>
+											Book Online
+											<GoArrowUpRight className=" text-2xl  group-hover:duration-500  group-hover:ease-in-out" />
+										</Button>
+										{/* </Link> */}
 									</NavigationMenuItem>
 								</NavigationMenuList>
 							</NavigationMenu>
