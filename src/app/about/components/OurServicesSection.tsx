@@ -27,7 +27,7 @@ const OurServicesSection = () => {
 							</section>
 							<section className="flex h-auto w-full flex-col justify-center gap-10 lg:w-[60%] lg:pl-20">
 								<section className="flex h-auto w-full flex-col">
-									<h4>Our Expertise</h4>
+									<h4>We Expertise in</h4>
 									<div className="my-5 w-full space-y-5 text-xl font-medium">
 										<div>Landscape Design</div>
 										<Separator />

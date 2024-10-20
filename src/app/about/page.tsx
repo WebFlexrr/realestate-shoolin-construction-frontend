@@ -45,11 +45,14 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-const AboutPage = (): React.JSX.Element => {
+const AboutPage = async (): Promise<React.JSX.Element> => {
+	const aboutPage = await sanityFetch<AboutPageTypes>({
+		query: ABOUT_PAGE_SEO_QUERY,
+	});
 	return (
 		<main className="z-0 mt-[5rem] h-auto w-full">
 			<HeroHeading heading={'About Us'} />
-			<HeroSection />
+			<HeroSection about={aboutPage.about} />
 			<OurServicesSection />
 			<OurValuesSection />
 			<OurTeamSection />

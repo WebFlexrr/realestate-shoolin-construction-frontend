@@ -156,14 +156,15 @@ export type AboutPage = {
 	values?: string;
 };
 
-export type Homepage = {
+export type HomePage = {
 	_id: string;
-	_type: 'homepage';
+	_type: 'homePage';
 	_createdAt: string;
 	_updatedAt: string;
 	_rev: string;
 	title?: string;
 	subTitle?: string;
+	about?: string;
 	seo?: SeoMetaFields;
 };
 
@@ -510,7 +511,7 @@ export type AllSanitySchemaTypes =
 	| ContactPage
 	| ProjectsPage
 	| AboutPage
-	| Homepage
+	| HomePage
 	| MetaTag
 	| MetaAttribute
 	| SeoMetaFields

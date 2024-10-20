@@ -76,7 +76,7 @@ const EnquiryForm: FC<EnquiryFormProps> = ({ projectTitle, projectSlug }) => {
 		);
 	};
 	return (
-		<Card>
+		<Card className="">
 			<CardHeader>
 				<CardTitle className="flex items-center justify-center">
 					<Image
@@ -84,11 +84,11 @@ const EnquiryForm: FC<EnquiryFormProps> = ({ projectTitle, projectSlug }) => {
 						width={0}
 						height={0}
 						alt=""
-						className="h-auto w-[100px]"
+						className="h-auto w-[120px]"
 					/>
 				</CardTitle>
-				<CardDescription className="flex items-center justify-center">
-					This is a Enquery Form
+				<CardDescription className="flex items-center justify-center text-2xl font-bold text-black">
+					This is a Enquiry Form
 				</CardDescription>
 			</CardHeader>
 			<CardContent>

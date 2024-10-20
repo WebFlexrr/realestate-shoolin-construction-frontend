@@ -33,10 +33,10 @@ const Navbar = async (): Promise<JSX.Element> => {
 
 	return (
 		<nav className="fixed top-0 z-20 h-auto w-full">
-			<section className=" flex h-7 w-full items-center gap-10 bg-[#4C4C6D] text-white">
+			<section className=" hidden h-7 w-full items-center gap-10 bg-[#4C4C6D] text-white lg:flex">
 				<section className="mx-5 flex w-full items-center justify-end  py-2  xl:mx-auto xl:max-w-7xl ">
-					<div className="mx-auto flex w-full  max-w-[90rem] items-center justify-end gap-10">
-						<div className="hidden items-center gap-2 lg:flex">
+					<div className="mx-auto  w-full max-w-[90rem]  items-center justify-end gap-10 lg:flex">
+						<div className=" flex items-center gap-2">
 							<Link
 								aria-label="This is Facebook Logo for visit our Facebook Page"
 								href={'https://www.facebook.com/profile.php?id=61565175867835'}
@@ -173,7 +173,6 @@ const Navbar = async (): Promise<JSX.Element> => {
 									</SheetClose>
 									<SheetClose asChild>
 										<Link
-											// href={`/projects/${slug.slug.current}`}
 											href={
 												slug.slug
 													? `/projects/${slug?.slug.current}`

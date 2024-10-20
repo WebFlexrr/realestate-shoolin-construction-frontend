@@ -21,12 +21,12 @@ export const PROJECT_DETAILS_QUERY = (slug: string) => {
 
 export const HOME_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "homePage"][0]{ _createdAt,
-_type,_id,seo,title,_updatedAt,subTitle
+_type,_id,seo,title,_updatedAt,subTitle,about
 }`);
 
 export const ABOUT_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "aboutPage"][0]{ _createdAt,
-_type,_id,seo,title,_updatedAt,subTitle
+_type,_id,seo,title,_updatedAt,subTitle,about
 }`);
 export const PROJECTS_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "projectsPage"][0]{ _createdAt,
