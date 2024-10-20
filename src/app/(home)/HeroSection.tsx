@@ -1,25 +1,34 @@
-'use client';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import React from 'react';
+import React, { FC } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import Link from 'next/link';
 
-const HeroSection = (): React.JSX.Element => {
+interface HeroSectionProps {
+	title?: string;
+	subTitle?: string;
+}
+
+const HeroSection: FC<HeroSectionProps> = async ({
+	title,
+	subTitle,
+}): Promise<React.JSX.Element> => {
 	return (
-		<section className="relative h-auto w-full bg-background2 pb-10 pt-[2rem] lg:h-auto ">
+		<section className="relative h-auto w-full bg-background2 pb-10 pt-[1rem] md:pt-[2rem] lg:h-auto ">
 			<section className="  flex h-full w-full flex-col px-5 sm:px-16 md:flex-row  xl:mx-auto xl:max-w-7xl xl:px-0">
-				<section className="flex h-full flex-col items-center justify-center gap-8 pt-32 md:w-1/2 lg:pr-20 lg:pt-40 ">
-					<section className="h-auto w-full ">
-						<h1 className="  text-6xl font-medium ">
+				<section className="flex h-full flex-col items-center justify-center gap-8 pt-32 md:w-1/2 lg:pr-10 lg:pt-40 ">
+					<section className="h-auto w-full  ">
+						<h1 className=" text-5xl   font-medium md:text-6xl ">
 							{/* Your home, your style begin your design adventure */}
-							Your Dream home,In affordable prices
+							{/* Your Dream home,In affordable prices */}
+							{title}
 						</h1>
 					</section>
 					<section>
-						<p>
-							A fusion of modern aesthetics and classical precision, capturing
-							the essence of architectural excellence.
+						<p className="text-lg">
+							{/* A fusion of modern aesthetics and classical precision, capturing
+							the essence of architectural excellence. */}
+							{subTitle}
 						</p>
 					</section>
 					<section className="w-full">

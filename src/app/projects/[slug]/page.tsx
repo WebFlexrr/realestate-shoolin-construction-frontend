@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer';
 import AmenitiesSection from '@/app/projects/[slug]/components/AmenitiesSection';
 import ConstructionStatusSection from '@/app/projects/[slug]/components/ConstructionStatusSection';
 import DescriptionSection from '@/app/projects/[slug]/components/DescriptionSection';
@@ -17,6 +16,8 @@ import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { Metadata } from 'next';
 import LoansBannerSection from './components/LoansBannerSection';
 import EnquiryPanel from './components/EnquiryPanel';
+import EnquiryForm from '@/components/EnquiryForm';
+import PopUpNotification from '@/components/PopUpNotification';
 
 export async function generateMetadata({
 	params,
@@ -115,6 +116,9 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 					/>
 				</section>
 			</section>
+			{/* POPup Notification Area  */}
+
+			<PopUpNotification title={project.title} slug={project.slug?.current} />
 		</main>
 	);
 };

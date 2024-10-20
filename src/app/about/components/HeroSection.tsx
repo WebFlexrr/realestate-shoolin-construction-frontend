@@ -1,8 +1,11 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import React from 'react';
+import React, { FC } from 'react';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+	about?: string;
+}
+const HeroSection: FC<HeroSectionProps> = ({ about }) => {
 	return (
 		<section className="h-auto w-full ">
 			<section className=" relative mx-auto flex h-full w-full max-w-7xl flex-col px-5 xl:px-0">
@@ -11,13 +14,14 @@ const HeroSection = () => {
 						<h2>Who We are?</h2>
 						<div className="h-1 w-20 bg-primary"></div>
 					</section>
-					<section className=" order-3 w-full md:order-2">
-						<p>
-							Shoolin Construction is a Construction Company. Sunil Das is the
+					<section className=" order-3 w-full  md:order-2">
+						<p className="text-base leading-7 tracking-wider">
+							{about}
+							{/* Shoolin Construction is a Construction Company. Sunil Das is the
 							founder of the company. Our mission is to provide houses at an
 							affordable prices. We assure the best for the price. Backed by a
 							talented team of professionals. We are able to provide there
-							superior service and construction jobs to our valued clients.
+							superior service and construction jobs to our valued clients. */}
 						</p>
 					</section>
 					<section className=" order-2 h-auto w-full ">

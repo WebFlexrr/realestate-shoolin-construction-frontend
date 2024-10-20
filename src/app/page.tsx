@@ -5,12 +5,12 @@ import ProjectSection from '@/app/(home)/ProjectSection';
 import { sanityFetch } from '@/sanity/lib/client';
 import { HOME_PAGE_SEO_QUERY } from '@/sanity/lib/queries';
 import { Metadata } from 'next';
-import { Homepage } from '@/sanity/types/sanity.types';
+import { HomePage } from '@/sanity/types/sanity.types';
 import { imageUrlFor } from '@/sanity/lib/imageUrlFor';
 import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const homePage = await sanityFetch<Homepage>({
+	const homePage = await sanityFetch<HomePage>({
 		query: HOME_PAGE_SEO_QUERY,
 	});
 
@@ -42,15 +42,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-	// const testimonials = await sanityFetch<Testimonial[]>({
-	// 	query: TESTIMONIALS_QUERY,
-	// });
+	const homePage = await sanityFetch<HomePage>({
+		query: HOME_PAGE_SEO_QUERY,
+	});
 
 	return (
 		<main className=" h-auto w-full">
-			<HeroSection />
+			<HeroSection title={homePage.title} subTitle={homePage.subTitle} />
 			<ProjectSection />
-			<AboutSection />
+			<AboutSection about={homePage.about} />
 			{/* <Testimonials testimonials={testimonials} /> */}
 			<FAQ />
 		</main>

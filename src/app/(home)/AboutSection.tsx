@@ -1,10 +1,14 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { FC } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 
-const AboutSection = (): JSX.Element => {
+interface AboutSectionProps {
+	about?: string;
+}
+
+const AboutSection: FC<AboutSectionProps> = ({ about }): JSX.Element => {
 	return (
 		<section className="h-auto w-full bg-background2">
 			<section className="h-auto w-full px-5 py-20 sm:px-16 xl:mx-auto xl:max-w-7xl xl:px-0 ">
@@ -12,34 +16,23 @@ const AboutSection = (): JSX.Element => {
 					<section className="flex h-auto w-full flex-col gap-10 lg:w-[70%] lg:pr-20 ">
 						<section className="h-auto w-full">
 							<div className=" w-fit ">
-								<h2>
-									&quot;From concept to creation how our dedication shapes
-									architectural marvels&quot;
-								</h2>
+								<h2 className="text-5xl">Who We Are?</h2>
+								{/* <h4 className="">Shoolin Construction is construction Company</h4> */}
 							</div>
 						</section>
-						<section className="flex h-auto w-full ">
-							<section className="flex h-auto w-[40%] flex-col justify-between">
+						<section className="flex h-auto w-full">
+							<section className="flex h-auto w-[40%] flex-col  justify-between">
 								<section className="flex w-full flex-col">
-									<div className="font-poppins text-sm">Founded</div>
-									<div className="font-poppins text-2xl">2019</div>
+									<div className="font-poppins ">Founded</div>
+									<div className="font-poppins text-3xl">2019</div>
 								</section>
 								<section className="flex w-full flex-col">
-									<div className="font-poppins  text-sm">
-										Projects Completed
-									</div>
-									<div className="font-poppins text-2xl">10+</div>
+									<div className="font-poppins ">Projects Completed</div>
+									<div className="font-poppins text-3xl">10+</div>
 								</section>
 							</section>
-							<section className="mx-auto w-[60%] pl-5 text-center leading-5">
-								<p>
-									Welcome to Shoolin Construction Developers! Discover your
-									dream home with our user-friendly interface and extensive
-									property listings. Whether buying, selling, or renting, our
-									platform offers tailored solutions to match your needs.
-									Explore top-notch properties and seamless navigation for a
-									hassle-free real estate experience. Start your journey today!
-								</p>
+							<section className="mx-auto w-[60%] pl-5 text-center  ">
+								<p className="text-base leading-7 tracking-wider">{about}</p>
 							</section>
 						</section>
 						<section className="flex w-full items-center justify-center">
