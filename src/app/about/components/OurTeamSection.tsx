@@ -14,14 +14,19 @@ import {
 } from '@/components/ui/card';
 import SectionHeading from '@/components/SectionHeading';
 import Image from 'next/image';
+import { FC } from 'react';
 
-const OurTeamSection = () => {
+interface OurTeamSectionProps {
+	ownerMessage?: Array<string>;
+}
+
+const OurTeamSection: FC<OurTeamSectionProps> = ({ ownerMessage }) => {
 	return (
 		<section className="relative h-full w-full  bg-background lg:py-20 ">
 			<section className=" mx-auto flex h-auto w-full max-w-7xl flex-col px-5 xl:px-0">
-				<SectionHeading subTitle={'Members'} mainTitle={'Meet Our Team'} />
+				<SectionHeading subTitle={'Owner'} mainTitle={'Meet Our Owner'} />
 				<section className="flex h-auto w-full flex-col  gap-10 lg:flex-row  xl:gap-0 ">
-					<section className="flex h-auto w-full justify-start gap-3    lg:w-1/3">
+					<section className="flex  h-auto w-full justify-start gap-3 lg:w-[35%]">
 						<div className=" w-full space-y-5  ">
 							<div className="w-full">
 								<Image
@@ -41,7 +46,7 @@ const OurTeamSection = () => {
 						</div>
 					</section>
 
-					<section className="h-auto w-full  lg:w-full lg:pl-10 xl:pl-20 ">
+					<section className="h-auto  w-full  lg:w-[65%] lg:pl-10 xl:pl-20 ">
 						<section className="h-auto w-full">
 							<section className="h-auto w-full pr-4 lg:mt-20">
 								<h4>
@@ -50,13 +55,16 @@ const OurTeamSection = () => {
 								</h4>
 							</section>
 							<section>
-								<section className=" mt-5 h-auto w-full lg:mt-16">
-									<p>
-										Our team is our greatest asset. Comprised of talented
-										architects, designers, engineers, and support staff, we are
-										united by a shared passion for design excellence and a
-										commitment to exceeding client expectations.
-									</p>
+								<section className=" mt-5 h-auto w-full space-y-5 lg:mt-16">
+									{/* <PortableText
+										components={PTComponents}
+										value={ownerMessage}
+									/> */}
+									{ownerMessage?.map((text, index) => (
+										<p key={index} className="text-lg leading-7">
+											{text}
+										</p>
+									))}
 								</section>
 								<section className="mt-5 flex w-fit flex-col border-t border-black">
 									<span>Sunil Das</span>

@@ -146,6 +146,15 @@ const Navbar = async (): Promise<JSX.Element> => {
 								<section className="flex flex-col  py-6">
 									<SheetClose asChild>
 										<Link
+											href={'/'}
+											className="flex w-full items-center justify-between border-b border-black py-4"
+										>
+											Home
+											<MdOutlineKeyboardArrowRight className="text-xl text-primary" />
+										</Link>
+									</SheetClose>
+									<SheetClose asChild>
+										<Link
 											href={'/about'}
 											className="flex w-full items-center justify-between border-b border-black py-4"
 										>

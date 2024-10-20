@@ -152,6 +152,9 @@ export type AboutPage = {
 	_updatedAt: string;
 	_rev: string;
 	about?: string;
+	ownerMessage?: Array<string>;
+	ourValues?: Array<string>;
+	ourVision?: Array<string>;
 	seo?: SeoMetaFields;
 	values?: string;
 };

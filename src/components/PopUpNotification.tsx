@@ -13,10 +13,9 @@ const PopUpNotification: FC<PopUpNotificationProps> = ({ title, slug }) => {
 	const popUpTimer = useCallback(() => {}, []);
 
 	useEffect(() => {
-		const timeId = setTimeout(() => {
+		setTimeout(() => {
 			setShowPopUp(true);
 		}, 2000);
-		clearTimeout(timeId);
 	}, [popUpTimer]);
 	return (
 		<div

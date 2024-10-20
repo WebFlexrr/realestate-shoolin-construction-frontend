@@ -37,7 +37,7 @@ const FAQ = async (): Promise<React.JSX.Element> => {
 									{faqs.map((faq, index) => (
 										<AccordionItem key={faq._id} value={`item-${index + 1}`}>
 											<AccordionTrigger>
-												{index + 1}. {faq.question}
+												{index + 1} . {faq.question}
 											</AccordionTrigger>
 											<AccordionContent>
 												<p>{faq.answer}</p>

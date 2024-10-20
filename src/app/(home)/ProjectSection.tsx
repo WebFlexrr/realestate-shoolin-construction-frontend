@@ -17,7 +17,11 @@ const ProjectSection = async (): Promise<React.JSX.Element> => {
 				<SectionHeading
 					mainTitle={'Current Projects'}
 					subTitle={'Explore more'}
+					description={
+						'Shoolin Construction gives your dream new flats in Dum Dum. Check out our premium, well-designed residential options in substantial areas. Your home, which is both trendy and magnificent, is waiting for you!'
+					}
 				/>
+
 				<section className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
 					{projects.map((project) => {
 						return (

@@ -16,7 +16,7 @@ const AboutSection: FC<AboutSectionProps> = ({ about }): JSX.Element => {
 					<section className="flex h-auto w-full flex-col gap-10 lg:w-[70%] lg:pr-20 ">
 						<section className="h-auto w-full">
 							<div className=" w-fit ">
-								<h2 className="text-5xl">Who We Are</h2>
+								<h2 className="text-5xl">Who We Are?</h2>
 								{/* <h4 className="">Shoolin Construction is construction Company</h4> */}
 							</div>
 						</section>

@@ -53,9 +53,12 @@ const AboutPage = async (): Promise<React.JSX.Element> => {
 		<main className="z-0 mt-[5rem] h-auto w-full">
 			<HeroHeading heading={'About Us'} />
 			<HeroSection about={aboutPage.about} />
+			<OurTeamSection ownerMessage={aboutPage.ownerMessage} />
+			<OurValuesSection
+				ourValues={aboutPage.ourValues}
+				ourVision={aboutPage.ourVision}
+			/>
 			<OurServicesSection />
-			<OurValuesSection />
-			<OurTeamSection />
 			<FAQ />
 		</main>
 	);
