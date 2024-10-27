@@ -21,11 +21,11 @@ const PopUpNotification: FC<PopUpNotificationProps> = ({ title, slug }) => {
 		<div
 			className={`${showPopUp ? 'fixed' : 'hidden'} left-0 top-0 z-30  h-screen w-full`}
 		>
-			<div
-				onClick={() => setShowPopUp(false)}
-				className="relative flex h-full w-full items-center justify-center"
-			>
-				<div className="absolute h-full  w-full bg-black opacity-50"></div>
+			<div className="relative flex h-full w-full items-center justify-center">
+				<div
+					onClick={() => setShowPopUp(false)}
+					className="absolute h-full  w-full bg-black opacity-50"
+				></div>
 				<div className="z-40 w-full max-w-96 ">
 					<EnquiryForm projectTitle={title} projectSlug={slug} />
 				</div>

@@ -26,11 +26,11 @@ _type,_id,seo,title,_updatedAt,subTitle,about
 
 export const ABOUT_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "aboutPage"][0]{ _createdAt,
-_type,_id,seo,title,_updatedAt,subTitle,about,ownerMessage, ourValues,ourVision
+_type,_id,seo,title,_updatedAt,subTitle,aboutTitle,aboutDescription,ownerMessage, ourValues,ourVision
 }`);
 export const PROJECTS_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "projectsPage"][0]{ _createdAt,
-_type,_id,seo,title,_updatedAt,subTitle
+_type,_id,seo,title,description,_updatedAt,subTitle
 }`);
 export const CONTACT_PAGE_SEO_QUERY =
 	defineQuery(`*[_type == "contactPage"][0]{ _createdAt,
