@@ -38,7 +38,7 @@ const HeroSection: FC<HeroSectionProps> = async ({
 								size={'lg'}
 								className=" group  text-lg"
 							>
-								Find your Property
+								Find your best home
 								<GoArrowUpRight className=" text-2xl transition-all  group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:duration-500  group-hover:ease-in-out" />
 							</Button>
 						</Link>
