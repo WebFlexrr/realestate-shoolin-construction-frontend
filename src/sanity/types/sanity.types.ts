@@ -151,7 +151,8 @@ export type AboutPage = {
 	_createdAt: string;
 	_updatedAt: string;
 	_rev: string;
-	about?: string;
+	aboutTitle?: string;
+	aboutDescription?: string;
 	ownerMessage?: Array<string>;
 	ourValues?: Array<string>;
 	ourVision?: Array<string>;

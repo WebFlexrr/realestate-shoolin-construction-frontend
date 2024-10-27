@@ -3,21 +3,28 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 
 interface HeroSectionProps {
-	about?: string;
+	aboutTitle?: string;
+	aboutDescription?: string;
 }
-const HeroSection: FC<HeroSectionProps> = ({ about }) => {
+const HeroSection: FC<HeroSectionProps> = ({
+	aboutTitle,
+	aboutDescription,
+}) => {
 	return (
 		<section className="h-auto w-full ">
 			<section className=" relative mx-auto flex h-full w-full max-w-7xl flex-col px-5 xl:px-0">
 				<section className="grid h-auto w-full grid-cols-1 justify-between gap-5 md:grid-cols-2 lg:flex-row lg:gap-x-7 lg:gap-y-14 ">
-					<section className=" order-1  flex w-full flex-col gap-3">
+					<section className=" order-1 flex  w-full flex-col gap-3 lg:pr-12">
 						<h1 className="font-inter-Tight text-3xl leading-[36px] lg:text-4xl lg:leading-[46px]">
-							Who We are?
+							{aboutTitle}
 						</h1>
+
 						<div className="h-1 w-20 bg-primary"></div>
 					</section>
 					<section className=" order-3 w-full  md:order-2">
-						<p className="text-base leading-7 tracking-wider">{about}</p>
+						<p className="text-base leading-7 tracking-wider">
+							{aboutDescription}
+						</p>
 					</section>
 					<section className=" order-2 h-auto w-full ">
 						<Image
