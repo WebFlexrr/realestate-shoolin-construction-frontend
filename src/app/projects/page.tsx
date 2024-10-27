@@ -17,7 +17,6 @@ export async function generateMetadata(): Promise<Metadata> {
 		query: PROJECTS_PAGE_SEO_QUERY,
 	});
 
-	// console.log(projectsPage);
 	return {
 		title: `Projects - ${projectsPage.seo?.metaTitle}`,
 		description: projectsPage.seo?.metaDescription,
@@ -50,9 +49,17 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 		query: PROJECTS_QUERY,
 	});
 
+	const projectsPage = await sanityFetch<ProjectsPageType>({
+		query: PROJECTS_PAGE_SEO_QUERY,
+	});
+
 	return (
 		<main className="mt-[7rem] h-auto w-full">
-			<HeroHeading heading={'Our Projects'} subHeading={'Projects'} />
+			<HeroHeading
+				heading={'Our Projects'}
+				// subHeading={'Shoolin Construction gives your dream new flats in Dum Dum. Check out our premium, well-designed residential options in substantial areas. Your home, which is both trendy and magnificent, is waiting for you!'}
+				description={projectsPage.description}
+			/>
 			<section className="h-auto w-full  ">
 				<section className="mx-auto h-auto w-full max-w-7xl space-y-20 px-5 pb-40 xl:px-0">
 					<section className="flex w-full flex-col">

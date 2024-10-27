@@ -189,6 +189,7 @@ export type ProjectsPage = {
 	_updatedAt: string;
 	_rev: string;
 	title?: string;
+	description?: string;
 	seo?: SeoMetaFields;
 };
 
