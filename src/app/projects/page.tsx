@@ -57,7 +57,7 @@ const ProjectPage = async (): Promise<React.JSX.Element> => {
 		<main className="mt-[7rem] h-auto w-full">
 			<HeroHeading
 				heading={'Our Projects'}
-				// subHeading={'Shoolin Construction gives your dream new flats in Dum Dum. Check out our premium, well-designed residential options in substantial areas. Your home, which is both trendy and magnificent, is waiting for you!'}
+				semiH1Heading={projectsPage.title}
 				description={projectsPage.description}
 			/>
 			<section className="h-auto w-full  ">

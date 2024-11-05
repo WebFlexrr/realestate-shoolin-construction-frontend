@@ -5,11 +5,13 @@ interface HeroHeadingProps {
 	heading: string;
 	subHeading?: string;
 	description?: string;
+	semiH1Heading?: string;
 }
 const HeroHeading: FC<HeroHeadingProps> = ({
 	heading,
 	subHeading,
 	description,
+	semiH1Heading,
 }) => {
 	return (
 		<section className="mx-auto h-auto w-full max-w-7xl space-y-4 px-5 py-10 xl:px-0">
@@ -18,7 +20,12 @@ const HeroHeading: FC<HeroHeadingProps> = ({
 			</span>
 			<Separator />
 			<div className="w-full text-sm font-medium ">{subHeading}</div>
-			<p className="mt-1.5 text-lg font-medium">{description}</p>
+
+			{semiH1Heading && (
+				<h1 className="flex w-full items-center text-4xl">{semiH1Heading}</h1>
+			)}
+
+			<p className="mt-1.5 text-base sm:text-lg ">{description}</p>
 		</section>
 	);
 };
