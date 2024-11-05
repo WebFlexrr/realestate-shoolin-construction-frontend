@@ -21,6 +21,24 @@ export const metadata: Metadata = {
 	// },
 };
 
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'GeneralContractor',
+	name: 'Shoolin Constructions',
+	image: '',
+	'@id': '',
+	url: 'https://www.shoolinconstruction.com/',
+	telephone: '+91-8017194170',
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress:
+			'132, Subhash Nagar Road,Dum Dum Cantonment, near Subhash Nagar Stadium & Water Tanks',
+		addressLocality: 'Kolkata',
+		postalCode: '700065',
+		addressCountry: 'IN',
+	},
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
