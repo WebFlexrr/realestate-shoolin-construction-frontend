@@ -46,8 +46,33 @@ export default async function Home() {
 		query: HOME_PAGE_SEO_QUERY,
 	});
 
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'HomeAndConstructionBusiness',
+		name: 'Shoolin Constructions',
+		image:
+			'https://www.shoolinconstruction.com/_next/image?url=%2Fpicture%2Fshop-pic.jpg&w=1080&q=75',
+		'@id': '',
+		url: 'https://www.shoolinconstruction.com/',
+		telephone: '+91-8017194170',
+		address: {
+			'@type': 'PostalAddress',
+			streetAddress:
+				'132, Subhash Nagar Road,Dum Dum Cantonment, near Subhash Nagar Stadium & Water Tanks',
+			addressLocality: 'Kolkata',
+			postalCode: '700065',
+			addressCountry: 'IN',
+		},
+	};
+
 	return (
 		<main className=" h-auto w-full">
+			{/* Add JSON-LD to your page */}
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
+			{/* ... */}
 			<HeroSection title={homePage.title} subTitle={homePage.subTitle} />
 			<ProjectSection />
 			<AboutSection about={homePage.about} />
