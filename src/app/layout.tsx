@@ -26,10 +26,52 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>): JSX.Element {
+	const jsonLd = {
+		'@context': 'https://schema.org/',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Home',
+				item: 'https://www.shoolinconstruction.com/',
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: 'About Us',
+				item: 'https://www.shoolinconstruction.com/about',
+			},
+			{
+				'@type': 'ListItem',
+				position: 3,
+				name: 'Our Current Projects',
+				item: 'https://www.shoolinconstruction.com/projects',
+			},
+			{
+				'@type': 'ListItem',
+				position: 4,
+				name: 'FAQ',
+				item: 'https://www.shoolinconstruction.com/faq',
+			},
+			{
+				'@type': 'ListItem',
+				position: 5,
+				name: 'Contact Us',
+				item: 'https://www.shoolinconstruction.com/contact',
+			},
+		],
+	};
 	return (
 		<html lang="en">
 			<GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER!} />
 			<body>
+				{/* Add JSON-LD to your page */}
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
+				{/* ... */}
 				<Navbar />
 				{children}
 				<Toaster />

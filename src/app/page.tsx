@@ -62,6 +62,12 @@ export default async function Home() {
 			addressLocality: 'Kolkata',
 			postalCode: '700065',
 			addressCountry: 'IN',
+			addressRegion: 'WB',
+		},
+		geo: {
+			'@type': 'GeoCoordinates',
+			latitude: 22.6326826,
+			longitude: 88.4072023,
 		},
 	};
 
@@ -72,6 +78,7 @@ export default async function Home() {
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
+
 			{/* ... */}
 			<HeroSection title={homePage.title} subTitle={homePage.subTitle} />
 			<ProjectSection />
