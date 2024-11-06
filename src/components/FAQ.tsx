@@ -8,7 +8,7 @@ import {
 import Image from 'next/image';
 import SectionHeading from './SectionHeading';
 import { FAQ_QUERY } from '@/sanity/lib/queries';
-import { client, sanityFetch } from '@/sanity/lib/client';
+import { sanityFetch } from '@/sanity/lib/client';
 import { Faq } from '@/sanity/types/sanity.types';
 
 const FAQ = async (): Promise<React.JSX.Element> => {
